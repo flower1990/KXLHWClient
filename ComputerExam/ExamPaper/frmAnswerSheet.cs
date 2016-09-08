@@ -2242,6 +2242,9 @@ namespace ComputerExam.ExamPaper
             this.SetStyle(ControlStyles.DoubleBuffer, true);
             this.SetStyle(ControlStyles.UserPaint, true);
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+
+
+
         }
         /// <summary>
         /// 选中当前树节点
