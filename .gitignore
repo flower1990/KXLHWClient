@@ -1,0 +1,18 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/ComputerExam/bin
+/ComputerExam/obj
+/ComputerExam.BLL/bin
+/ComputerExam.BLL/obj
+/ComputerExam.DAL/bin
+/ComputerExam.DAL/obj
+/ComputerExam.Model/bin
+/ComputerExam.Model/obj
+/ComputerExam.Model/obj/Debug/ComputerExam.Model.csproj.FileListAbsolute.txt
+/ComputerExam.Update/bin
+/ComputerExam.Update/obj
+/ComputerExam.Util/bin
+/ComputerExam.Util/obj
+/Libary
