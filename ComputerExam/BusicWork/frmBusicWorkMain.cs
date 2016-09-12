@@ -66,7 +66,7 @@ namespace ComputerExam.BusicWork
         {
             PublicClass.SetFormSize(this);
 
-            tsbHomeWork_Click(this, e);
+            tsbNotice_Click(this, e);
         }
 
         private void tsbHomeWork_Click(object sender, EventArgs e)
@@ -144,6 +144,11 @@ namespace ComputerExam.BusicWork
         private void tsbResource_Click(object sender, EventArgs e)
         {
             FormBind(new frmResource());
+        }
+
+        private void tsbNotice_Click(object sender, EventArgs e)
+        {
+            FormBind(new frmNotice());
         }
     }
 }

@@ -1,0 +1,29 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<fin>
+  <head>
+    <ver>1.0</ver>
+    <state>1</state>
+    <workdate>2016-09-09</workdate>
+    <excode>1016</excode>
+    <exsm>执行成功！</exsm>
+    <reserve></reserve>
+  </head>
+  <msg>
+    <param></param>
+    <body>
+      <info>
+        <ID>10</ID>
+        <Title>似懂非懂</Title>
+        <Content>PHAgc3R5bGU9ImxpbmUtaGVpZ2h0OiAxNnB4OyI+PGltZyBzcmM9Imh0dHA6Ly9sb2NhbGhvc3QvU0tQL1Jlc291cmNlL3ZlbmRvci9wbHVnaW5zL3VlZGl0b3IxXzRfM18zL2RpYWxvZ3MvYXR0YWNobWVudC9maWxlVHlwZUltYWdlcy9pY29uX3Jhci5naWYiLz48YSBocmVmPSJodHRwOi8vMTkyLjE2OC4xOTkuMTcxL3Nvd2VyZXN0cmVzL05vdGljZS8vZmlsZS8yMDE2MDkwOS82MzYwOTAxOTA0MDc3MTE1NjU0NDIwNTA4LnJhciIgdGl0bGU9IuS9nOS4muezu+e7n+aPkuS7ti5yYXIiIHN0eWxlPSJmb250LXNpemU6IDEycHg7IGNvbG9yOiByZ2IoMCwgMTAyLCAyMDQpOyI+5L2c5Lia57O757uf5o+S5Lu2LnJhcjwvYT48L3A+PHA+PGltZyBzcmM9Imh0dHA6Ly9pbWcuYmFpZHUuY29tL2hpL2p4Mi9qXzAwMjkuZ2lmIi8+PC9wPg==</Content>
+        <CreateTime>2016/9/9 11:50:24</CreateTime>
+      </info>
+      <info>
+        <ID>9</ID>
+        <Title>123123</Title>
+        <Content>PHA+6YCa55+l6YCa55+lPC9wPjxwPjxpbWcgc3JjPSJodHRwOi8vMTkyLjE2OC4xOTkuMTcxL3Nvd2VyZXN0cmVzL05vdGljZS8vaW1hZ2UvMjAxNjA5MDkvNjM2MDkwMTcyMTgzMDg5MTc2MTA2NjY2Ny5qcGciIHRpdGxlPSJiZ19sb2dpbi5qcGciIGFsdD0iYmdfbG9naW4uanBnIi8+PC9wPg==</Content>
+        <CreateTime>2016/9/9 11:22:08</CreateTime>
+      </info>
+    </body>
+  </msg>
+</fin>
+<!--646B33783444C0C0BF75F6C5C2B4FAA2-->

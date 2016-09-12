@@ -521,5 +521,39 @@ namespace ComputerExam.DAL
             }
             return state;
         }
+        /// <summary>
+        /// 获取通知
+        /// </summary>
+        /// <param name="studentCode"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <returns></returns>
+        public List<M_Notice> GetNotice(string studentCode, string startTime, string endTime)
+        {
+            string result = string.Empty;
+            string rXml = string.Empty;
+            string message = string.Empty;
+            List<M_Notice> listNotice = new List<M_Notice>();
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("<StudentCode>{0}</StudentCode>", studentCode);
+            sb.AppendFormat("<StartTime>{0}</StartTime>", startTime);
+            sb.AppendFormat("<EndTime>{0}</EndTime>", endTime);
+
+            rXml = publicClass.ReturnRequest(sb.ToString(), Globals.CODE_Notice);
+            result = Globals.SERVICE.examonline(rXml, Globals.CODE_Notice);
+
+            if (publicClass.IsRight(result))
+            {
+                listNotice = XmlHelper.XmlToObjList<M_Notice>(result, "body");
+                message = xmlUnit.GetXmlNodeValue(result, "exsm");
+            }
+            else
+            {
+                message = errorMessage;
+            }
+
+            return listNotice;
+        }
     }
 }

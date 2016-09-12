@@ -53,6 +53,7 @@
     <Compile Include="M_ExerciseSubject.cs" />
     <Compile Include="M_JobScore.cs" />
     <Compile Include="M_MyJob.cs" />
+    <Compile Include="M_Notice.cs" />
     <Compile Include="M_PaperInfo.cs" />
     <Compile Include="M_PaperTopic.cs" />
     <Compile Include="M_PaperTopicType.cs" />

@@ -181,5 +181,16 @@ namespace ComputerExam.BLL
         {
             return dal.ExistsHWFile(hwid, topicdbcode, topicdbversion);
         }
+        /// <summary>
+        /// 获取通知
+        /// </summary>
+        /// <param name="studentCode"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <returns></returns>
+        public List<M_Notice> GetNotice(string studentCode, string startTime, string endTime)
+        {
+            return dal.GetNotice(studentCode, startTime, endTime);
+        }
     }
 }

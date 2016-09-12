@@ -74,6 +74,10 @@ namespace ComputerExam.Util
         /// 检查作业文件是否有效
         /// </summary>
         public const string CODE_ExistsHWFile = "1015";
+        /// <summary>
+        /// 通知
+        /// </summary>
+        public const string CODE_Notice = "1016";
         #endregion
 
         /// <summary>

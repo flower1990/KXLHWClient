@@ -42,6 +42,7 @@
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.pnlBackground = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.tsbNotice = new System.Windows.Forms.ToolStripButton();
             this.panel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.pnlBackground.SuspendLayout();
@@ -68,6 +69,7 @@
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbNotice,
             this.tsbHomeWork,
             this.tsbDownWork,
             this.tsbWorkBrowse,
@@ -90,8 +92,6 @@
             this.tsbHomeWork.AutoSize = false;
             this.tsbHomeWork.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tsbHomeWork.BackgroundImage")));
             this.tsbHomeWork.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tsbHomeWork.Checked = true;
-            this.tsbHomeWork.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsbHomeWork.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.tsbHomeWork.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.tsbHomeWork.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -256,6 +256,24 @@
             this.lblTitle.TabIndex = 3;
             this.lblTitle.Text = "考学练 作业客户端";
             // 
+            // tsbNotice
+            // 
+            this.tsbNotice.AutoSize = false;
+            this.tsbNotice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tsbNotice.BackgroundImage")));
+            this.tsbNotice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tsbNotice.Checked = true;
+            this.tsbNotice.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.tsbNotice.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.tsbNotice.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbNotice.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNotice.Name = "tsbNotice";
+            this.tsbNotice.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.tsbNotice.Size = new System.Drawing.Size(192, 49);
+            this.tsbNotice.Text = "公告浏览";
+            this.tsbNotice.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbNotice.ToolTipText = "公告浏览";
+            this.tsbNotice.Click += new System.EventHandler(this.tsbNotice_Click);
+            // 
             // frmBusicWorkMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -294,5 +312,6 @@
         private System.Windows.Forms.ToolStripButton tsbMyJobStatistics;
         private System.Windows.Forms.ToolStripButton tsbUseManual;
         private System.Windows.Forms.ToolStripButton tsbResource;
+        private System.Windows.Forms.ToolStripButton tsbNotice;
     }
 }
