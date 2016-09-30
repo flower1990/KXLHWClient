@@ -386,8 +386,8 @@ namespace ComputerExam.StepWizard
         public frmExamSubject()
         {
             InitializeComponent();
-            CommonUtil.InitialBackgroundImage("bg_exam.jpg", pnlBackground);
-            CommonUtil.InitialBackgroundImage("bg_color.jpg", this);
+            CommonUtil.InitialBackgroundImage(Globals.BGExam, pnlBackground);
+            CommonUtil.InitialBackgroundImage(Globals.BGcolor, this);
         }
 
         private void frmExamSubject_Load(object sender, EventArgs e)

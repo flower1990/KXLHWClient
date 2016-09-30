@@ -70,6 +70,7 @@ namespace ComputerExam.DAL
                 entity.CreatePaperMode = Convert.ToInt32(reader["CreatePaperMode"]);
                 //考试模式
                 entity.ExamMode = reader["考试模式"].ToString();
+                entity.MediaPackageFileName = reader["MediaPackageFileName"].ToString();
                 //UserLockerIDs
                 //EnableMondifyExamMode
                 //发布类型

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComputerExam.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,7 @@ namespace ComputerExam.ExamPaper
         public frmExamScoreDetail()
         {
             InitializeComponent();
-            CommonUtil.InitialBackgroundImage("bg_scoredetail.jpg", pnlBackground);
+            CommonUtil.InitialBackgroundImage(Globals.BGScoreDetail, pnlBackground);
         }
 
         private void btnExit_Click(object sender, EventArgs e)

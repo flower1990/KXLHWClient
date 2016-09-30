@@ -133,6 +133,7 @@ namespace ComputerExam
             CommonUtil.listResourceType.Insert(0, new M_ResourceType() { ID = 0, Name = "---请选择---" });
             CommonUtil.listResourceModel = listUtil.GetResourceModel();
             CommonUtil.listChartType = listUtil.GetChartType();
+            Globals.DownType = bService.GetSystemPara("作业中心配置", "作业上传FTP");
         }
         /// <summary>
         /// 记住账号
@@ -270,7 +271,7 @@ namespace ComputerExam
         public frmLogin()
         {
             InitializeComponent();
-            CommonUtil.InitialBackgroundImage("bg_login.jpg", this);
+            CommonUtil.InitialBackgroundImage(Globals.BGLogin, this);
         }
 
         private void frmLogin_Load(object sender, EventArgs e)

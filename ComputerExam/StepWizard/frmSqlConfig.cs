@@ -32,7 +32,7 @@ namespace ComputerExam.StepWizard
         public frmSqlConfig()
         {
             InitializeComponent();
-            CommonUtil.InitialBackgroundImage("bg_sqlcfg.jpg", this);
+            CommonUtil.InitialBackgroundImage(Globals.BGSqlConfig, this);
         }
 
         private void frmSqlConfig_Load(object sender, EventArgs e)

@@ -25,5 +25,9 @@ namespace ComputerExam.Model
         public string TermID { get; set; }
         public string CourseID { get; set; }
         public string TeacherID { get; set; }
+        public bool IsUploadEnvFile { get; set; }
+        public bool IsUploadVideoFile { get; set; }
+        public string VideoFileName { get; set; }
+        public string VideoFilePath { get; set; }
     }
 }

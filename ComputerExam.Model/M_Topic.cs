@@ -46,6 +46,7 @@ namespace ComputerExam.Model
         public int TopicRightLevel { get; set; }
         public bool AllowSubTopic { get; set; }
         public bool AllowPeiWu { get; set; }
+        public string MultimediaFileName { get; set; }
         public List<M_SubTopic> SubTopics { get; set; }
     }
 }

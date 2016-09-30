@@ -108,6 +108,7 @@ namespace ComputerExam.Model
         public string StudentCode { get; set; }
         public string JobDownLoadState { get; set; }
         public string AccountDownLoadState { get; set; }
+        public string VideoDownLoadState { get; set; }
         public string JobSubmitState { get; set; }
         public string JobNo { get; set; }
         public string EnvFileName { get; set; }
@@ -118,5 +119,8 @@ namespace ComputerExam.Model
         public string IsUpload { get; set; }
         public string RequireEnvFile { get; set; }
         public string IsUploadAnswerFile { get; set; }
+        public bool IsUploadVideoFile { get; set; }
+        public string VideoFileName { get; set; }
+        public string VideoFilePath { get; set; }
     }
 }

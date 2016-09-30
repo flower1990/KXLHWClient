@@ -555,5 +555,38 @@ namespace ComputerExam.DAL
 
             return listNotice;
         }
+        /// <summary>
+        /// 获取配置
+        /// </summary>
+        /// <param name="studentCode"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <returns></returns>
+        public string GetSystemPara(string paramType, string paramName)
+        {
+            string result = string.Empty;
+            string rXml = string.Empty;
+            string message = string.Empty;
+            string syspara = string.Empty;
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("<ParamType>{0}</ParamType>", paramType);
+            sb.AppendFormat("<ParamName>{0}</ParamName>", paramName);
+
+            rXml = publicClass.ReturnRequest(sb.ToString(), Globals.CODE_SystemPara);
+            result = Globals.SERVICE.examonline(rXml, Globals.CODE_SystemPara);
+
+            if (publicClass.IsRight(result))
+            {
+                syspara = xmlUnit.GetXmlNodeValue(result, "ParamValue");
+                message = xmlUnit.GetXmlNodeValue(result, "exsm");
+            }
+            else
+            {
+                message = errorMessage;
+            }
+
+            return syspara;
+        }
     }
 }

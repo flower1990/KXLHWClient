@@ -62,6 +62,7 @@ namespace ComputerExam.Util
         trtCaoZuo_Outlook,
         trtCaoZuo_ShiWuFangZhen,
         trtCaoZuo_Email,
+        trtCaoZuo_YueJuan
     }
 
     public enum Enum_KeGuanTi

@@ -57,8 +57,8 @@ namespace ComputerExam.BusicWorkOffLine
         public frmBusicWorkMain()
         {
             InitializeComponent();
-            CommonUtil.InitialBackgroundImage("bg_title.jpg", pnlBackground);
-            this.Text = string.Format("{0} v5.0.B0829", UserConfigSettings.Instance.ReadSetting("系统标题"));
+            CommonUtil.InitialBackgroundImage(Globals.BGTitle, pnlBackground);
+            this.Text = string.Format("{0} {1}", Globals.SystemVersion, UserConfigSettings.Instance.ReadSetting("系统标题"));
             lblTitle.Text = UserConfigSettings.Instance.ReadSetting("系统标题");
         }
 
@@ -108,8 +108,7 @@ namespace ComputerExam.BusicWorkOffLine
 
         private void tsbUseManual_Click(object sender, EventArgs e)
         {
-            string useManualPath = Application.StartupPath + @"\SowerTestClient\System\天津商业大学数字化作业中心 作业客户端使用手册.doc";
-
+            string useManualPath = Application.StartupPath + @"\SowerTestClient\System\朔日（云+）作业客户端使用手册.doc";
             if (File.Exists(useManualPath))
             {
                 Process.Start(useManualPath);

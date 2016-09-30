@@ -15,7 +15,7 @@ namespace ComputerExam.ExamPaper
         public frmScoreDetail()
         {
             InitializeComponent();
-            CommonUtil.InitialBackgroundImage("bg_scoredetail.jpg", pnlBackground);
+            CommonUtil.InitialBackgroundImage(Globals.BGScoreDetail, pnlBackground);
         }
 
         private void frmScoreDetail_Load(object sender, EventArgs e)

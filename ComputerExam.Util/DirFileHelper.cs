@@ -232,8 +232,7 @@ namespace ComputerExam.Util
         /// <param name="file">要删除的文件路径和名称</param>
         public static void DeleteFile(string file)
         {
-            if (File.Exists(System.Web.HttpContext.Current.Request.PhysicalApplicationPath + file))
-                File.Delete(System.Web.HttpContext.Current.Request.PhysicalApplicationPath + file);
+            if (File.Exists(file)) File.Delete(file);
         }
         #endregion
 
@@ -279,9 +278,9 @@ namespace ComputerExam.Util
         {
             dir1 = dir1.Replace("/", "\\");
             dir2 = dir2.Replace("/", "\\");
-            if (File.Exists(System.Web.HttpContext.Current.Request.PhysicalApplicationPath + "\\" + dir1))
+            if (File.Exists(dir1))
             {
-                File.Copy(System.Web.HttpContext.Current.Request.PhysicalApplicationPath + "\\" + dir1, System.Web.HttpContext.Current.Request.PhysicalApplicationPath + "\\" + dir2, true);
+                File.Copy(dir1, dir2, true);
             }
         }
         #endregion
@@ -686,8 +685,9 @@ namespace ComputerExam.Util
         public static string GetFileNameNoExtension(string filePath)
         {
             //获取文件的名称
-            FileInfo fi = new FileInfo(filePath);
-            return fi.Name.Split('.')[0];
+            //FileInfo fi = new FileInfo(filePath);
+            //return fi.Name.Split('.')[0];
+            return Path.GetFileNameWithoutExtension(filePath);
         }
         #endregion
 

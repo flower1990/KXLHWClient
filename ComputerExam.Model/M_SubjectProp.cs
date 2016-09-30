@@ -127,5 +127,7 @@ namespace ComputerExam.Model
         /// 试卷类型
         /// </summary>
         public string PaperType { get; set; }
+        
+        public string MediaPackageFileName { get; set; }
     }
 }

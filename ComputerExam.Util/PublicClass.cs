@@ -70,6 +70,10 @@ namespace ComputerExam.Util
         /// </summary>
         public static string ExamSysDir;
         /// <summary>
+        /// 视频目录
+        /// </summary>
+        public static string ExamVideo;
+        /// <summary>
         /// 试卷目录
         /// </summary>
         public static string PaperDownloadDir;
@@ -178,6 +182,7 @@ namespace ComputerExam.Util
         public static string StudentPwd = "";
         public static string ExamineeName = "";
         public static string JobType = "";
+        public static string VideoFilePath = string.Empty;
         #endregion
 
         #region 检测Office是否安装
@@ -402,6 +407,7 @@ namespace ComputerExam.Util
                 PaperDownloadDir = ExamSysDir + @"Paper\Download\";
                 ExamSysDirGradeDll = ExamSysDir + @"System\GradeDll\";
                 ExamImagesDir = Application.StartupPath + @"\Common\Images\";
+                ExamVideo = ExamSysDir + @"Video\";
 
                 StudentDirGradeDll = StudentDir + @"\GradeDll\";
                 StudentDirAccount = StudentDir + @"\Account\";
@@ -429,9 +435,9 @@ namespace ComputerExam.Util
                 Directory.CreateDirectory(StudentDirCbtesExam);
                 Directory.CreateDirectory(StudentDirData);
                 Directory.CreateDirectory(StudentDirGradeDll);
-
                 //复制评分库目录到考生目录中
-                SowerExamPlugn.CopyDirectoryFiles(ExamSysDirGradeDll, StudentDirGradeDll, true);
+                //SowerExamPlugn.CopyDirectoryFiles(ExamSysDirGradeDll, StudentDirGradeDll, true);
+                DirFileHelper.CopyFolder(ExamSysDirGradeDll, StudentDirGradeDll);
             }
             catch (Exception)
             {
@@ -490,6 +496,7 @@ namespace ComputerExam.Util
             List<string> slDifficultyID = new List<string>();
             List<string> slDifficultyName = new List<string>();
             List<string> slPeiWuTopic = new List<string>();
+            List<string> slMultimediaFileName = new List<string>();
             List<string> slSubTopicCount = new List<string>();
 
             List<string> slSubTopicID = new List<string>();
@@ -587,6 +594,7 @@ namespace ComputerExam.Util
                 slGUID = xml.SplitString(xml.GetXmlNodeValue(sTopicList, "统一编号"), xml.SplitFlagStr);
                 slDifficultyID = xml.SplitString(xml.GetXmlNodeValue(sTopicList, "难易程度ID"), xml.SplitFlagStr);
                 slDifficultyName = xml.SplitString(xml.GetXmlNodeValue(sTopicList, "难易程度"), xml.SplitFlagStr);
+                slMultimediaFileName = xml.SplitString(xml.GetXmlNodeValue(sTopicList, "MultimediaFileName"), xml.SplitFlagStr);
                 #endregion
 
                 #region//安全检测
@@ -636,6 +644,7 @@ namespace ComputerExam.Util
                     shitixinxi.Mark = double.Parse(slTopicMark[j]);
                     shitixinxi.Score = double.Parse(slTopicScore[j]);
                     shitixinxi.TopicRightLevel = 1;
+                    shitixinxi.MultimediaFileName = slMultimediaFileName[j];
                     #endregion
 
                     #region 初始化子试题信息
@@ -790,7 +799,6 @@ namespace ComputerExam.Util
             if (iBaseTypeId == 700 && iJudgeEngineId == 10027) return Enum_TTopicRealType.trtTyping;
             if (iBaseTypeId == 300 && iJudgeEngineId == 10031) return Enum_TTopicRealType.trtAnLiFenXi;
             if (iBaseTypeId == 600 && iJudgeEngineId == 10032) return Enum_TTopicRealType.trtJiSuanFenXi;
-
             if (iBaseTypeId == 500 && iJudgeEngineId == 10001) return Enum_TTopicRealType.trtCaoZuoWord;
             if (iBaseTypeId == 500 && iJudgeEngineId == 10002) return Enum_TTopicRealType.trtCaoZuoExcel;
             if (iBaseTypeId == 500 && iJudgeEngineId == 10003) return Enum_TTopicRealType.trtCaoZuoPowerPoint;
@@ -805,7 +813,7 @@ namespace ComputerExam.Util
             if (iBaseTypeId == 500 && iJudgeEngineId == 10018) return Enum_TTopicRealType.trtCaoZuo_CPP;
             if (iBaseTypeId == 500 && iJudgeEngineId == 10020) return Enum_TTopicRealType.trtCaoZuo_Email;
             if (iBaseTypeId == 200 && iJudgeEngineId == 10026) return Enum_TTopicRealType.trtZhuGuan;
-
+            if (iBaseTypeId == 500 && iJudgeEngineId == 10029) return Enum_TTopicRealType.trtCaoZuo_YueJuan;
             if (iBaseTypeId == 500 && iJudgeEngineId == 20001) return Enum_TTopicRealType.trtCaoZuoUFIDA;
             if (iBaseTypeId == 500 && iJudgeEngineId == 20004) return Enum_TTopicRealType.trtCaoZuo_JavaNetBean;
             if (iBaseTypeId == 500 && iJudgeEngineId == 20006) return Enum_TTopicRealType.trtCaoZuo_ShiWuFangZhen;
@@ -821,10 +829,8 @@ namespace ComputerExam.Util
         public Enum_TTopicRealType GetTopicRealType(M_PaperTopic ATopic)
         {
             int iBaseTypeId, iJudgeEngineId;
-
             iBaseTypeId = int.Parse(ATopic.BasicTypeId);
             iJudgeEngineId = int.Parse(ATopic.JudgeEngineId);
-
             if (iBaseTypeId == 100 && iJudgeEngineId == 10022) return Enum_TTopicRealType.trtDanXuan;
             if (iBaseTypeId == 300 && iJudgeEngineId == 10023) return Enum_TTopicRealType.trtDuoXuan;
             if (iBaseTypeId == 400 && iJudgeEngineId == 10024) return Enum_TTopicRealType.trtPanDuan;
@@ -832,7 +838,6 @@ namespace ComputerExam.Util
             if (iBaseTypeId == 700 && iJudgeEngineId == 10027) return Enum_TTopicRealType.trtTyping;
             if (iBaseTypeId == 300 && iJudgeEngineId == 10031) return Enum_TTopicRealType.trtAnLiFenXi;
             if (iBaseTypeId == 600 && iJudgeEngineId == 10032) return Enum_TTopicRealType.trtJiSuanFenXi;
-
             if (iBaseTypeId == 500 && iJudgeEngineId == 10001) return Enum_TTopicRealType.trtCaoZuoWord;
             if (iBaseTypeId == 500 && iJudgeEngineId == 10002) return Enum_TTopicRealType.trtCaoZuoExcel;
             if (iBaseTypeId == 500 && iJudgeEngineId == 10003) return Enum_TTopicRealType.trtCaoZuoPowerPoint;
@@ -847,7 +852,7 @@ namespace ComputerExam.Util
             if (iBaseTypeId == 500 && iJudgeEngineId == 10018) return Enum_TTopicRealType.trtCaoZuo_CPP;
             if (iBaseTypeId == 500 && iJudgeEngineId == 10020) return Enum_TTopicRealType.trtCaoZuo_Email;
             if (iBaseTypeId == 200 && iJudgeEngineId == 10026) return Enum_TTopicRealType.trtZhuGuan;
-
+            if (iBaseTypeId == 500 && iJudgeEngineId == 10029) return Enum_TTopicRealType.trtCaoZuo_YueJuan;
             if (iBaseTypeId == 500 && iJudgeEngineId == 20001) return Enum_TTopicRealType.trtCaoZuoUFIDA;
             if (iBaseTypeId == 500 && iJudgeEngineId == 20004) return Enum_TTopicRealType.trtCaoZuo_JavaNetBean;
             if (iBaseTypeId == 500 && iJudgeEngineId == 20006) return Enum_TTopicRealType.trtCaoZuo_ShiWuFangZhen;
@@ -935,7 +940,8 @@ namespace ComputerExam.Util
             string[] array = { 
                           "trtCaoZuoUFIDA", "trtCaoZuoWindows", "trtCaoZuoWord", "trtCaoZuoExcel",
                           "trtCaoZuoPowerPoint", "trtCaoZuoAccess", "trtCaoZuo_VB", "trtCaoZuo_VF", "trtCaoZuo_IE",
-                          "trtCaoZuo_Java", "trtCaoZuo_C", "trtCaoZuo_CPP", "trtCaoZuo_Outlook" ,"trtCaoZuo_ShiWuFangZhen" ,"trtCaoZuo_Email"};
+                          "trtCaoZuo_Java", "trtCaoZuo_C", "trtCaoZuo_CPP", "trtCaoZuo_Outlook" ,"trtCaoZuo_ShiWuFangZhen" ,
+                          "trtCaoZuo_Email", "trtCaoZuo_JavaNetBean", "trtCaoZuo_YueJuan"};
 
             return array.Contains(GetTopicRealType(ATopic).ToString());
         }
@@ -950,7 +956,8 @@ namespace ComputerExam.Util
             string[] array = { 
                           "trtCaoZuoUFIDA", "trtCaoZuoWindows", "trtCaoZuoWord", "trtCaoZuoExcel",
                           "trtCaoZuoPowerPoint", "trtCaoZuoAccess", "trtCaoZuo_VB", "trtCaoZuo_VF", "trtCaoZuo_IE",
-                          "trtCaoZuo_Java", "trtCaoZuo_C", "trtCaoZuo_CPP", "trtCaoZuo_Outlook" ,"trtCaoZuo_ShiWuFangZhen" ,"trtCaoZuo_Email"};
+                          "trtCaoZuo_Java", "trtCaoZuo_C", "trtCaoZuo_CPP", "trtCaoZuo_Outlook" ,"trtCaoZuo_ShiWuFangZhen" ,
+                          "trtCaoZuo_Email", "trtCaoZuo_JavaNetBean", "trtCaoZuo_YueJuan"};
 
             return array.Contains(GetTopicRealType(ATopic).ToString());
         }

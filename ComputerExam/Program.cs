@@ -91,7 +91,7 @@ namespace ComputerExam
         public static void CheckInstance()
         {
             Boolean createdNew; //返回是否赋予了使用线程的互斥体初始所属权
-            Mutex instance = new Mutex(true, "许昌学院数字化作业中心 作业客户端", out createdNew); //同步基元变量
+            Mutex instance = new Mutex(true, "朔日（云+）作业客户端", out createdNew); //同步基元变量
             if (createdNew) //首次使用互斥体
             {
                 instance.ReleaseMutex();

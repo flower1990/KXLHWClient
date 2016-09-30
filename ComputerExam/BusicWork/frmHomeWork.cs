@@ -73,6 +73,37 @@ namespace ComputerExam.BusicWork
             }
         }
         /// <summary>
+        /// 设置视频下载状态
+        /// </summary>
+        /// <param name="serverMyJob"></param>
+        private void SetVideoDownLoadState(List<M_MyJob> serverMyJob)
+        {
+            bool existsResult = false;
+            string videoFileName = string.Empty;
+            DirectoryInfo directoryInfo = new DirectoryInfo(Application.StartupPath + @"\SowerTestClient\Video\");
+            List<DirectoryInfo> fileInfo = directoryInfo.GetDirectories().ToList();
+            foreach (var server in serverMyJob)
+            {
+                videoFileName = string.IsNullOrEmpty(server.VideoFileName) == true ? "" : Path.GetFileNameWithoutExtension(server.VideoFileName.ToLower());
+                existsResult = fileInfo.Exists(f =>
+                {
+                    string[] nameList = f.Name.Split('_');
+                    if (nameList.Length <= 1) return false;
+                    if (nameList[0] != PublicClass.StudentCode) return false;
+                    if (nameList[1] == videoFileName) return true;
+                    else return false;
+                });
+                if (existsResult)
+                {
+                    server.VideoDownLoadState = "已下载";
+                }
+                else
+                {
+                    server.VideoDownLoadState = "未下载";
+                }
+            }
+        }
+        /// <summary>
         /// 设置作业序号
         /// </summary>
         /// <param name="serverMyJob"></param>
@@ -101,6 +132,129 @@ namespace ComputerExam.BusicWork
                 return job1.ChapterName.CompareTo(job2.ChapterName);
             else
                 return job1.HWName.CompareTo(job2.HWName);
+        }
+        private void HttpDownload(M_MyJob myJob)
+        {
+            //下载地址
+            string downLoadUrl = string.Format("{0}/{1}", fileHost, myJob.FilePath.Replace(@"\", @"/"));
+            //文件路径
+            string filePath = myJob.FilePath;
+            //文件名
+            string fileName = Path.GetFileName(filePath);
+            //复制文件到系统路径
+            string copyPath = string.Format(@"{0}\SowerTestClient\Paper\Download\{1}_{2}", Application.StartupPath, PublicClass.StudentCode, fileName);
+            //下载文件保存路径
+            string savePath = string.Format("{0}\\{1}_{2}", Globals.DownLoadDir, PublicClass.StudentCode, fileName);
+            //下载作业
+            bool downResult = CommonUtil.DownloadFile(downLoadUrl, savePath, tsbBar, tsbMessage, "作业下载进度：");
+            if (downResult)
+            {
+                //复制作业到系统目录
+                File.Copy(savePath, copyPath, true);
+                //删除下载文件
+                File.Delete(savePath);
+                //设置已下载状态
+                dgvResult.SelectedRows[0].Cells["JobDownLoadState"].Value = "已下载";
+                tsbMessage.Text = "作业下载进度：";
+                tsbBar.Value = 0;
+            }
+            if (myJob.RequireEnvFile.ToLower() == "true" && myJob.IsUpload.ToLower() == "true" && cbIsDownAccount.Checked == true)
+            {
+                downLoadUrl = string.Format("{0}/{1}", fileHost, myJob.EnvFilePath.Replace(@"\", @"/"));
+                filePath = myJob.FilePath;
+                fileName = myJob.EnvFileName;
+                copyPath = string.Format(@"{0}\SowerTestClient\Paper\Account\{1}", Application.StartupPath, fileName);
+                savePath = string.Format("{0}\\{1}", Globals.DownLoadDir, fileName);
+                downResult = CommonUtil.DownloadFile(downLoadUrl, savePath, tsbBar, tsbMessage, "帐套下载进度：");
+                if (downResult)
+                {
+                    //复制作业到系统目录
+                    DirFileHelper.Copy(savePath, copyPath);
+                    //删除临时下载文件
+                    DirFileHelper.DeleteFile(savePath);
+                    tsbMessage.Text = "账套下载进度：";
+                    tsbBar.Value = 0;
+                    dgvResult.SelectedRows[0].Cells["AccountDownLoadState"].Value = "已下载";
+                }
+            }
+            //下载视频文件
+            if (string.IsNullOrEmpty(myJob.VideoFilePath) == false && myJob.IsUploadVideoFile == true && cbIsDownVideo.Checked == true)
+            {
+                downLoadUrl = string.Format("{0}/{1}", fileHost, myJob.VideoFilePath.Replace(@"\", @"/"));
+                filePath = myJob.VideoFilePath;
+                fileName = myJob.VideoFileName;
+                copyPath = string.Format(@"{0}\SowerTestClient\Video\{1}_{2}", Application.StartupPath, PublicClass.StudentCode, Path.GetFileNameWithoutExtension(fileName));
+                savePath = string.Format("{0}\\{1}", Globals.DownLoadDir, fileName);
+                downResult = CommonUtil.DownloadFile(downLoadUrl, savePath, tsbBar, tsbMessage, "视频下载进度：");
+                if (downResult)
+                {
+                    //复制作业到系统目录
+                    ZipFileTools.UnZipSZL(savePath, copyPath);
+                    //删除临时下载文件
+                    DirFileHelper.DeleteFile(savePath);
+                    tsbMessage.Text = "视频下载进度：";
+                    tsbBar.Value = 0;
+                    dgvResult.SelectedRows[0].Cells["VideoDownLoadState"].Value = "已下载";
+                }
+            }
+        }
+        private void FtpDownload(M_MyJob myJob)
+        {
+            //文件路径
+            string filePath = Path.GetDirectoryName(myJob.FilePath).Replace("\\", "//");
+            //文件名
+            string fileName = Path.GetFileName(myJob.FilePath);
+            //复制文件到系统路径
+            string copyPath = string.Format(@"{0}\SowerTestClient\Paper\Download\{1}_{2}", Application.StartupPath, PublicClass.StudentCode, fileName);
+            //下载文件保存路径
+            string savePath = string.Format("{0}\\{1}", Globals.DownLoadDir, fileName);
+
+            FtpWeb ftpWeb = CommonUtil.GetFtpWeb();
+            if (ftpWeb != null)
+            {
+                ftpWeb.Download(Globals.DownLoadDir, fileName, filePath, tsbBar, tsbMessage, "作业下载进度：");
+            }
+
+            //复制作业到系统目录
+            File.Copy(savePath, copyPath, true);
+            //删除下载文件
+            File.Delete(savePath);
+            //设置已下载状态
+            dgvResult.SelectedRows[0].Cells["JobDownLoadState"].Value = "已下载";
+            tsbMessage.Text = "作业下载进度：";
+            tsbBar.Value = 0;
+            //下载账套文件
+            if (ftpWeb != null && myJob.RequireEnvFile.ToLower() == "true" && myJob.IsUpload.ToLower() == "true" && cbIsDownAccount.Checked == true)
+            {
+                filePath = Path.GetDirectoryName(myJob.EnvFilePath).Replace("\\", "//");
+                fileName = myJob.EnvFileName;
+                copyPath = string.Format(@"{0}\SowerTestClient\Paper\Account\{1}", Application.StartupPath, fileName);
+                savePath = string.Format("{0}\\{1}", Globals.DownLoadDir, fileName);
+                ftpWeb.Download(Globals.DownLoadDir, fileName, filePath, tsbBar, tsbMessage, "帐套下载进度：");
+                //复制作业到系统目录
+                DirFileHelper.Copy(savePath, copyPath);
+                //删除临时下载文件
+                DirFileHelper.DeleteFile(savePath);
+                tsbMessage.Text = "帐套下载进度：";
+                tsbBar.Value = 0;
+                dgvResult.SelectedRows[0].Cells["AccountDownLoadState"].Value = "已下载";
+            }
+            //下载视频文件
+            if (ftpWeb != null && myJob.IsUploadVideoFile == true && string.IsNullOrEmpty(myJob.VideoFilePath) == false && cbIsDownVideo.Checked == true)
+            {
+                filePath = Path.GetDirectoryName(myJob.VideoFilePath).Replace("\\", "//");
+                fileName = myJob.VideoFileName;
+                copyPath = string.Format(@"{0}\SowerTestClient\Video\{1}_{2}\", Application.StartupPath, PublicClass.StudentCode, DirFileHelper.GetFileNameNoExtension(myJob.VideoFilePath));
+                savePath = string.Format("{0}\\{1}", Globals.DownLoadDir, fileName);
+                ftpWeb.Download(Globals.DownLoadDir, fileName, filePath, tsbBar, tsbMessage, "视频下载进度：");
+                //复制作业到系统目录
+                ZipFileTools.UnZipSZL(savePath, copyPath);
+                //删除临时下载文件
+                DirFileHelper.DeleteFile(savePath);
+                tsbMessage.Text = "视频下载进度：";
+                tsbBar.Value = 0;
+                dgvResult.SelectedRows[0].Cells["VideoDownLoadState"].Value = "已下载";
+            }
         }
         /// <summary>
         /// 初始化组件
@@ -153,6 +307,8 @@ namespace ComputerExam.BusicWork
                     SetJobDownLoadState(serverMyJob);
                     //设置账套下载状态
                     SetAccountDownLoadState(serverMyJob);
+                    //设置视频下载状态
+                    SetVideoDownLoadState(serverMyJob);
                     //排序
                     serverMyJob.Sort(SortMyJob);
                     //设置作业序号
@@ -203,139 +359,27 @@ namespace ComputerExam.BusicWork
             {
                 btnDownLoad.Enabled = false;
                 this.ParentForm.Enabled = false;
-                //下载地址
-                string downLoadUrl = string.Format("{0}/{1}", fileHost, myJob.FilePath.Replace(@"\", @"/"));
-                //文件路径
-                string filePath = myJob.FilePath;
-                //文件名
-                string fileName = Path.GetFileName(filePath);
-                //复制文件到系统路径
-                string copyPath = string.Format(@"{0}\SowerTestClient\Paper\Download\{1}_{2}", Application.StartupPath, PublicClass.StudentCode, fileName);
-                //下载文件保存路径
-                string savePath = string.Format("{0}\\{1}_{2}", Globals.DownLoadDir, PublicClass.StudentCode, fileName);
-                //下载作业
-                bool downResult = CommonUtil.DownloadFile(downLoadUrl, savePath, tsbBar, tsbMessage, "下载进度：");
-                if (downResult)
+                if (Globals.DownType == "1")
                 {
-                    //复制作业到系统目录
-                    File.Copy(savePath, copyPath, true);
-                    //删除下载文件
-                    File.Delete(savePath);
-                    //设置已下载状态
-                    dgvResult.SelectedRows[0].Cells["JobDownLoadState"].Value = "已下载";
-                    tsbMessage.Text = "当前作业下载进度：";
-                    tsbBar.Value = 0;
-                }
-                if (myJob.RequireEnvFile.ToLower() == "true" && myJob.IsUpload.ToLower() == "true" && cbIsDownAccount.Checked == true)
-                {
-                    downLoadUrl = string.Format("{0}/{1}", fileHost, myJob.EnvFilePath.Replace(@"\", @"/"));
-                    filePath = myJob.FilePath;
-                    fileName = myJob.EnvFileName;
-                    copyPath = string.Format(@"{0}\SowerTestClient\Paper\Account\{1}", Application.StartupPath, fileName);
-                    savePath = string.Format("{0}\\{1}", Globals.DownLoadDir, fileName);
-                    downResult = CommonUtil.DownloadFile(downLoadUrl, savePath, tsbBar, tsbMessage, "下载进度：");
-                    if (downResult)
+                    FtpWeb ftpWeb = CommonUtil.GetFtpWeb();
+                    if (ftpWeb != null)
                     {
-                        //复制作业到系统目录
-                        File.Copy(savePath, copyPath, true);
-                        //删除下载文件
-                        File.Delete(savePath);
-                        //设置已下载状态
-                        dgvResult.SelectedRows[0].Cells["JobDownLoadState"].Value = "已下载";
-                        tsbMessage.Text = "当前帐套下载进度：";
-                        tsbBar.Value = 0;
+                        FtpDownload(myJob);
+                    }
+                    else
+                    {
+                        HttpDownload(myJob);
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                PublicClass.ShowMessageOk(ex.Message);
-            }
-            finally
-            {
-                btnDownLoad.Enabled = true;
-                this.ParentForm.Enabled = true;
-            }
-        }
-        /// <summary>
-        /// FTP下载
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnFtpDown_Click(object sender, EventArgs e)
-        {
-            FtpWeb ftpWeb = null;
-            if (dgvResult.SelectedRows.Count == 0) return;
-            M_MyJob myJob = dgvResult.SelectedRows[0].DataBoundItem as M_MyJob;
-            myJob.StudentCode = PublicClass.StudentCode;
-
-            #region //作业限定时间&&当前时间小于作业发布开始时间
-            if (myJob.HWSubmitTimeType.ToLower() == "true" &&       //1：限时，0：不限时
-                DateTime.Now <= DateTime.Parse(myJob.ExamStartDateTime))
-            {
-                PublicClass.ShowMessageOk("还没有到作业时间，不允许下载作业。");
-                return;
-            }
-            #endregion
-
-            #region //作业限定时间&&不允许补交作业&&当前时间大于作业提交截止时间
-            if (myJob.HWSubmitTimeType.ToLower() == "true" &&       //true：限时，false：不限时
-                myJob.IsPay.ToLower() == "false" &&           //true：允许补交作业，false：不允许补交作业
-                DateTime.Now >= DateTime.Parse(myJob.ExamEndDateTime))
-            {
-                PublicClass.ShowMessageOk("对不起，您已经过了交作业时间。\n请联系老师允许您补交作业！");
-                return;
-            }
-            #endregion
-
-            try
-            {
-                btnDownLoad.Enabled = false;
-                this.ParentForm.Enabled = false;
-                //文件路径
-                string filePath = Path.GetDirectoryName(myJob.FilePath).Replace("\\", "//");
-                //文件名
-                string fileName = Path.GetFileName(myJob.FilePath);
-                //复制文件到系统路径
-                string copyPath = string.Format(@"{0}\SowerTestClient\Paper\Download\{1}_{2}", Application.StartupPath, PublicClass.StudentCode, fileName);
-                //下载文件保存路径
-                string savePath = string.Format("{0}\\{1}", Globals.DownLoadDir, fileName);
-
-                ftpWeb = CommonUtil.GetFtpWeb();
-                if (ftpWeb != null)
+                else
                 {
-                    ftpWeb.Download(Globals.DownLoadDir, fileName, filePath, tsbBar, tsbMessage, "作业下载进度：");
-                }
-
-                //复制作业到系统目录
-                File.Copy(savePath, copyPath, true);
-                //删除下载文件
-                File.Delete(savePath);
-                //设置已下载状态
-                dgvResult.SelectedRows[0].Cells["JobDownLoadState"].Value = "已下载";
-                tsbMessage.Text = "作业下载进度：";
-                tsbBar.Value = 0;
-                if (ftpWeb != null && myJob.RequireEnvFile.ToLower() == "true" && myJob.IsUpload.ToLower() == "true" && cbIsDownAccount.Checked == true)
-                {
-                    filePath = Path.GetDirectoryName(myJob.EnvFilePath).Replace("\\", "//");
-                    fileName = myJob.EnvFileName;
-                    copyPath = string.Format(@"{0}\SowerTestClient\Paper\Account\{1}", Application.StartupPath, fileName);
-                    savePath = string.Format("{0}\\{1}", Globals.DownLoadDir, fileName);
-                    ftpWeb.Download(Globals.DownLoadDir, fileName, filePath, tsbBar, tsbMessage, "帐套下载进度：");
-                    //复制作业到系统目录
-                    File.Copy(savePath, copyPath, true);
-                    //删除下载文件
-                    File.Delete(savePath);
-                    //设置已下载状态
-                    dgvResult.SelectedRows[0].Cells["JobDownLoadState"].Value = "已下载";
-                    tsbMessage.Text = "帐套下载进度：";
-                    tsbBar.Value = 0;
+                    HttpDownload(myJob);
                 }
             }
             catch (Exception ex)
             {
-                Msg.ShowError("下载作业出错，请联系管理员。");
-                LogHelper.WriteLog(typeof(frmDownTopicDB), ex);
+                PublicClass.ShowMessageOk("下载作业出错，错误详情请参考系统日志。");
+                LogHelper.WriteLog(typeof(frmHomeWork), ex);
                 CommonUtil.WriteLog(ex);
             }
             finally
@@ -373,7 +417,7 @@ namespace ComputerExam.BusicWork
                 }
                 if (fileName.ToLower() != envFileName)
                 {
-                    Msg.ShowInformation(string.Format("您添加的帐套文件无效，请添加名字为{0}的账套文件。", envFileName));
+                    Msg.ShowInformation(string.Format("您添加的帐套文件无效，请添加名字为【{0}】的账套文件。", envFileName));
                     return;
                 }
                 try
@@ -418,7 +462,6 @@ namespace ComputerExam.BusicWork
             var topicDBCode = string.Empty;
             var topicDBVersion = string.Empty;
             var sExistsHWFile = string.Empty;
-
             if (dgvResult.SelectedRows.Count == 0) return;
             M_MyJob myJob = dgvResult.SelectedRows[0].DataBoundItem as M_MyJob;
             ofdOpenFile.Title = "作业文件";
@@ -455,6 +498,63 @@ namespace ComputerExam.BusicWork
                     {
                         File.Copy(filePath, copyPath, true);
                         dgvResult.SelectedRows[0].Cells["JobDownLoadState"].Value = "已下载";
+                    }, null);
+                }
+                catch (Exception ex)
+                {
+                    LogHelper.WriteLog(typeof(frmHomeWork), ex);
+                    CommonUtil.WriteLog(ex);
+                }
+            }
+        }
+        /// <summary>
+        /// 添加视频文件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAddVideoFile_Click(object sender, EventArgs e)
+        {
+            if (dgvResult.SelectedRows.Count == 0) return;
+            M_MyJob myJob = dgvResult.SelectedRows[0].DataBoundItem as M_MyJob;
+            ofdOpenFile.Title = "视频资源";
+            ofdOpenFile.FileName = "视频资源";
+            ofdOpenFile.Filter = "视频资源|*.zip*";
+            ofdOpenFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            DialogResult result = ofdOpenFile.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string filePath = ofdOpenFile.FileName;
+                string fileName = Path.GetFileName(filePath);
+                string fileExt = Path.GetExtension(filePath).ToLower();
+                string copyPath = string.Format(@"{0}\SowerTestClient\Video\{1}_{2}\",
+                    Application.StartupPath, PublicClass.StudentCode, DirFileHelper.GetFileNameNoExtension(filePath));
+                string videoFileName = string.IsNullOrEmpty(myJob.VideoFileName) == true ? "" : myJob.VideoFileName.ToLower();
+                if (string.IsNullOrEmpty(videoFileName))
+                {
+                    Msg.ShowInformation(string.Format("作业“{0}”没有添加视频资源，请联系授课教师到作业中心->作业维护发布列表进行添加。", myJob.HWName));
+                    return;
+                }
+                if (fileName.ToLower() != videoFileName)
+                {
+                    Msg.ShowInformation(string.Format("您添加的视频资源无效，请添加名字为{0}的视频资源。", videoFileName));
+                    return;
+                }
+                try
+                {
+                    if (fileExt != ".zip")
+                    {
+                        PublicClass.ShowMessageOk("该文件不是有效的视频资源包，请重新添加！");
+                        return;
+                    }
+                    if (Directory.Exists(copyPath))
+                    {
+                        DialogResult dialogResult = PublicClass.ShowMessageOKCancel("该视频资源包已经存在，确定要覆盖吗？");
+                        if (dialogResult == DialogResult.Cancel) return;
+                    }
+                    CommonUtil.ShowProcessing("正在处理中，请稍候...", this, (obj) =>
+                    {
+                        ZipFileTools.UnZipSZL(filePath, copyPath);
+                        dgvResult.SelectedRows[0].Cells["VideoDownLoadState"].Value = "已下载";
                     }, null);
                 }
                 catch (Exception ex)
@@ -517,6 +617,7 @@ namespace ComputerExam.BusicWork
                     }
                 }
             }
-        }   
+        }
+
     }
 }

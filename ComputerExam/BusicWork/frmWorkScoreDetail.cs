@@ -26,7 +26,7 @@ namespace ComputerExam.BusicWork
         {
             InitializeComponent();
             jobScore = score;
-            CommonUtil.InitialBackgroundImage("bg_scoredetail.jpg", pnlBackground);
+            CommonUtil.InitialBackgroundImage(Globals.BGScoreDetail, pnlBackground);
         }
 
         private void frmWorkScoreDetail_Load(object sender, EventArgs e)

@@ -192,5 +192,16 @@ namespace ComputerExam.BLL
         {
             return dal.GetNotice(studentCode, startTime, endTime);
         }
+        /// <summary>
+        /// 获取配置
+        /// </summary>
+        /// <param name="studentCode"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <returns></returns>
+        public string GetSystemPara(string paramType, string paramName)
+        {
+            return dal.GetSystemPara(paramType, paramName);
+        }
     }
 }

@@ -223,7 +223,7 @@ namespace ComputerExam.StepWizard
         public frmSetServiceAddress()
         {
             InitializeComponent();
-            CommonUtil.InitialBackgroundImage("bg_setupwizard.jpg", this);
+            CommonUtil.InitialBackgroundImage(Globals.BGSetupWizard, this);
         }
 
         private void frmSetServiceAddress_Load(object sender, EventArgs e)

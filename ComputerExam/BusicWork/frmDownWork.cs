@@ -74,11 +74,11 @@ namespace ComputerExam.BusicWork
             string fileName = Path.GetFileNameWithoutExtension(filePath);
             if (string.IsNullOrEmpty(studentDir))
             {
-                PublicClass.StudentDir = string.Format(@"{0}\\K01\{1}_{2}", PublicClass.GetStudentDir(), PublicClass.StudentCode, fileName);
+                PublicClass.StudentDir = string.Format(@"{0}\K01\{1}_{2}", PublicClass.GetStudentDir(), PublicClass.StudentCode, fileName);
             }
             else
             {
-                PublicClass.StudentDir = string.Format(@"{0}\\K01\{1}_{2}", studentDir.Substring(0, 3), PublicClass.StudentCode, fileName);
+                PublicClass.StudentDir = string.Format(@"{0}\K01\{1}_{2}", studentDir.Substring(0, 3), PublicClass.StudentCode, fileName);
             }
             UserConfigSettings.Instance.WriteSetting("学生目录", PublicClass.StudentDir);
         }
@@ -88,11 +88,9 @@ namespace ComputerExam.BusicWork
         private void InitialKaoShiFangShi()
         {
             publicClass.InitSystemProp();
-
             string paperPath = PublicClass.StudentDir + "\\Data\\ExamRec.dat";
             string studentCode = PublicClass.SowerExamPlugn.GetParaValue(PublicClass.StudentDir, "考生信息", "考生考号");
             string IsUTF = PublicClass.SowerExamPlugn.GetParaValue(PublicClass.StudentDir, "试卷参数", "用友实操题");
-
             if (File.Exists(paperPath) && studentCode == PublicClass.StudentCode)
             {
                 if (IsUTF.ToLower() == "true")
@@ -181,6 +179,37 @@ namespace ComputerExam.BusicWork
             }
         }
         /// <summary>
+        /// 设置视频下载状态
+        /// </summary>
+        /// <param name="serverMyJob"></param>
+        private void SetVideoDownLoadState(List<M_MyJob> serverMyJob)
+        {
+            bool existsResult = false;
+            string videoFileName = string.Empty;
+            DirectoryInfo directoryInfo = new DirectoryInfo(Application.StartupPath + @"\SowerTestClient\Video\");
+            List<DirectoryInfo> fileInfo = directoryInfo.GetDirectories().ToList();
+            foreach (var server in serverMyJob)
+            {
+                videoFileName = string.IsNullOrEmpty(server.VideoFileName) == true ? "" : Path.GetFileNameWithoutExtension(server.VideoFileName.ToLower());
+                existsResult = fileInfo.Exists(f =>
+                {
+                    string[] nameList = f.Name.Split('_');
+                    if (nameList.Length <= 1) return false;
+                    if (nameList[0] != PublicClass.StudentCode) return false;
+                    if (nameList[1] == videoFileName) return true;
+                    else return false;
+                });
+                if (existsResult)
+                {
+                    server.VideoDownLoadState = "已下载";
+                }
+                else
+                {
+                    server.VideoDownLoadState = "未下载";
+                }
+            }
+        }
+        /// <summary>
         /// 设置作业序号
         /// </summary>
         /// <param name="serverMyJob"></param>
@@ -250,6 +279,8 @@ namespace ComputerExam.BusicWork
                     SetJobDownLoadState(serverMyJob);
                     //设置账套下载状态
                     SetAccountDownLoadState(serverMyJob);
+                    //设置视频下载状态
+                    SetVideoDownLoadState(serverMyJob);
                     //排序
                     downMyJob.Sort(SortMyJob);
                     //设置作业序号
@@ -276,6 +307,8 @@ namespace ComputerExam.BusicWork
                 M_MyJob myJob = dgvResult.SelectedRows[0].DataBoundItem as M_MyJob;
                 PublicClass.oMyJob = myJob;
                 PublicClass.JobType = JobType.ShiJuan;
+                PublicClass.VideoFilePath = string.Format(@"{0}\SowerTestClient\Video\{1}_{2}\",
+                    Application.StartupPath, PublicClass.StudentCode, DirFileHelper.GetFileNameNoExtension(myJob.VideoFilePath));
 
                 //作业限定时间&&当前时间小于作业发布开始时间
                 if (myJob.HWSubmitTimeType.ToLower() == "true" &&       //true：限时，false：不限时
@@ -311,12 +344,13 @@ namespace ComputerExam.BusicWork
                     return;
                 }
 
-                //string envFilePath = string.Format(@"{0}\SowerTestClient\Paper\Account\{1}", Application.StartupPath, myJob.EnvFileName);
-                //if (myJob.RequireEnvFile.ToLower() == "true" && !File.Exists(envFilePath))
-                //{
-                //    PublicClass.ShowMessageOk(string.Format("对不起，没有检测到账套文件{0}。\n请您进行添加！", myJob.EnvFileName));
-                //    return;
-                //}
+                string envFilePath = string.Format(@"{0}\SowerTestClient\Paper\Account\{1}", Application.StartupPath, myJob.EnvFileName);
+                string requireEnvFile = string.IsNullOrEmpty(myJob.RequireEnvFile) == true ? "false" : myJob.RequireEnvFile.ToLower();
+                if (requireEnvFile == "true" && !File.Exists(envFilePath))
+                {
+                    PublicClass.ShowMessageOk(string.Format("对不起，没有检测到账套文件{0}。\n请您进行手动添加！", myJob.EnvFileName));
+                    return;
+                }
 
                 InitialStudentDir();
 
@@ -410,7 +444,7 @@ namespace ComputerExam.BusicWork
                 }
                 if (fileName.ToLower() != envFileName)
                 {
-                    Msg.ShowInformation(string.Format("您添加的帐套文件无效，请添加名字为{0}的账套文件。", envFileName));
+                    Msg.ShowInformation(string.Format("您添加的帐套文件无效，请添加名字为【{0}】的账套文件。", envFileName));
                     return;
                 }
                 try
@@ -431,6 +465,60 @@ namespace ComputerExam.BusicWork
                     {
                         File.Copy(filePath, copyPath, true);
                         dgvResult.SelectedRows[0].Cells["AccountDownLoadState"].Value = "已下载";
+                    }, null);
+                }
+                catch (Exception ex)
+                {
+                    LogHelper.WriteLog(typeof(frmHomeWork), ex);
+                    CommonUtil.WriteLog(ex);
+                }
+            }
+        }
+
+        private void btnAddVideoFile_Click(object sender, EventArgs e)
+        {
+            if (dgvResult.SelectedRows.Count == 0) return;
+            M_MyJob myJob = dgvResult.SelectedRows[0].DataBoundItem as M_MyJob;
+            ofdOpenFile.Title = "视频资源";
+            ofdOpenFile.FileName = "视频资源";
+            ofdOpenFile.Filter = "视频资源|*.zip*";
+            ofdOpenFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            DialogResult result = ofdOpenFile.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                string filePath = ofdOpenFile.FileName;
+                string fileName = Path.GetFileName(filePath);
+                string fileExt = Path.GetExtension(filePath).ToLower();
+                string copyPath = string.Format(@"{0}\SowerTestClient\Video\{1}_{2}\",
+                    Application.StartupPath, PublicClass.StudentCode, DirFileHelper.GetFileNameNoExtension(filePath));
+                string videoFileName = string.IsNullOrEmpty(myJob.VideoFileName) == true ? "" : myJob.VideoFileName.ToLower();
+                if (string.IsNullOrEmpty(videoFileName))
+                {
+                    Msg.ShowInformation(string.Format("作业“{0}”没有添加视频资源，请联系授课教师到作业中心->作业维护发布列表进行添加。", myJob.HWName));
+                    return;
+                }
+                if (fileName.ToLower() != videoFileName)
+                {
+                    Msg.ShowInformation(string.Format("您添加的视频资源无效，请添加名字为【{0}】的视频资源。", videoFileName));
+                    return;
+                }
+                try
+                {
+                    if (fileExt != ".zip")
+                    {
+                        PublicClass.ShowMessageOk("该文件不是有效的视频资源，请重新添加！");
+                        return;
+                    }
+                    if (Directory.Exists(copyPath))
+                    {
+                        DialogResult dialogResult = PublicClass.ShowMessageOKCancel("该视频资源包已经存在，确定要覆盖吗？");
+                        if (dialogResult == DialogResult.Cancel) return;
+                    }
+                    CommonUtil.ShowProcessing("正在处理中，请稍候...", this, (obj) =>
+                    {
+                        ZipFileTools.UnZipSZL(filePath, copyPath);
+                        dgvResult.SelectedRows[0].Cells["VideoDownLoadState"].Value = "已下载";
                     }, null);
                 }
                 catch (Exception ex)

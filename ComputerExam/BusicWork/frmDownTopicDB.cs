@@ -84,11 +84,15 @@ namespace ComputerExam.BusicWork
             string topicFileName = string.Empty;
             string topicFilePath = string.Empty;
             string topicEnvFilePath = string.Empty;
+            string topicVideoFilePath = string.Empty;
             string requireEnvFile = string.Empty;
             string envFileName = string.Empty;
             string envFilePath = string.Empty;
+            string videoFileName = string.Empty;
+            string videoFilePath = string.Empty;
             string envFileExt = string.Empty;
             string copyEnvPath = string.Empty;
+            string copyVideoPath = string.Empty;
             string filePath = string.Empty;
             string fileTPath = string.Empty;
             string fileExt = string.Empty;
@@ -130,23 +134,34 @@ namespace ComputerExam.BusicWork
                 connection = string.Format(@"data source={0};password={1};polling=false;failifmissing=true", filePath, PublicClass.PasswordTopicDB);
                 connectionT = string.Format(@"data source={0};polling=false;failifmissing=true", fileTPath);
                 #endregion
+                //下载题库文件
                 ftpWeb = CommonUtil.GetFtpWeb();
                 if (ftpWeb != null)
                 {
-                    ftpWeb.Download(Globals.DownLoadDir, topicFileName, topicFilePath, proDown, lblDown, "当前题库下载进度：");
+                    ftpWeb.Download(Globals.DownLoadDir, topicFileName, topicFilePath, proDown, lblDown, "题库下载进度：");
                 }
                 else
                 {
                     Msg.ShowInformation("FTP地址不可用，请返回登陆界面进行配置。");
                     return;
                 }
-                if (ftpWeb != null && requireEnvFile == "true" && string.IsNullOrEmpty(topicDB.EnvFilePath) == false)
+                //下载账套文件
+                if (ftpWeb != null && requireEnvFile == "true" && topicDB.IsUploadEnvFile == true && !string.IsNullOrEmpty(topicDB.EnvFilePath))
                 {
                     envFileName = Path.GetFileName(topicDB.EnvFilePath);
                     envFilePath = string.Format("{0}\\{1}", Globals.DownLoadDir, envFileName);
                     copyEnvPath = string.Format(@"{0}\SowerTestClient\Paper\Account\{1}", Application.StartupPath, envFileName);
                     topicEnvFilePath = Path.GetDirectoryName(topicDB.EnvFilePath).Replace("\\", "//");
-                    ftpWeb.Download(Globals.DownLoadDir, envFileName, topicEnvFilePath, proDown, lblDown, "当前账套下载进度：");
+                    ftpWeb.Download(Globals.DownLoadDir, envFileName, topicEnvFilePath, proDown, lblDown, "账套下载进度：");
+                }
+                //下载视频文件
+                if (ftpWeb != null && topicDB.IsUploadVideoFile == true && !string.IsNullOrEmpty(topicDB.VideoFilePath))
+                {
+                    videoFileName = Path.GetFileName(topicDB.VideoFilePath);
+                    videoFilePath = string.Format("{0}\\{1}", Globals.DownLoadDir, videoFileName);
+                    copyVideoPath = string.Format(@"{0}\SowerTestClient\Video\{1}_{2}\", Application.StartupPath, PublicClass.StudentCode, DirFileHelper.GetFileNameNoExtension(videoFileName));
+                    topicVideoFilePath = Path.GetDirectoryName(topicDB.VideoFilePath).Replace("\\", "//");
+                    ftpWeb.Download(Globals.DownLoadDir, videoFileName, topicVideoFilePath, proDown, lblDown, "视频下载进度：");
                 }
                 #region 验证题库文件
                 if (fileExt != ".sdb" && fileExt != ".srk")
@@ -163,7 +178,7 @@ namespace ComputerExam.BusicWork
                     CommonUtil.ShowProcessing("正在验证题库，请稍候...", this, (obj) =>
                     {
                         //复制一个.sdbt文件
-                        File.Copy(filePath, fileTPath, true);
+                        DirFileHelper.CopyFile(filePath, fileTPath);
                         //修改.sdbt文件密码
                         bool updateResult = key3.ChangePassWordByGB2312(fileTPath, PublicClass.PassWordTopicDB_SDB, "");
                         if (updateResult)
@@ -172,19 +187,29 @@ namespace ComputerExam.BusicWork
                             conn.Open();
                             if (ConnectionState.Open == conn.State)
                             {
+                                //更改题库密码
                                 conn.ChangePassword(PublicClass.PasswordTopicDB);
-                                File.Copy(filePath, copyPath.Replace(".srk", ".sdb"), true);
-                                File.Copy(fileTPath, copyTPath.Replace(".srk", ".sdb"), true);
-                                if (requireEnvFile == "true" && string.IsNullOrEmpty(topicDB.EnvFilePath) == false)
+                                //复制题库到系统目录
+                                DirFileHelper.CopyFile(filePath, copyPath.Replace(".srk", ".sdb"));
+                                DirFileHelper.CopyFile(fileTPath, copyTPath.Replace(".srk", ".sdb"));
+                                //复制账套到系统目录
+                                if (requireEnvFile == "true" && topicDB.IsUploadEnvFile == true && !string.IsNullOrEmpty(topicDB.EnvFilePath))
                                 {
-                                    File.Copy(envFilePath, copyEnvPath, true);
+                                    DirFileHelper.CopyFile(envFilePath, copyEnvPath);
+                                }
+                                //复制视频到系统目录
+                                if (topicDB.IsUploadVideoFile == true && !string.IsNullOrEmpty(topicDB.VideoFilePath))
+                                {
+                                    ZipFileTools.UnZipSZL(videoFilePath, copyVideoPath);
                                 }
                                 conn.Close();
                             }
                             conn.Dispose();
                             conn = null;
-                            File.Delete(filePath);
-                            File.Delete(fileTPath);
+                            DirFileHelper.DeleteFile(filePath);
+                            DirFileHelper.DeleteFile(fileTPath);
+                            DirFileHelper.DeleteFile(envFilePath);
+                            DirFileHelper.DeleteFile(videoFilePath);
                         }
                         else
                         {

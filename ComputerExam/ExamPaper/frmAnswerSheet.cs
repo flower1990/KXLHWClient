@@ -96,10 +96,11 @@ namespace ComputerExam.ExamPaper
             {
                 int iHour;
                 int iSecond;
-
+                var title = UserConfigSettings.Instance.ReadSetting("系统标题");
+                lblTitle.Text = title;
                 if (PublicClass.JobType == JobType.TiKu)
                 {
-                    this.Text = string.Format("考学练 作业客户端_{0}--第{1}套试题", PublicClass.oSubjectProp.SubjectName, PublicClass.oSubjectProp.PresetPaperID);
+                    this.Text = string.Format("{0}_{1}--第{2}套试题", title, PublicClass.oSubjectProp.SubjectName, PublicClass.oSubjectProp.PresetPaperID);
                     string examTime = PublicClass.oSubjectProp.ExamMode == "1" ? "不计时" : PublicClass.oSubjectProp.TotalExamTime.ToString() + "分钟";
                     lblExamSubject.Text = string.Format("考试科目：{0}，考试时长：{1}，试卷总分：{2}", PublicClass.oSubjectProp.SubjectName, examTime, PublicClass.oPaperInfo.PaperMark);
                     lblExamName.Text = string.Format("考生姓名：{0}，准考证号：{1}，考试用机：{2}[{3}]", PublicClass.oSubjectProp.StudentName, PublicClass.StudentCode, Environment.MachineName, PublicClass.LANIP);
@@ -107,7 +108,7 @@ namespace ComputerExam.ExamPaper
 
                 if (PublicClass.JobType == JobType.ShiJuan)
                 {
-                    this.Text = string.Format("考学练 作业客户端_{0}", PublicClass.oMyJob.HWName);
+                    this.Text = string.Format("{0}_{1}", title, PublicClass.oMyJob.HWName);
                     string examTime = string.IsNullOrEmpty(PublicClass.oMyJob.TotalExamTime) == true ? "不计时" : PublicClass.oMyJob.TotalExamTime.ToString() + "分钟";
                     lblExamSubject.Text = string.Format("作业名称：{0}，考试时长：{1}，试卷总分：{2}", PublicClass.oMyJob.HWName, examTime, PublicClass.oPaperInfo.PaperMark);
                     lblExamName.Text = string.Format("考生姓名：{0}，准考证号：{1}，考试用机：{2}[{3}]", PublicClass.oMyJob.RealName, PublicClass.StudentCode, Environment.MachineName, PublicClass.LANIP);
@@ -4255,16 +4256,16 @@ namespace ComputerExam.ExamPaper
 
             try
             {
+                //安全检查
+                CurrTopicRealType = publicClass.GetTopicRealType(oCurrTopic);
+                if (CurrTopicRealType == Enum_TTopicRealType.trtUnknown)
+                {
+                    MessageBox.Show("请选择一道操作题。");
+                    return;
+                }
                 CommonUtil.ShowProcessing("正在处理中，请稍候...", this, (obj) =>
                 {
                     #region 加载数据
-                    //安全检查
-                    CurrTopicRealType = publicClass.GetTopicRealType(oCurrTopic);
-                    if (CurrTopicRealType == Enum_TTopicRealType.trtUnknown)
-                    {
-                        MessageBox.Show("请选择一道操作题。");
-                        return;
-                    }
                     //获取当前题型
                     oTopicType = GetTopicTypeObject(oCurrTopic.TopicTypeId);
                     //单题评分
@@ -4418,8 +4419,7 @@ namespace ComputerExam.ExamPaper
 
                     #endregion
                 }, null);
-
-                MessageBoxEx.Show(this, sHint);
+                if (!string.IsNullOrEmpty(sHint)) MessageBoxEx.Show(this, sHint);
             }
             catch (Exception ex)
             {
@@ -5030,6 +5030,27 @@ namespace ComputerExam.ExamPaper
             busicWorkMain.Show();
             this.Close();
         }
+        /// <summary>
+        /// 视频解析
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsbVideo_Click(object sender, EventArgs e)
+        {
+            string videoPath = string.Format(@"{0}\{1}", PublicClass.VideoFilePath, oCurrTopic.MultimediaFileName);
+            if (string.IsNullOrEmpty(oCurrTopic.MultimediaFileName))
+            {
+                Msg.ShowInformation("当前试题没有视频解析");
+                return;
+            }
+            if (!DirFileHelper.IsExistFile(videoPath))
+            {
+                Msg.ShowInformation("当前试题没有视频解析");
+                return;
+            }
+            frmVideo video = new frmVideo(videoPath);
+            video.Show();
+        }
         #endregion
 
         #region 工具栏--下
@@ -5289,5 +5310,7 @@ namespace ComputerExam.ExamPaper
             }
         }
         #endregion
+
+
     }
 }

@@ -25,6 +25,7 @@ namespace ComputerExam.Model
         public string FileName { get; set; }
         public string CheckResult { get; set; }
         public string TopicFilePath { get; set; }
+        public string VideoFileName { get; set; }
     }
 
     public class M_ExerciseFile

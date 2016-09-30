@@ -30,9 +30,6 @@ namespace ComputerExam.ExamPaper
             this.SetStyle(ControlStyles.DoubleBuffer, true);
             this.SetStyle(ControlStyles.UserPaint, true);
             this.SetStyle(ControlStyles.ResizeRedraw, true);
-
-            string fileName = PublicClass.ExamImagesDir + "bg_loading.jpg";
-            if (File.Exists(fileName)) this.pnlBackground.BackgroundImage = Image.FromFile(fileName);
         }
 
         public void ShowMessage(string message)
@@ -43,8 +40,8 @@ namespace ComputerExam.ExamPaper
         public frmHandPager()
         {
             InitializeComponent();
-            CommonUtil.InitialBackgroundImage("bg_loading.jpg", pnlBackground);
-            CommonUtil.InitialBackgroundImage("bg_color.jpg", this);
+            CommonUtil.InitialBackgroundImage(Globals.BGLoading, pnlBackground);
+            CommonUtil.InitialBackgroundImage(Globals.BGcolor, this);
         }
 
         private void frmExamInfo_Load(object sender, EventArgs e)

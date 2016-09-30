@@ -78,6 +78,10 @@ namespace ComputerExam.Util
         /// 通知
         /// </summary>
         public const string CODE_Notice = "1016";
+        /// <summary>
+        /// 通知
+        /// </summary>
+        public const string CODE_SystemPara = "1017";
         #endregion
 
         /// <summary>
@@ -111,5 +115,19 @@ namespace ComputerExam.Util
             }
         }
         public static bool IsOnline = false;
+        /// <summary>
+        /// 文件下载方式，1：ftp方式；2：http方式。
+        /// </summary>
+        public static string DownType = "1";
+        public const string SystemVersion = "v2.1.908.B0929";
+        public const string BGcolor = "bg_color.jpg";
+        public const string BGExam = "bg_exam.jpg";
+        public const string BGInfo = "bg_info.jpg";
+        public const string BGLoading = "bg_loading.jpg";
+        public const string BGLogin = "bg_login.jpg";
+        public const string BGScoreDetail = "bg_scoredetail.jpg";
+        public const string BGSetupWizard = "bg_setupwizard.jpg";
+        public const string BGSqlConfig = "bg_sqlcfg.jpg";
+        public const string BGTitle = "bg_title.jpg";
     }
 }

@@ -64,6 +64,7 @@
     <Compile Include="M_SubTopic.cs" />
     <Compile Include="M_SysConfig.cs" />
     <Compile Include="M_SysResource.cs" />
+    <Compile Include="M_SystemPara.cs" />
     <Compile Include="M_SystemSetting.cs" />
     <Compile Include="M_TaoJuanXinXi.cs" />
     <Compile Include="M_TiKuScore.cs" />

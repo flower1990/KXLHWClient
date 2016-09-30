@@ -42,8 +42,8 @@ namespace ComputerExam.StepWizard
         public frmStudentLogin()
         {
             InitializeComponent();
-            CommonUtil.InitialBackgroundImage("bg_exam.jpg", pnlBackground);
-            CommonUtil.InitialBackgroundImage("bg_color.jpg", this);
+            CommonUtil.InitialBackgroundImage(Globals.BGExam, pnlBackground);
+            CommonUtil.InitialBackgroundImage(Globals.BGcolor, this);
         }
 
         private void frmExamineeLogin_Load(object sender, EventArgs e)

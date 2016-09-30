@@ -23,7 +23,7 @@ namespace ComputerExam.BusicWork
         B_Service bService = new B_Service();
         BindingList<M_ExerciseSubjectDetail> listSubject = new BindingList<M_ExerciseSubjectDetail>();
         BindingList<M_ExerciseFile> listFile = new BindingList<M_ExerciseFile>();
-
+        BindingList<M_ExerciseFile> listVideoFile = new BindingList<M_ExerciseFile>();
         /// <summary>
         /// 加载题库文件
         /// </summary>
@@ -49,7 +49,7 @@ namespace ComputerExam.BusicWork
                         subject.TopicDBVersion = mSubjectProp.TopicDBVersion;
                         subject.FileName = mSubjectProp.EnvFileName;
                         subject.TopicFilePath = item.FullName;
-
+                        subject.VideoFileName = Path.GetFileNameWithoutExtension(mSubjectProp.MediaPackageFileName);
                         listSubject.Add(subject);
                     }
                 }
@@ -77,8 +77,7 @@ namespace ComputerExam.BusicWork
             try
             {
                 listFile.Clear();
-
-                DirectoryInfo directoryInfo = new DirectoryInfo(Application.StartupPath + @"\SowerTestClient\Paper\Account");
+                DirectoryInfo directoryInfo = new DirectoryInfo(Application.StartupPath + @"\SowerTestClient\Paper\Account\");
                 FileInfo[] fileInfo = directoryInfo.GetFiles("*.casf");//只取文本文档
                 foreach (FileInfo item in fileInfo)
                 {
@@ -89,13 +88,42 @@ namespace ComputerExam.BusicWork
                         file.FileVersion = item.LastWriteTime.ToString();
                         file.Description = item.Name;
                         file.FilePath = item.FullName;
-
                         listFile.Add(file);
                     }
                 }
-
                 dgvFiles.AutoGenerateColumns = false;
                 dgvFiles.DataSource = listFile;
+            }
+            catch (Exception ex)
+            {
+                LogHelper.WriteLog(typeof(frmExercise), ex);
+                CommonUtil.WriteLog(ex);
+            }
+        }
+        /// <summary>
+        /// 加载视频文件
+        /// </summary>
+        private void LoadVideoFiles()
+        {
+            try
+            {
+                listVideoFile.Clear();
+                DirectoryInfo directoryInfo = new DirectoryInfo(Application.StartupPath + @"\SowerTestClient\Video\");
+                DirectoryInfo[] dirList = directoryInfo.GetDirectories();
+                foreach (DirectoryInfo item in dirList)
+                {
+                    string[] nameList = item.Name.Split('_');
+                    if (nameList.Length <= 1) continue;
+                    if (nameList[0] != PublicClass.StudentCode) continue;
+                    M_ExerciseFile file = new M_ExerciseFile();
+                    file.FileName = nameList[1];
+                    file.FileVersion = item.LastWriteTime.ToString();
+                    file.Description = item.Name;
+                    file.FilePath = item.FullName;
+                    listVideoFile.Add(file);
+                }
+                dgvVideoFiles.AutoGenerateColumns = false;
+                dgvVideoFiles.DataSource = listVideoFile;
             }
             catch (Exception ex)
             {
@@ -113,6 +141,7 @@ namespace ComputerExam.BusicWork
         {
             LoadTopicDB();
             LoadFiles();
+            LoadVideoFiles();
         }
         /// <summary>
         /// 添加题库文件
@@ -121,9 +150,7 @@ namespace ComputerExam.BusicWork
         /// <param name="e"></param>
         private void btnAddTopicDB_Click(object sender, EventArgs e)
         {
-            //ofdOpenTopicDB.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             DialogResult result = ofdOpenTopicDB.ShowDialog();
-
             if (result == DialogResult.OK)
             {
                 string existsResult = string.Empty;
@@ -151,7 +178,7 @@ namespace ComputerExam.BusicWork
                     CommonUtil.ShowProcessing("正在验证题库，请稍候...", this, (obj) =>
                     {
                         //复制一个.sdbt文件
-                        File.Copy(filePath, fileTPath, true);
+                        DirFileHelper.CopyFile(filePath, fileTPath);
                         //修改.sdbt文件密码
                         bool updateResult = key3.ChangePassWordByGB2312(fileTPath, PublicClass.PassWordTopicDB_SDB, "");
 
@@ -163,21 +190,19 @@ namespace ComputerExam.BusicWork
                             {
                                 conn.ChangePassword(PublicClass.PasswordTopicDB);
                                 conn.Close();
-
-                                File.Copy(filePath, copyPath.Replace(".srk", ".sdb"), true);
-                                File.Copy(fileTPath, copyTPath.Replace(".srk", ".sdb"), true);
-
+                                DirFileHelper.CopyFile(filePath, copyPath.Replace(".srk", ".sdb"));
+                                DirFileHelper.CopyFile(fileTPath, copyTPath.Replace(".srk", ".sdb"));
                                 mSubjectProp = bSubjectProp.GetSubjectProp(Path.GetFileName(copyTPath.Replace(".srk", ".sdb")));
                                 existsResult = bService.ExistsTopicDB(mSubjectProp.TopicDBCode, mSubjectProp.TopicDBVersion);
                                 if (existsResult == "-1")
                                 {
-                                    File.Delete(copyPath.Replace(".srk", ".sdb"));
-                                    File.Delete(copyTPath.Replace(".srk", ".sdb"));
+                                    DirFileHelper.DeleteFile(copyPath.Replace(".srk", ".sdb"));
+                                    DirFileHelper.DeleteFile(copyTPath.Replace(".srk", ".sdb"));
                                 }
                             }
                             conn.Dispose();
                             conn = null;
-                            File.Delete(fileTPath);
+                            DirFileHelper.DeleteFile(fileTPath);
                         }
                         else
                         {
@@ -224,14 +249,8 @@ namespace ComputerExam.BusicWork
                     M_ExerciseSubjectDetail subject = dgvTopicDB.SelectedRows[0].DataBoundItem as M_ExerciseSubjectDetail;
                     sdbFile = subject.TopicFilePath;
                     sdbtFile = subject.TopicFilePath.Substring(0, subject.TopicFilePath.Length - 1);
-
-                    if (File.Exists(sdbFile) || File.Exists(sdbtFile))
-                    {
-                        //删除.sdb文件
-                        File.Delete(sdbFile);
-                        //删除.sdbt文件
-                        File.Delete(sdbtFile);
-                    }
+                    DirFileHelper.DeleteFile(sdbFile);
+                    DirFileHelper.DeleteFile(sdbtFile);
                 }
                 catch (IOException)
                 {
@@ -258,14 +277,12 @@ namespace ComputerExam.BusicWork
         {
             ofdOpenFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             DialogResult result = ofdOpenFile.ShowDialog();
-
             if (result == DialogResult.OK)
             {
                 string filePath = ofdOpenFile.FileName;
                 string fileName = Path.GetFileName(filePath);
                 string fileExt = Path.GetExtension(filePath).ToLower();
                 string copyPath = string.Format(@"{0}\SowerTestClient\Paper\Account\{1}", Application.StartupPath, fileName);
-
                 try
                 {
                     if (fileExt != ".casf")
@@ -273,16 +290,14 @@ namespace ComputerExam.BusicWork
                         PublicClass.ShowMessageOk("该文件不是有效的账套文件，请重新添加！");
                         return;
                     }
-
                     if (File.Exists(copyPath))
                     {
                         DialogResult dialogResult = PublicClass.ShowMessageOKCancel("该账套文件已经存在，确定要覆盖吗？");
                         if (dialogResult == DialogResult.Cancel) return;
                     }
-
                     CommonUtil.ShowProcessing("正在处理中，请稍候...", this, (obj) =>
                     {
-                        File.Copy(filePath, copyPath, true);
+                        DirFileHelper.CopyFile(filePath, copyPath);
                     }, null);
                 }
                 catch (Exception ex)
@@ -303,9 +318,7 @@ namespace ComputerExam.BusicWork
         private void btnDeleteFile_Click(object sender, EventArgs e)
         {
             string casfFile = "";
-
             if (dgvFiles.SelectedRows.Count == 0) return;
-
             DialogResult dialogResult = PublicClass.ShowMessageOKCancel("您确定要删除吗？");
             if (dialogResult == DialogResult.OK)
             {
@@ -315,10 +328,7 @@ namespace ComputerExam.BusicWork
                     casfFile = files.FilePath;
                     listFile.Remove(files);
                     //删除.sdb文件
-                    if (File.Exists(casfFile))
-                    {
-                        File.Delete(casfFile);
-                    }
+                    DirFileHelper.DeleteFile(casfFile);
                 }
                 catch (IOException)
                 {
@@ -337,6 +347,84 @@ namespace ComputerExam.BusicWork
             }
         }
         /// <summary>
+        /// 添加视频资源
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAddVideoFile_Click(object sender, EventArgs e)
+        {
+            ofdOpenVideoFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            DialogResult result = ofdOpenVideoFile.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string filePath = ofdOpenVideoFile.FileName;
+                string fileName = Path.GetFileNameWithoutExtension(filePath);
+                string fileExt = Path.GetExtension(filePath).ToLower();
+                string copyPath = string.Format(@"{0}\SowerTestClient\Video\{1}_{2}", Application.StartupPath, PublicClass.StudentCode, fileName);
+                try
+                {
+                    if (fileExt != ".zip")
+                    {
+                        PublicClass.ShowMessageOk("该文件不是有效的视频资源包，请重新添加！");
+                        return;
+                    }
+                    if (Directory.Exists(copyPath))
+                    {
+                        DialogResult dialogResult = PublicClass.ShowMessageOKCancel("该视频资源包已经存在，确定要覆盖吗？");
+                        if (dialogResult == DialogResult.Cancel) return;
+                    }
+                    CommonUtil.ShowProcessing("正在处理中，请稍候...", this, (obj) =>
+                    {
+                        ZipFileTools.UnZipSZL(filePath, copyPath);
+                    }, null);
+                }
+                catch (Exception ex)
+                {
+                    PublicClass.ShowMessageOk(ex.Message);
+                }
+                finally
+                {
+                    LoadVideoFiles();
+                }
+            }
+        }
+        /// <summary>
+        /// 删除视频资源
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelVideoFile_Click(object sender, EventArgs e)
+        {
+            string videoFile = "";
+            if (dgvVideoFiles.SelectedRows.Count == 0) return;
+            DialogResult dialogResult = PublicClass.ShowMessageOKCancel("您确定要删除吗？");
+            if (dialogResult == DialogResult.OK)
+            {
+                try
+                {
+                    M_ExerciseFile files = dgvVideoFiles.SelectedRows[0].DataBoundItem as M_ExerciseFile;
+                    videoFile = files.FilePath;
+                    listFile.Remove(files);
+                    //删除视频资源包
+                    DirFileHelper.DeleteDirectory(videoFile);
+                }
+                catch (IOException)
+                {
+                    string errorMessage = string.Format("无法删除该文件，文件正在被另一个人或程序使用。\n关闭任何可能使用这个文件的程序，重新试一次。");
+                    PublicClass.ShowErrorMessageOk(errorMessage);
+                }
+                catch (Exception ex)
+                {
+                    PublicClass.ShowMessageOk(ex.Message);
+                }
+                finally
+                {
+                    //刷新列表
+                    LoadVideoFiles();
+                }
+            }
+        }
+        /// <summary>
         /// 关闭
         /// </summary>
         /// <param name="sender"></param>
@@ -345,5 +433,7 @@ namespace ComputerExam.BusicWork
         {
             this.Close();
         }
+
+
     }
 }

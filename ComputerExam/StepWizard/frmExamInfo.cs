@@ -608,8 +608,8 @@ namespace ComputerExam.StepWizard
         public frmExamInfo()
         {
             InitializeComponent();
-            CommonUtil.InitialBackgroundImage("bg_info.jpg", pnlBackground);
-            CommonUtil.InitialBackgroundImage("bg_color.jpg", this);
+            CommonUtil.InitialBackgroundImage(Globals.BGInfo, pnlBackground);
+            CommonUtil.InitialBackgroundImage(Globals.BGcolor, this);
         }
 
         private void frmExamInfo_Load(object sender, EventArgs e)

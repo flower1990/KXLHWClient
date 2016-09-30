@@ -17,7 +17,7 @@
     <SccAuxPath>Svn</SccAuxPath>
     <SccProvider>SubversionScc</SccProvider>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>发布\</PublishUrl>
+    <PublishUrl>E:\站点发布\朔日考学练客户端\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -30,6 +30,7 @@
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -52,10 +53,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>start.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>7E1ED47566C657CED771727E9490A4BBA25C83DA</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ComputerExam_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="System" />
@@ -218,6 +233,12 @@
     </Compile>
     <Compile Include="ExamPaper\frmHandPager.Designer.cs">
       <DependentUpon>frmHandPager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamPaper\frmVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamPaper\frmVideo.Designer.cs">
+      <DependentUpon>frmVideo.cs</DependentUpon>
     </Compile>
     <Compile Include="ExamPaper\TopicType\frmAnLiFenXi.cs">
       <SubType>Form</SubType>
@@ -431,6 +452,9 @@
     <EmbeddedResource Include="ExamPaper\frmHandPager.resx">
       <DependentUpon>frmHandPager.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamPaper\frmVideo.resx">
+      <DependentUpon>frmVideo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExamPaper\TopicType\frmAnLiFenXi.resx">
       <DependentUpon>frmAnLiFenXi.cs</DependentUpon>

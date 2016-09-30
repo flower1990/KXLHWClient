@@ -36,20 +36,6 @@
             this.pnlTopicTypeContainer = new System.Windows.Forms.Panel();
             this.pnlTopTool = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbAddFontSize = new System.Windows.Forms.ToolStripButton();
-            this.tsbReduceFontSize = new System.Windows.Forms.ToolStripButton();
-            this.tsbDifficultMark = new System.Windows.Forms.ToolStripButton();
-            this.tsbResetTopic = new System.Windows.Forms.ToolStripButton();
-            this.tsbDisplayAnalysis = new System.Windows.Forms.ToolStripButton();
-            this.tsbSingleQuesAnswer = new System.Windows.Forms.ToolStripButton();
-            this.tsbPaperScore = new System.Windows.Forms.ToolStripButton();
-            this.tsbReturnBigTopic = new System.Windows.Forms.ToolStripButton();
-            this.tsbReset = new System.Windows.Forms.ToolStripButton();
-            this.tsbExit = new System.Windows.Forms.ToolStripButton();
-            this.tsbLessenTopicFace = new System.Windows.Forms.ToolStripButton();
-            this.tsbBackupJob = new System.Windows.Forms.ToolStripButton();
-            this.tsbLessenTopicFace2 = new System.Windows.Forms.ToolStripButton();
-            this.tsbHandPaper = new System.Windows.Forms.ToolStripButton();
             this.pnlTopicType = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblTopicType = new System.Windows.Forms.Label();
@@ -67,18 +53,6 @@
             this.txtAnalysis = new AxSowerRichText.AxSowerRichTextBox();
             this.pnlPageIndex = new System.Windows.Forms.Panel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.tsbFirst = new System.Windows.Forms.ToolStripButton();
-            this.tsbLastTopic = new System.Windows.Forms.ToolStripButton();
-            this.tsbNextTopic = new System.Windows.Forms.ToolStripButton();
-            this.tsbEndTopic = new System.Windows.Forms.ToolStripButton();
-            this.tsbExamFolder = new System.Windows.Forms.ToolStripButton();
-            this.tsbOpenApplication = new System.Windows.Forms.ToolStripButton();
-            this.tsbSave = new System.Windows.Forms.ToolStripButton();
-            this.tsbDaTi = new System.Windows.Forms.ToolStripButton();
-            this.tsbResetTopic2 = new System.Windows.Forms.ToolStripButton();
-            this.tsbReturnBigTopic2 = new System.Windows.Forms.ToolStripButton();
-            this.tsbResetUI = new System.Windows.Forms.ToolStripButton();
-            this.tsbSimpleDox = new System.Windows.Forms.ToolStripButton();
             this.pnlNavigation = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -95,6 +69,33 @@
             this.tmrShowTopic = new System.Windows.Forms.Timer(this.components);
             this.tmrTotalUserTime = new System.Windows.Forms.Timer(this.components);
             this.sfdExportPaper = new System.Windows.Forms.SaveFileDialog();
+            this.tsbAddFontSize = new System.Windows.Forms.ToolStripButton();
+            this.tsbReduceFontSize = new System.Windows.Forms.ToolStripButton();
+            this.tsbDifficultMark = new System.Windows.Forms.ToolStripButton();
+            this.tsbResetTopic = new System.Windows.Forms.ToolStripButton();
+            this.tsbDisplayAnalysis = new System.Windows.Forms.ToolStripButton();
+            this.tsbSingleQuesAnswer = new System.Windows.Forms.ToolStripButton();
+            this.tsbPaperScore = new System.Windows.Forms.ToolStripButton();
+            this.tsbReturnBigTopic = new System.Windows.Forms.ToolStripButton();
+            this.tsbReset = new System.Windows.Forms.ToolStripButton();
+            this.tsbExit = new System.Windows.Forms.ToolStripButton();
+            this.tsbLessenTopicFace = new System.Windows.Forms.ToolStripButton();
+            this.tsbBackupJob = new System.Windows.Forms.ToolStripButton();
+            this.tsbVideo = new System.Windows.Forms.ToolStripButton();
+            this.tsbLessenTopicFace2 = new System.Windows.Forms.ToolStripButton();
+            this.tsbHandPaper = new System.Windows.Forms.ToolStripButton();
+            this.tsbFirst = new System.Windows.Forms.ToolStripButton();
+            this.tsbLastTopic = new System.Windows.Forms.ToolStripButton();
+            this.tsbNextTopic = new System.Windows.Forms.ToolStripButton();
+            this.tsbEndTopic = new System.Windows.Forms.ToolStripButton();
+            this.tsbExamFolder = new System.Windows.Forms.ToolStripButton();
+            this.tsbOpenApplication = new System.Windows.Forms.ToolStripButton();
+            this.tsbSave = new System.Windows.Forms.ToolStripButton();
+            this.tsbDaTi = new System.Windows.Forms.ToolStripButton();
+            this.tsbResetTopic2 = new System.Windows.Forms.ToolStripButton();
+            this.tsbReturnBigTopic2 = new System.Windows.Forms.ToolStripButton();
+            this.tsbResetUI = new System.Windows.Forms.ToolStripButton();
+            this.tsbSimpleDox = new System.Windows.Forms.ToolStripButton();
             this.pnlContainer.SuspendLayout();
             this.pnlTopicFace.SuspendLayout();
             this.pnlOpation.SuspendLayout();
@@ -212,6 +213,7 @@
             this.tsbExit,
             this.tsbLessenTopicFace,
             this.tsbBackupJob,
+            this.tsbVideo,
             this.tsbLessenTopicFace2,
             this.tsbHandPaper});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
@@ -223,151 +225,6 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.Paint += new System.Windows.Forms.PaintEventHandler(this.toolStrip1_Paint);
-            // 
-            // tsbAddFontSize
-            // 
-            this.tsbAddFontSize.BackColor = System.Drawing.Color.Transparent;
-            this.tsbAddFontSize.Image = ((System.Drawing.Image)(resources.GetObject("tsbAddFontSize.Image")));
-            this.tsbAddFontSize.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.tsbAddFontSize.Name = "tsbAddFontSize";
-            this.tsbAddFontSize.Size = new System.Drawing.Size(76, 22);
-            this.tsbAddFontSize.Text = "增大字号";
-            this.tsbAddFontSize.Click += new System.EventHandler(this.tsbAddFontSize_Click);
-            this.tsbAddFontSize.MouseLeave += new System.EventHandler(this.tsbCommon_MouseLeave);
-            this.tsbAddFontSize.MouseHover += new System.EventHandler(this.tsbCommon_MouseHover);
-            this.tsbAddFontSize.Paint += new System.Windows.Forms.PaintEventHandler(this.tsbCommon_Paint);
-            // 
-            // tsbReduceFontSize
-            // 
-            this.tsbReduceFontSize.BackColor = System.Drawing.Color.Transparent;
-            this.tsbReduceFontSize.Image = ((System.Drawing.Image)(resources.GetObject("tsbReduceFontSize.Image")));
-            this.tsbReduceFontSize.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbReduceFontSize.Name = "tsbReduceFontSize";
-            this.tsbReduceFontSize.Size = new System.Drawing.Size(76, 22);
-            this.tsbReduceFontSize.Text = "减小字号";
-            this.tsbReduceFontSize.Click += new System.EventHandler(this.tsbReduceFontSize_Click);
-            // 
-            // tsbDifficultMark
-            // 
-            this.tsbDifficultMark.BackColor = System.Drawing.Color.Transparent;
-            this.tsbDifficultMark.Image = ((System.Drawing.Image)(resources.GetObject("tsbDifficultMark.Image")));
-            this.tsbDifficultMark.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbDifficultMark.Name = "tsbDifficultMark";
-            this.tsbDifficultMark.Size = new System.Drawing.Size(76, 22);
-            this.tsbDifficultMark.Text = "疑难标识";
-            this.tsbDifficultMark.Click += new System.EventHandler(this.tsbDifficultMark_Click);
-            // 
-            // tsbResetTopic
-            // 
-            this.tsbResetTopic.BackColor = System.Drawing.Color.Transparent;
-            this.tsbResetTopic.Image = ((System.Drawing.Image)(resources.GetObject("tsbResetTopic.Image")));
-            this.tsbResetTopic.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbResetTopic.Name = "tsbResetTopic";
-            this.tsbResetTopic.Size = new System.Drawing.Size(76, 22);
-            this.tsbResetTopic.Text = "重做本题";
-            this.tsbResetTopic.Click += new System.EventHandler(this.tsbResetTopic_Click);
-            // 
-            // tsbDisplayAnalysis
-            // 
-            this.tsbDisplayAnalysis.BackColor = System.Drawing.Color.Transparent;
-            this.tsbDisplayAnalysis.Image = ((System.Drawing.Image)(resources.GetObject("tsbDisplayAnalysis.Image")));
-            this.tsbDisplayAnalysis.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbDisplayAnalysis.Name = "tsbDisplayAnalysis";
-            this.tsbDisplayAnalysis.Size = new System.Drawing.Size(76, 22);
-            this.tsbDisplayAnalysis.Text = "显示评析";
-            this.tsbDisplayAnalysis.Click += new System.EventHandler(this.tsbDisplayAnalysis_Click);
-            // 
-            // tsbSingleQuesAnswer
-            // 
-            this.tsbSingleQuesAnswer.BackColor = System.Drawing.Color.Transparent;
-            this.tsbSingleQuesAnswer.Image = ((System.Drawing.Image)(resources.GetObject("tsbSingleQuesAnswer.Image")));
-            this.tsbSingleQuesAnswer.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbSingleQuesAnswer.Name = "tsbSingleQuesAnswer";
-            this.tsbSingleQuesAnswer.Size = new System.Drawing.Size(76, 22);
-            this.tsbSingleQuesAnswer.Text = "单题评分";
-            this.tsbSingleQuesAnswer.Click += new System.EventHandler(this.tsbSingleQuesAnswer_Click);
-            // 
-            // tsbPaperScore
-            // 
-            this.tsbPaperScore.BackColor = System.Drawing.Color.Transparent;
-            this.tsbPaperScore.Image = ((System.Drawing.Image)(resources.GetObject("tsbPaperScore.Image")));
-            this.tsbPaperScore.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbPaperScore.Name = "tsbPaperScore";
-            this.tsbPaperScore.Size = new System.Drawing.Size(76, 22);
-            this.tsbPaperScore.Text = "试卷评分";
-            this.tsbPaperScore.Click += new System.EventHandler(this.tsbPaperScore_Click);
-            // 
-            // tsbReturnBigTopic
-            // 
-            this.tsbReturnBigTopic.BackColor = System.Drawing.Color.Transparent;
-            this.tsbReturnBigTopic.Image = ((System.Drawing.Image)(resources.GetObject("tsbReturnBigTopic.Image")));
-            this.tsbReturnBigTopic.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbReturnBigTopic.Name = "tsbReturnBigTopic";
-            this.tsbReturnBigTopic.Size = new System.Drawing.Size(88, 22);
-            this.tsbReturnBigTopic.Text = "返回大题板";
-            this.tsbReturnBigTopic.Click += new System.EventHandler(this.tsbReturnBigTopic_Click);
-            // 
-            // tsbReset
-            // 
-            this.tsbReset.BackColor = System.Drawing.Color.Transparent;
-            this.tsbReset.Image = ((System.Drawing.Image)(resources.GetObject("tsbReset.Image")));
-            this.tsbReset.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbReset.Name = "tsbReset";
-            this.tsbReset.Size = new System.Drawing.Size(100, 21);
-            this.tsbReset.Text = "复位题板位置";
-            this.tsbReset.Click += new System.EventHandler(this.tsbReset_Click);
-            // 
-            // tsbExit
-            // 
-            this.tsbExit.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbExit.BackColor = System.Drawing.Color.Transparent;
-            this.tsbExit.Image = ((System.Drawing.Image)(resources.GetObject("tsbExit.Image")));
-            this.tsbExit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbExit.Name = "tsbExit";
-            this.tsbExit.Size = new System.Drawing.Size(76, 21);
-            this.tsbExit.Text = "退出练习";
-            this.tsbExit.Click += new System.EventHandler(this.tsbExit_Click);
-            // 
-            // tsbLessenTopicFace
-            // 
-            this.tsbLessenTopicFace.BackColor = System.Drawing.Color.Transparent;
-            this.tsbLessenTopicFace.Image = ((System.Drawing.Image)(resources.GetObject("tsbLessenTopicFace.Image")));
-            this.tsbLessenTopicFace.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbLessenTopicFace.Name = "tsbLessenTopicFace";
-            this.tsbLessenTopicFace.Size = new System.Drawing.Size(76, 21);
-            this.tsbLessenTopicFace.Text = "缩小题板";
-            this.tsbLessenTopicFace.Click += new System.EventHandler(this.tsbLessenTopicFace_Click);
-            // 
-            // tsbBackupJob
-            // 
-            this.tsbBackupJob.BackColor = System.Drawing.Color.Transparent;
-            this.tsbBackupJob.Image = ((System.Drawing.Image)(resources.GetObject("tsbBackupJob.Image")));
-            this.tsbBackupJob.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbBackupJob.Name = "tsbBackupJob";
-            this.tsbBackupJob.Size = new System.Drawing.Size(76, 21);
-            this.tsbBackupJob.Text = "备份作业";
-            this.tsbBackupJob.Click += new System.EventHandler(this.tsbBackupJob_Click);
-            // 
-            // tsbLessenTopicFace2
-            // 
-            this.tsbLessenTopicFace2.BackColor = System.Drawing.Color.Transparent;
-            this.tsbLessenTopicFace2.Image = ((System.Drawing.Image)(resources.GetObject("tsbLessenTopicFace2.Image")));
-            this.tsbLessenTopicFace2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbLessenTopicFace2.Name = "tsbLessenTopicFace2";
-            this.tsbLessenTopicFace2.Size = new System.Drawing.Size(76, 21);
-            this.tsbLessenTopicFace2.Text = "缩小题板";
-            this.tsbLessenTopicFace2.Click += new System.EventHandler(this.tsbLessenTopicFace2_Click);
-            // 
-            // tsbHandPaper
-            // 
-            this.tsbHandPaper.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbHandPaper.BackColor = System.Drawing.Color.Transparent;
-            this.tsbHandPaper.Image = ((System.Drawing.Image)(resources.GetObject("tsbHandPaper.Image")));
-            this.tsbHandPaper.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbHandPaper.Name = "tsbHandPaper";
-            this.tsbHandPaper.Size = new System.Drawing.Size(76, 21);
-            this.tsbHandPaper.Text = "交卷退出";
-            this.tsbHandPaper.Click += new System.EventHandler(this.tsbHandPaper_Click);
             // 
             // pnlTopicType
             // 
@@ -593,127 +450,6 @@
             this.toolStrip2.Size = new System.Drawing.Size(687, 25);
             this.toolStrip2.TabIndex = 1;
             // 
-            // tsbFirst
-            // 
-            this.tsbFirst.BackColor = System.Drawing.Color.Transparent;
-            this.tsbFirst.Image = ((System.Drawing.Image)(resources.GetObject("tsbFirst.Image")));
-            this.tsbFirst.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.tsbFirst.Name = "tsbFirst";
-            this.tsbFirst.Size = new System.Drawing.Size(52, 22);
-            this.tsbFirst.Text = "首题";
-            this.tsbFirst.Click += new System.EventHandler(this.tsbFirst_Click);
-            // 
-            // tsbLastTopic
-            // 
-            this.tsbLastTopic.BackColor = System.Drawing.Color.Transparent;
-            this.tsbLastTopic.Image = ((System.Drawing.Image)(resources.GetObject("tsbLastTopic.Image")));
-            this.tsbLastTopic.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbLastTopic.Name = "tsbLastTopic";
-            this.tsbLastTopic.Size = new System.Drawing.Size(64, 22);
-            this.tsbLastTopic.Text = "上一题";
-            this.tsbLastTopic.Click += new System.EventHandler(this.tsbLastTopic_Click);
-            // 
-            // tsbNextTopic
-            // 
-            this.tsbNextTopic.BackColor = System.Drawing.Color.Transparent;
-            this.tsbNextTopic.Image = ((System.Drawing.Image)(resources.GetObject("tsbNextTopic.Image")));
-            this.tsbNextTopic.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNextTopic.Name = "tsbNextTopic";
-            this.tsbNextTopic.Size = new System.Drawing.Size(64, 22);
-            this.tsbNextTopic.Text = "下一题";
-            this.tsbNextTopic.Click += new System.EventHandler(this.tsbNextTopic_Click);
-            // 
-            // tsbEndTopic
-            // 
-            this.tsbEndTopic.BackColor = System.Drawing.Color.Transparent;
-            this.tsbEndTopic.Image = ((System.Drawing.Image)(resources.GetObject("tsbEndTopic.Image")));
-            this.tsbEndTopic.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEndTopic.Name = "tsbEndTopic";
-            this.tsbEndTopic.Size = new System.Drawing.Size(52, 22);
-            this.tsbEndTopic.Text = "末题";
-            this.tsbEndTopic.Click += new System.EventHandler(this.tsbEndTopic_Click);
-            // 
-            // tsbExamFolder
-            // 
-            this.tsbExamFolder.BackColor = System.Drawing.Color.Transparent;
-            this.tsbExamFolder.Image = ((System.Drawing.Image)(resources.GetObject("tsbExamFolder.Image")));
-            this.tsbExamFolder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbExamFolder.Name = "tsbExamFolder";
-            this.tsbExamFolder.Size = new System.Drawing.Size(88, 22);
-            this.tsbExamFolder.Text = "考生文件夹";
-            this.tsbExamFolder.Click += new System.EventHandler(this.tsbExamFolder_Click);
-            // 
-            // tsbOpenApplication
-            // 
-            this.tsbOpenApplication.BackColor = System.Drawing.Color.Transparent;
-            this.tsbOpenApplication.Image = ((System.Drawing.Image)(resources.GetObject("tsbOpenApplication.Image")));
-            this.tsbOpenApplication.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbOpenApplication.Name = "tsbOpenApplication";
-            this.tsbOpenApplication.Size = new System.Drawing.Size(100, 22);
-            this.tsbOpenApplication.Text = "打开应用程序";
-            this.tsbOpenApplication.Click += new System.EventHandler(this.tsbOpenApplication_Click);
-            // 
-            // tsbSave
-            // 
-            this.tsbSave.BackColor = System.Drawing.Color.Transparent;
-            this.tsbSave.Image = ((System.Drawing.Image)(resources.GetObject("tsbSave.Image")));
-            this.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbSave.Name = "tsbSave";
-            this.tsbSave.Size = new System.Drawing.Size(52, 22);
-            this.tsbSave.Text = "保存";
-            this.tsbSave.Click += new System.EventHandler(this.tsbSave_Click);
-            // 
-            // tsbDaTi
-            // 
-            this.tsbDaTi.BackColor = System.Drawing.Color.Transparent;
-            this.tsbDaTi.Image = ((System.Drawing.Image)(resources.GetObject("tsbDaTi.Image")));
-            this.tsbDaTi.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbDaTi.Name = "tsbDaTi";
-            this.tsbDaTi.Size = new System.Drawing.Size(52, 22);
-            this.tsbDaTi.Text = "答题";
-            this.tsbDaTi.Click += new System.EventHandler(this.tsbDaTi_Click);
-            // 
-            // tsbResetTopic2
-            // 
-            this.tsbResetTopic2.BackColor = System.Drawing.Color.Transparent;
-            this.tsbResetTopic2.Image = ((System.Drawing.Image)(resources.GetObject("tsbResetTopic2.Image")));
-            this.tsbResetTopic2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbResetTopic2.Name = "tsbResetTopic2";
-            this.tsbResetTopic2.Size = new System.Drawing.Size(76, 22);
-            this.tsbResetTopic2.Text = "重做本题";
-            this.tsbResetTopic2.Click += new System.EventHandler(this.tsbReseTopic_Click);
-            // 
-            // tsbReturnBigTopic2
-            // 
-            this.tsbReturnBigTopic2.BackColor = System.Drawing.Color.Transparent;
-            this.tsbReturnBigTopic2.Image = ((System.Drawing.Image)(resources.GetObject("tsbReturnBigTopic2.Image")));
-            this.tsbReturnBigTopic2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbReturnBigTopic2.Name = "tsbReturnBigTopic2";
-            this.tsbReturnBigTopic2.Size = new System.Drawing.Size(88, 21);
-            this.tsbReturnBigTopic2.Text = "返回大题板";
-            this.tsbReturnBigTopic2.Click += new System.EventHandler(this.tsbReturnBigTopic2_Click);
-            // 
-            // tsbResetUI
-            // 
-            this.tsbResetUI.BackColor = System.Drawing.Color.Transparent;
-            this.tsbResetUI.Image = ((System.Drawing.Image)(resources.GetObject("tsbResetUI.Image")));
-            this.tsbResetUI.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbResetUI.Name = "tsbResetUI";
-            this.tsbResetUI.Size = new System.Drawing.Size(100, 21);
-            this.tsbResetUI.Text = "还原答题界面";
-            this.tsbResetUI.Click += new System.EventHandler(this.tsbResetUI_Click);
-            // 
-            // tsbSimpleDox
-            // 
-            this.tsbSimpleDox.BackColor = System.Drawing.Color.Transparent;
-            this.tsbSimpleDox.Image = ((System.Drawing.Image)(resources.GetObject("tsbSimpleDox.Image")));
-            this.tsbSimpleDox.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbSimpleDox.Name = "tsbSimpleDox";
-            this.tsbSimpleDox.Size = new System.Drawing.Size(76, 21);
-            this.tsbSimpleDox.Text = "查看样张";
-            this.tsbSimpleDox.Visible = false;
-            this.tsbSimpleDox.Click += new System.EventHandler(this.tsbSimpleDox_Click);
-            // 
             // pnlNavigation
             // 
             this.pnlNavigation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -871,6 +607,282 @@
             this.sfdExportPaper.Filter = "试卷文件|*.zip";
             this.sfdExportPaper.RestoreDirectory = true;
             // 
+            // tsbAddFontSize
+            // 
+            this.tsbAddFontSize.BackColor = System.Drawing.Color.Transparent;
+            this.tsbAddFontSize.Image = ((System.Drawing.Image)(resources.GetObject("tsbAddFontSize.Image")));
+            this.tsbAddFontSize.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.tsbAddFontSize.Name = "tsbAddFontSize";
+            this.tsbAddFontSize.Size = new System.Drawing.Size(76, 22);
+            this.tsbAddFontSize.Text = "增大字号";
+            this.tsbAddFontSize.Click += new System.EventHandler(this.tsbAddFontSize_Click);
+            this.tsbAddFontSize.MouseLeave += new System.EventHandler(this.tsbCommon_MouseLeave);
+            this.tsbAddFontSize.MouseHover += new System.EventHandler(this.tsbCommon_MouseHover);
+            this.tsbAddFontSize.Paint += new System.Windows.Forms.PaintEventHandler(this.tsbCommon_Paint);
+            // 
+            // tsbReduceFontSize
+            // 
+            this.tsbReduceFontSize.BackColor = System.Drawing.Color.Transparent;
+            this.tsbReduceFontSize.Image = ((System.Drawing.Image)(resources.GetObject("tsbReduceFontSize.Image")));
+            this.tsbReduceFontSize.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbReduceFontSize.Name = "tsbReduceFontSize";
+            this.tsbReduceFontSize.Size = new System.Drawing.Size(76, 22);
+            this.tsbReduceFontSize.Text = "减小字号";
+            this.tsbReduceFontSize.Click += new System.EventHandler(this.tsbReduceFontSize_Click);
+            // 
+            // tsbDifficultMark
+            // 
+            this.tsbDifficultMark.BackColor = System.Drawing.Color.Transparent;
+            this.tsbDifficultMark.Image = ((System.Drawing.Image)(resources.GetObject("tsbDifficultMark.Image")));
+            this.tsbDifficultMark.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDifficultMark.Name = "tsbDifficultMark";
+            this.tsbDifficultMark.Size = new System.Drawing.Size(76, 22);
+            this.tsbDifficultMark.Text = "疑难标识";
+            this.tsbDifficultMark.Click += new System.EventHandler(this.tsbDifficultMark_Click);
+            // 
+            // tsbResetTopic
+            // 
+            this.tsbResetTopic.BackColor = System.Drawing.Color.Transparent;
+            this.tsbResetTopic.Image = ((System.Drawing.Image)(resources.GetObject("tsbResetTopic.Image")));
+            this.tsbResetTopic.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbResetTopic.Name = "tsbResetTopic";
+            this.tsbResetTopic.Size = new System.Drawing.Size(76, 22);
+            this.tsbResetTopic.Text = "重做本题";
+            this.tsbResetTopic.Click += new System.EventHandler(this.tsbResetTopic_Click);
+            // 
+            // tsbDisplayAnalysis
+            // 
+            this.tsbDisplayAnalysis.BackColor = System.Drawing.Color.Transparent;
+            this.tsbDisplayAnalysis.Image = ((System.Drawing.Image)(resources.GetObject("tsbDisplayAnalysis.Image")));
+            this.tsbDisplayAnalysis.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDisplayAnalysis.Name = "tsbDisplayAnalysis";
+            this.tsbDisplayAnalysis.Size = new System.Drawing.Size(76, 22);
+            this.tsbDisplayAnalysis.Text = "显示评析";
+            this.tsbDisplayAnalysis.Click += new System.EventHandler(this.tsbDisplayAnalysis_Click);
+            // 
+            // tsbSingleQuesAnswer
+            // 
+            this.tsbSingleQuesAnswer.BackColor = System.Drawing.Color.Transparent;
+            this.tsbSingleQuesAnswer.Image = ((System.Drawing.Image)(resources.GetObject("tsbSingleQuesAnswer.Image")));
+            this.tsbSingleQuesAnswer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSingleQuesAnswer.Name = "tsbSingleQuesAnswer";
+            this.tsbSingleQuesAnswer.Size = new System.Drawing.Size(76, 22);
+            this.tsbSingleQuesAnswer.Text = "单题评分";
+            this.tsbSingleQuesAnswer.Click += new System.EventHandler(this.tsbSingleQuesAnswer_Click);
+            // 
+            // tsbPaperScore
+            // 
+            this.tsbPaperScore.BackColor = System.Drawing.Color.Transparent;
+            this.tsbPaperScore.Image = ((System.Drawing.Image)(resources.GetObject("tsbPaperScore.Image")));
+            this.tsbPaperScore.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbPaperScore.Name = "tsbPaperScore";
+            this.tsbPaperScore.Size = new System.Drawing.Size(76, 22);
+            this.tsbPaperScore.Text = "试卷评分";
+            this.tsbPaperScore.Click += new System.EventHandler(this.tsbPaperScore_Click);
+            // 
+            // tsbReturnBigTopic
+            // 
+            this.tsbReturnBigTopic.BackColor = System.Drawing.Color.Transparent;
+            this.tsbReturnBigTopic.Image = ((System.Drawing.Image)(resources.GetObject("tsbReturnBigTopic.Image")));
+            this.tsbReturnBigTopic.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbReturnBigTopic.Name = "tsbReturnBigTopic";
+            this.tsbReturnBigTopic.Size = new System.Drawing.Size(88, 22);
+            this.tsbReturnBigTopic.Text = "返回大题板";
+            this.tsbReturnBigTopic.Click += new System.EventHandler(this.tsbReturnBigTopic_Click);
+            // 
+            // tsbReset
+            // 
+            this.tsbReset.BackColor = System.Drawing.Color.Transparent;
+            this.tsbReset.Image = ((System.Drawing.Image)(resources.GetObject("tsbReset.Image")));
+            this.tsbReset.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbReset.Name = "tsbReset";
+            this.tsbReset.Size = new System.Drawing.Size(100, 21);
+            this.tsbReset.Text = "复位题板位置";
+            this.tsbReset.Click += new System.EventHandler(this.tsbReset_Click);
+            // 
+            // tsbExit
+            // 
+            this.tsbExit.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbExit.BackColor = System.Drawing.Color.Transparent;
+            this.tsbExit.Image = ((System.Drawing.Image)(resources.GetObject("tsbExit.Image")));
+            this.tsbExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbExit.Name = "tsbExit";
+            this.tsbExit.Size = new System.Drawing.Size(76, 21);
+            this.tsbExit.Text = "退出练习";
+            this.tsbExit.Click += new System.EventHandler(this.tsbExit_Click);
+            // 
+            // tsbLessenTopicFace
+            // 
+            this.tsbLessenTopicFace.BackColor = System.Drawing.Color.Transparent;
+            this.tsbLessenTopicFace.Image = ((System.Drawing.Image)(resources.GetObject("tsbLessenTopicFace.Image")));
+            this.tsbLessenTopicFace.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbLessenTopicFace.Name = "tsbLessenTopicFace";
+            this.tsbLessenTopicFace.Size = new System.Drawing.Size(76, 21);
+            this.tsbLessenTopicFace.Text = "缩小题板";
+            this.tsbLessenTopicFace.Click += new System.EventHandler(this.tsbLessenTopicFace_Click);
+            // 
+            // tsbBackupJob
+            // 
+            this.tsbBackupJob.BackColor = System.Drawing.Color.Transparent;
+            this.tsbBackupJob.Image = ((System.Drawing.Image)(resources.GetObject("tsbBackupJob.Image")));
+            this.tsbBackupJob.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbBackupJob.Name = "tsbBackupJob";
+            this.tsbBackupJob.Size = new System.Drawing.Size(76, 21);
+            this.tsbBackupJob.Text = "备份作业";
+            this.tsbBackupJob.Click += new System.EventHandler(this.tsbBackupJob_Click);
+            // 
+            // tsbVideo
+            // 
+            this.tsbVideo.BackColor = System.Drawing.Color.Transparent;
+            this.tsbVideo.Image = ((System.Drawing.Image)(resources.GetObject("tsbVideo.Image")));
+            this.tsbVideo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbVideo.Name = "tsbVideo";
+            this.tsbVideo.Size = new System.Drawing.Size(76, 21);
+            this.tsbVideo.Text = "视频解析";
+            this.tsbVideo.Click += new System.EventHandler(this.tsbVideo_Click);
+            // 
+            // tsbLessenTopicFace2
+            // 
+            this.tsbLessenTopicFace2.BackColor = System.Drawing.Color.Transparent;
+            this.tsbLessenTopicFace2.Image = ((System.Drawing.Image)(resources.GetObject("tsbLessenTopicFace2.Image")));
+            this.tsbLessenTopicFace2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbLessenTopicFace2.Name = "tsbLessenTopicFace2";
+            this.tsbLessenTopicFace2.Size = new System.Drawing.Size(76, 21);
+            this.tsbLessenTopicFace2.Text = "缩小题板";
+            this.tsbLessenTopicFace2.Click += new System.EventHandler(this.tsbLessenTopicFace2_Click);
+            // 
+            // tsbHandPaper
+            // 
+            this.tsbHandPaper.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbHandPaper.BackColor = System.Drawing.Color.Transparent;
+            this.tsbHandPaper.Image = ((System.Drawing.Image)(resources.GetObject("tsbHandPaper.Image")));
+            this.tsbHandPaper.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbHandPaper.Name = "tsbHandPaper";
+            this.tsbHandPaper.Size = new System.Drawing.Size(76, 21);
+            this.tsbHandPaper.Text = "交卷退出";
+            this.tsbHandPaper.Click += new System.EventHandler(this.tsbHandPaper_Click);
+            // 
+            // tsbFirst
+            // 
+            this.tsbFirst.BackColor = System.Drawing.Color.Transparent;
+            this.tsbFirst.Image = ((System.Drawing.Image)(resources.GetObject("tsbFirst.Image")));
+            this.tsbFirst.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.tsbFirst.Name = "tsbFirst";
+            this.tsbFirst.Size = new System.Drawing.Size(52, 22);
+            this.tsbFirst.Text = "首题";
+            this.tsbFirst.Click += new System.EventHandler(this.tsbFirst_Click);
+            // 
+            // tsbLastTopic
+            // 
+            this.tsbLastTopic.BackColor = System.Drawing.Color.Transparent;
+            this.tsbLastTopic.Image = ((System.Drawing.Image)(resources.GetObject("tsbLastTopic.Image")));
+            this.tsbLastTopic.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbLastTopic.Name = "tsbLastTopic";
+            this.tsbLastTopic.Size = new System.Drawing.Size(64, 22);
+            this.tsbLastTopic.Text = "上一题";
+            this.tsbLastTopic.Click += new System.EventHandler(this.tsbLastTopic_Click);
+            // 
+            // tsbNextTopic
+            // 
+            this.tsbNextTopic.BackColor = System.Drawing.Color.Transparent;
+            this.tsbNextTopic.Image = ((System.Drawing.Image)(resources.GetObject("tsbNextTopic.Image")));
+            this.tsbNextTopic.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNextTopic.Name = "tsbNextTopic";
+            this.tsbNextTopic.Size = new System.Drawing.Size(64, 22);
+            this.tsbNextTopic.Text = "下一题";
+            this.tsbNextTopic.Click += new System.EventHandler(this.tsbNextTopic_Click);
+            // 
+            // tsbEndTopic
+            // 
+            this.tsbEndTopic.BackColor = System.Drawing.Color.Transparent;
+            this.tsbEndTopic.Image = ((System.Drawing.Image)(resources.GetObject("tsbEndTopic.Image")));
+            this.tsbEndTopic.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEndTopic.Name = "tsbEndTopic";
+            this.tsbEndTopic.Size = new System.Drawing.Size(52, 22);
+            this.tsbEndTopic.Text = "末题";
+            this.tsbEndTopic.Click += new System.EventHandler(this.tsbEndTopic_Click);
+            // 
+            // tsbExamFolder
+            // 
+            this.tsbExamFolder.BackColor = System.Drawing.Color.Transparent;
+            this.tsbExamFolder.Image = ((System.Drawing.Image)(resources.GetObject("tsbExamFolder.Image")));
+            this.tsbExamFolder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbExamFolder.Name = "tsbExamFolder";
+            this.tsbExamFolder.Size = new System.Drawing.Size(88, 22);
+            this.tsbExamFolder.Text = "考生文件夹";
+            this.tsbExamFolder.Click += new System.EventHandler(this.tsbExamFolder_Click);
+            // 
+            // tsbOpenApplication
+            // 
+            this.tsbOpenApplication.BackColor = System.Drawing.Color.Transparent;
+            this.tsbOpenApplication.Image = ((System.Drawing.Image)(resources.GetObject("tsbOpenApplication.Image")));
+            this.tsbOpenApplication.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbOpenApplication.Name = "tsbOpenApplication";
+            this.tsbOpenApplication.Size = new System.Drawing.Size(100, 22);
+            this.tsbOpenApplication.Text = "打开应用程序";
+            this.tsbOpenApplication.Click += new System.EventHandler(this.tsbOpenApplication_Click);
+            // 
+            // tsbSave
+            // 
+            this.tsbSave.BackColor = System.Drawing.Color.Transparent;
+            this.tsbSave.Image = ((System.Drawing.Image)(resources.GetObject("tsbSave.Image")));
+            this.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSave.Name = "tsbSave";
+            this.tsbSave.Size = new System.Drawing.Size(52, 22);
+            this.tsbSave.Text = "保存";
+            this.tsbSave.Click += new System.EventHandler(this.tsbSave_Click);
+            // 
+            // tsbDaTi
+            // 
+            this.tsbDaTi.BackColor = System.Drawing.Color.Transparent;
+            this.tsbDaTi.Image = ((System.Drawing.Image)(resources.GetObject("tsbDaTi.Image")));
+            this.tsbDaTi.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDaTi.Name = "tsbDaTi";
+            this.tsbDaTi.Size = new System.Drawing.Size(52, 22);
+            this.tsbDaTi.Text = "答题";
+            this.tsbDaTi.Click += new System.EventHandler(this.tsbDaTi_Click);
+            // 
+            // tsbResetTopic2
+            // 
+            this.tsbResetTopic2.BackColor = System.Drawing.Color.Transparent;
+            this.tsbResetTopic2.Image = ((System.Drawing.Image)(resources.GetObject("tsbResetTopic2.Image")));
+            this.tsbResetTopic2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbResetTopic2.Name = "tsbResetTopic2";
+            this.tsbResetTopic2.Size = new System.Drawing.Size(76, 22);
+            this.tsbResetTopic2.Text = "重做本题";
+            this.tsbResetTopic2.Click += new System.EventHandler(this.tsbReseTopic_Click);
+            // 
+            // tsbReturnBigTopic2
+            // 
+            this.tsbReturnBigTopic2.BackColor = System.Drawing.Color.Transparent;
+            this.tsbReturnBigTopic2.Image = ((System.Drawing.Image)(resources.GetObject("tsbReturnBigTopic2.Image")));
+            this.tsbReturnBigTopic2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbReturnBigTopic2.Name = "tsbReturnBigTopic2";
+            this.tsbReturnBigTopic2.Size = new System.Drawing.Size(88, 21);
+            this.tsbReturnBigTopic2.Text = "返回大题板";
+            this.tsbReturnBigTopic2.Click += new System.EventHandler(this.tsbReturnBigTopic2_Click);
+            // 
+            // tsbResetUI
+            // 
+            this.tsbResetUI.BackColor = System.Drawing.Color.Transparent;
+            this.tsbResetUI.Image = ((System.Drawing.Image)(resources.GetObject("tsbResetUI.Image")));
+            this.tsbResetUI.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbResetUI.Name = "tsbResetUI";
+            this.tsbResetUI.Size = new System.Drawing.Size(100, 21);
+            this.tsbResetUI.Text = "还原答题界面";
+            this.tsbResetUI.Click += new System.EventHandler(this.tsbResetUI_Click);
+            // 
+            // tsbSimpleDox
+            // 
+            this.tsbSimpleDox.BackColor = System.Drawing.Color.Transparent;
+            this.tsbSimpleDox.Image = ((System.Drawing.Image)(resources.GetObject("tsbSimpleDox.Image")));
+            this.tsbSimpleDox.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSimpleDox.Name = "tsbSimpleDox";
+            this.tsbSimpleDox.Size = new System.Drawing.Size(76, 21);
+            this.tsbSimpleDox.Text = "查看样张";
+            this.tsbSimpleDox.Visible = false;
+            this.tsbSimpleDox.Click += new System.EventHandler(this.tsbSimpleDox_Click);
+            // 
             // frmAnswerSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -991,5 +1003,6 @@
         private System.Windows.Forms.Label lblSubTopicTitle;
         private System.Windows.Forms.ToolStripButton tsbBackupJob;
         private System.Windows.Forms.SaveFileDialog sfdExportPaper;
+        private System.Windows.Forms.ToolStripButton tsbVideo;
     }
 }

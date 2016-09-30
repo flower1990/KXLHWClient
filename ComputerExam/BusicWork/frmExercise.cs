@@ -99,6 +99,7 @@ namespace ComputerExam.BusicWork
             PublicClass.oSubjectProp.IgnoreTopicTypeUseNavButton = PublicClass.mSubjectClient.IgnoreTopicTypeUseNavButton;
             PublicClass.oSubjectProp.AutoSaveInterval = 0;
             PublicClass.oSubjectProp.PaperType = PublicClass.mSubjectClient.PaperType;
+            PublicClass.oSubjectProp.MediaPackageFileName = PublicClass.mSubjectClient.MediaPackageFileName;
         }
         /// <summary>
         /// 初始化学生目录
@@ -302,6 +303,7 @@ namespace ComputerExam.BusicWork
                 InitialKaoShiFangShi();
 
                 PublicClass.oSubjectProp.PresetPaperID = Convert.ToInt32(lbTaoJuan.SelectedValue);
+                PublicClass.VideoFilePath = string.Format(@"{0}\SowerTestClient\Video\{1}_{2}\", Application.StartupPath, PublicClass.StudentCode, DirFileHelper.GetFileNameNoExtension(PublicClass.oSubjectProp.MediaPackageFileName));
                 frmBusicWorkMain busicWorkMain = this.ParentForm as frmBusicWorkMain;
 
                 existsResult = bService.ExistsTopicDB(PublicClass.oSubjectProp.TopicDBCode, PublicClass.oSubjectProp.TopicDBVersion);
