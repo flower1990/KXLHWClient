@@ -303,7 +303,6 @@ namespace ComputerExam.BusicWork
             try
             {
                 if (dgvResult.SelectedRows.Count == 0) return;
-
                 M_MyJob myJob = dgvResult.SelectedRows[0].DataBoundItem as M_MyJob;
                 PublicClass.oMyJob = myJob;
                 PublicClass.JobType = JobType.ShiJuan;

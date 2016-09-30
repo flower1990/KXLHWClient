@@ -33,22 +33,18 @@ namespace ComputerExam.BusicWork
         /// </summary>
         /// <param name="copyPath"></param>
         /// <returns></returns>
-        private bool DownLoad(string copyPath)
+        private void DownLoad(string copyPath)
         {
             bool downResult = false;
-            bool downMyJobResult = false;
-
             string downLoadUrl = string.Empty;
             string filePath = string.Empty;
             string fileName = string.Empty;
             string savePath = string.Empty;
-            string downPath = "C:\\resource\\";
-            
-            M_Resource resource = dgvResult.SelectedRows[0].DataBoundItem as M_Resource;
-            if (!Directory.Exists(downPath)) Directory.CreateDirectory(downPath);
-
+            string downPath = Globals.DownLoadDir;
             try
             {
+                if (dgvResult.SelectedRows.Count == 0) return;
+                M_Resource resource = dgvResult.SelectedRows[0].DataBoundItem as M_Resource;
                 btnDownLoad.Enabled = false;
                 //下载地址
                 downLoadUrl = string.Format("{0}/{1}", fileHost, resource.RSPath.Replace(@"\", @"/"));
@@ -60,7 +56,6 @@ namespace ComputerExam.BusicWork
                 savePath = string.Format("{0}{1}", downPath, fileName);
                 //下载作业
                 downResult = CommonUtil.DownloadFile(downLoadUrl, savePath, tsbBar, tsbMessage, "下载进度：");
-
                 if (downResult)
                 {
                     switch (resource.RSType)
@@ -70,12 +65,14 @@ namespace ComputerExam.BusicWork
                             ZipFileTools.UnZipSZL(savePath, copyPath);
                             break;
                         case MyResourceType.TiKU:
+                            downPath = string.Format(@"{0}\{1}", downPath, Path.GetFileNameWithoutExtension(fileName));
                             //解压资源到目录
                             ZipFileTools.UnZipSZL(savePath, downPath);
                             DirectoryInfo directoryInfo = new DirectoryInfo(downPath);
                             FileInfo[] fileInfo = directoryInfo.GetFiles(); //只取.srk文件
                             if (fileInfo.Length > 0)
                                 DownLoadTopicDB(fileInfo[0].FullName);
+                            DirFileHelper.DeleteDirectory(downPath);
                             break;
                         case MyResourceType.ZiLiao:
                             //解压资源到目录
@@ -87,23 +84,21 @@ namespace ComputerExam.BusicWork
                             break;
                     }
                     //删除下载文件 
-                    Directory.Delete(downPath, true);
+                    DirFileHelper.DeleteFile(savePath);
                     //设置已下载状态
                     dgvResult.SelectedRows[0].Cells["DownLoadState"].Value = "已下载";
-                    downMyJobResult = true;
                 }
             }
             catch (Exception ex)
             {
-                PublicClass.ShowMessageOk(ex.Message);
-                downMyJobResult = false;
+                Msg.ShowError("资源下载失败，详情请参考系统错误日志。");
+                LogHelper.WriteLog(typeof(frmResource), ex);
+                CommonUtil.WriteLog(ex);
             }
             finally
             {
                 btnDownLoad.Enabled = true;
             }
-
-            return downMyJobResult;
         }
 
         private void DownLoadTopicDB(string fileFullName)
@@ -116,7 +111,6 @@ namespace ComputerExam.BusicWork
             string copyTPath = string.Format(@"{0}\data\{1}t", Application.StartupPath, fileName);
             string connection = string.Format(@"data source={0};password={1};polling=false;failifmissing=true", filePath, PublicClass.PasswordTopicDB);
             string connectionT = string.Format(@"data source={0};polling=false;failifmissing=true", fileTPath);
-
             try
             {
                 if (fileExt != ".sdb" && fileExt != ".srk")
@@ -124,20 +118,17 @@ namespace ComputerExam.BusicWork
                     PublicClass.ShowMessageOk("该文件不是有效的题库文件，请重新添加！");
                     return;
                 }
-
-                //if (File.Exists(copyTPath) && File.Exists(filePath))
-                //{
-                //    DialogResult dialogResult = PublicClass.ShowMessageOKCancel("该题库文件已经存在，确定要覆盖吗？");
-                //    if (dialogResult == DialogResult.Cancel) return;
-                //}
-
+                if (File.Exists(copyPath) && File.Exists(copyTPath))
+                {
+                    DialogResult dialogResult = PublicClass.ShowMessageOKCancel("该题库文件已经存在，确定要覆盖吗？");
+                    if (dialogResult == DialogResult.Cancel) return;
+                }
                 CommonUtil.ShowProcessing("正在验证题库，请稍候...", this, (obj) =>
                 {
                     //复制一个.sdbt文件
-                    File.Copy(filePath, fileTPath, true);
+                    DirFileHelper.CopyFile(filePath, fileTPath);
                     //修改.sdbt文件密码
                     bool updateResult = key3.ChangePassWordByGB2312(fileTPath, PublicClass.PassWordTopicDB_SDB, "");
-
                     if (updateResult)
                     {
                         SQLiteConnection conn = new SQLiteConnection(connectionT);
@@ -145,10 +136,8 @@ namespace ComputerExam.BusicWork
                         if (ConnectionState.Open == conn.State)
                         {
                             conn.ChangePassword(PublicClass.PasswordTopicDB);
-
-                            File.Copy(filePath, copyPath.Replace(".srk", ".sdb"), true);
-                            File.Copy(fileTPath, copyTPath.Replace(".srk", ".sdb"), true);
-
+                            DirFileHelper.CopyFile(filePath, copyPath.Replace(".srk", ".sdb"));
+                            DirFileHelper.CopyFile(fileTPath, copyTPath.Replace(".srk", ".sdb"));
                             conn.Close();
                         }
                         conn.Dispose();
@@ -162,6 +151,10 @@ namespace ComputerExam.BusicWork
                 }, null);
             }
             catch (SQLiteException)
+            {
+                PublicClass.ShowMessageOk("无法打开题库文件，该题库不是有效的题库文件！");
+            }
+            catch (AggregateException)
             {
                 PublicClass.ShowMessageOk("无法打开题库文件，该题库不是有效的题库文件！");
             }
@@ -385,9 +378,7 @@ namespace ComputerExam.BusicWork
                 string path = string.Empty;
                 string resourceModel = cboResourceModel.SelectedValue.ToString();
                 bool result = false;
-
                 GetResourceDirectoryInfo(resource, ref directoryInfo, ref fileInfo, ref path, ref result);
-
                 this.ParentForm.Enabled = false;
                 if (result)
                 {

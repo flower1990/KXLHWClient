@@ -170,7 +170,7 @@ namespace ComputerExam.BusicWork
                         PublicClass.ShowMessageOk("该文件不是有效的题库文件，请重新添加！");
                         return;
                     }
-                    if (File.Exists(copyTPath) && File.Exists(filePath))
+                    if (File.Exists(copyPath) && File.Exists(copyTPath))
                     {
                         DialogResult dialogResult = PublicClass.ShowMessageOKCancel("该题库文件已经存在，确定要覆盖吗？");
                         if (dialogResult == DialogResult.Cancel) return;
@@ -181,7 +181,6 @@ namespace ComputerExam.BusicWork
                         DirFileHelper.CopyFile(filePath, fileTPath);
                         //修改.sdbt文件密码
                         bool updateResult = key3.ChangePassWordByGB2312(fileTPath, PublicClass.PassWordTopicDB_SDB, "");
-
                         if (updateResult)
                         {
                             SQLiteConnection conn = new SQLiteConnection(connectionT);
@@ -216,6 +215,10 @@ namespace ComputerExam.BusicWork
                     }
                 }
                 catch (SQLiteException)
+                {
+                    PublicClass.ShowMessageOk("无法打开题库文件，该题库不是有效的题库文件！");
+                }
+                catch (AggregateException)
                 {
                     PublicClass.ShowMessageOk("无法打开题库文件，该题库不是有效的题库文件！");
                 }

@@ -232,6 +232,12 @@ namespace ComputerExam.BusicWork
                 LogHelper.WriteLog(typeof(frmDownTopicDB), we);
                 CommonUtil.WriteLog(we);
             }
+            catch (AggregateException ae)
+            {
+                Msg.ShowError("无法打开题库文件，该题库不是有效的题库文件！");
+                LogHelper.WriteLog(typeof(frmDownTopicDB), ae);
+                CommonUtil.WriteLog(ae);
+            }
             catch (Exception ex)
             {
                 PublicClass.ShowErrorMessageOk(ex.Message);

@@ -292,20 +292,14 @@ namespace ComputerExam.BusicWork
                     PublicClass.ShowMessageOk("请选择一门考试科目，在进行后续操作。");
                     return;
                 }
-
                 PublicClass.SubjectName = cboSubject.SelectedValue.ToString();
                 PublicClass.JobType = JobType.TiKu;
-
                 InitialStudentDir();
-
                 InitialSubjectProp();
-
                 InitialKaoShiFangShi();
-
                 PublicClass.oSubjectProp.PresetPaperID = Convert.ToInt32(lbTaoJuan.SelectedValue);
                 PublicClass.VideoFilePath = string.Format(@"{0}\SowerTestClient\Video\{1}_{2}\", Application.StartupPath, PublicClass.StudentCode, DirFileHelper.GetFileNameNoExtension(PublicClass.oSubjectProp.MediaPackageFileName));
                 frmBusicWorkMain busicWorkMain = this.ParentForm as frmBusicWorkMain;
-
                 existsResult = bService.ExistsTopicDB(PublicClass.oSubjectProp.TopicDBCode, PublicClass.oSubjectProp.TopicDBVersion);
                 if (existsResult == "-1")
                 {
