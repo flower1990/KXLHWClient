@@ -18,9 +18,9 @@ namespace ComputerExam.BLL
         /// <param name="password">密码</param>
         /// <param name="message">验证信息</param>
         /// <returns></returns>
-        public string GetUserInfo(string userName, string password, out string message)
+        public string GetUserInfo(string userName, string password, out string message, out DateTime serverTime)
         {
-            return dal.GetUserInfo(userName, password, out message);
+            return dal.GetUserInfo(userName, password, out message, out serverTime);
         }
         /// <summary>
         /// 获取学生科目数据

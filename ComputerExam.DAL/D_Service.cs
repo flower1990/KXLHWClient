@@ -21,13 +21,13 @@ namespace ComputerExam.DAL
         /// <param name="password">密码</param>
         /// <param name="message">验证信息</param>
         /// <returns></returns>
-        public string GetUserInfo(string userName, string password, out string message)
+        public string GetUserInfo(string userName, string password, out string message, out DateTime serverTime)
         {
             string result = string.Empty;
             string rXml = string.Empty;
             string realName = string.Empty;
             StringBuilder sb = new StringBuilder();
-
+            
             sb.AppendFormat("<StudentCode>{0}</StudentCode>", userName);
             sb.AppendFormat("<Password>{0}</Password>", DES.EncryStrHexUTF8(password, userName));
 
@@ -38,10 +38,12 @@ namespace ComputerExam.DAL
             {
                 realName = xmlUnit.GetXmlNodeValue(result, "RealName");
                 message = xmlUnit.GetXmlNodeValue(result, "exsm");
+                serverTime = DateTime.Parse(xmlUnit.GetXmlNodeValue(result, "workdate"));
             }
             else
             {
                 message = errorMessage;
+                serverTime = DateTime.Now;
             }
             return realName;
         }

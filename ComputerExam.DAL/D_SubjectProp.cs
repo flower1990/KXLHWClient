@@ -21,7 +21,6 @@ namespace ComputerExam.DAL
             SQLiteCommand command = new SQLiteCommand(sql, connection);
             connection.Open();
             SQLiteDataReader reader = command.ExecuteReader(CommandBehavior.CloseConnection);
-
             if (reader.Read())
             {
                 #region 初始化

@@ -150,6 +150,7 @@ namespace ComputerExam.ExamPaper
                         lblTime.Visible = false;
                         tsbHandPaper.Visible = true;
                     }
+                    tsbBackupJob.Visible = false;
                 }
                 #endregion
 
@@ -202,6 +203,7 @@ namespace ComputerExam.ExamPaper
                         tsbSingleQuesAnswer.Visible = true;
                     }
                     if (Globals.IsOnline) bService.RecordingTime(1, PublicClass.StudentCode, PublicClass.oMyJob.ID, PublicClass.oMyJob.HWName);
+                    tsbBackupJob.Visible = true;
                 }
                 #endregion
 
@@ -1349,7 +1351,7 @@ namespace ComputerExam.ExamPaper
                 handPaper.lblTitle.Refresh();
                 handPaper.lblHint.Text = "准备对当前考生选择题进行评分，请稍候...";
                 handPaper.lblHint.Refresh();
-                handPaper.TopMost = true;
+                handPaper.TopMost = false;
                 handPaper.Show();
                 Application.DoEvents();
                 #endregion
@@ -1724,10 +1726,6 @@ namespace ComputerExam.ExamPaper
                         }
                         #endregion
 
-                        #region 填空题
-
-                        #endregion
-
                         //试题间增加分隔虚线
                         scoreDetail.txtScore.SelectionColor = Color.DarkGray;
                         scoreDetail.txtScore.SelectedText = XiaHuaXian;
@@ -1762,6 +1760,7 @@ namespace ComputerExam.ExamPaper
                         sb.AppendFormat("<TopicTypePoint>{0}</TopicTypePoint>", topicTypePoint);
                         sb.AppendFormat("<TopicTypeScore>{0}</TopicTypeScore>", topicTypeScore);
                         sb.AppendFormat("<ScoreDetail>{0}</ScoreDetail>", topicScoreDetail);
+                        sb.AppendFormat("<EditorType>{0}</EditorType>", aTopic.EditorType);
                         sb.AppendFormat("</Topic>");
                         #endregion
                     }
@@ -3687,43 +3686,30 @@ namespace ComputerExam.ExamPaper
                             duoXuan.cbF.Checked = false;
                         }
 
-                        switch (oCurrTopic.UserAnswer)
+                        char[] arrUserAnswer = oCurrTopic.UserAnswer.ToCharArray();
+                        if (arrUserAnswer.Contains('A'))
                         {
-                            case "A":
-                                duoXuan.cbA.Checked = true;
-                                break;
-                            case "AB":
-                                duoXuan.cbA.Checked = true;
-                                duoXuan.cbB.Checked = true;
-                                break;
-                            case "ABC":
-                                duoXuan.cbA.Checked = true;
-                                duoXuan.cbB.Checked = true;
-                                duoXuan.cbC.Checked = true;
-                                break;
-                            case "ABCD":
-                                duoXuan.cbA.Checked = true;
-                                duoXuan.cbB.Checked = true;
-                                duoXuan.cbC.Checked = true;
-                                duoXuan.cbD.Checked = true;
-                                break;
-                            case "ABCDE":
-                                duoXuan.cbA.Checked = true;
-                                duoXuan.cbB.Checked = true;
-                                duoXuan.cbC.Checked = true;
-                                duoXuan.cbD.Checked = true;
-                                duoXuan.cbE.Checked = true;
-                                break;
-                            case "ABCDEF":
-                                duoXuan.cbA.Checked = true;
-                                duoXuan.cbB.Checked = true;
-                                duoXuan.cbC.Checked = true;
-                                duoXuan.cbD.Checked = true;
-                                duoXuan.cbE.Checked = true;
-                                duoXuan.cbF.Checked = true;
-                                break;
-                            default:
-                                break;
+                            duoXuan.cbA.Checked = true;
+                        }
+                        if (arrUserAnswer.Contains('B'))
+                        {
+                            duoXuan.cbB.Checked = true;
+                        }
+                        if (arrUserAnswer.Contains('C'))
+                        {
+                            duoXuan.cbC.Checked = true;
+                        }
+                        if (arrUserAnswer.Contains('D'))
+                        {
+                            duoXuan.cbD.Checked = true;
+                        }
+                        if (arrUserAnswer.Contains('E'))
+                        {
+                            duoXuan.cbE.Checked = true;
+                        }
+                        if (arrUserAnswer.Contains('F'))
+                        {
+                            duoXuan.cbF.Checked = true;
                         }
                         #endregion
                     }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDownTopicDB));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,9 +55,9 @@
             this.EnvFileUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cboSubject = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboSubject = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -109,15 +109,17 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControl1.Location = new System.Drawing.Point(12, 148);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(604, 210);
             this.tabControl1.TabIndex = 2;
+            this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.BackColor = System.Drawing.Color.White;
             this.tabPage3.Controls.Add(this.lblDown);
             this.tabPage3.Controls.Add(this.proDown);
             this.tabPage3.Controls.Add(this.btnDown);
@@ -147,9 +149,12 @@
             // 
             // btnDown
             // 
-            this.btnDown.Location = new System.Drawing.Point(6, 155);
+            this.btnDown.FlatAppearance.BorderSize = 0;
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown.Image = global::ComputerExam.Properties.Resources.按钮03;
+            this.btnDown.Location = new System.Drawing.Point(6, 154);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(75, 23);
+            this.btnDown.Size = new System.Drawing.Size(76, 24);
             this.btnDown.TabIndex = 5;
             this.btnDown.Text = "下载题库";
             this.btnDown.UseVisualStyleBackColor = true;
@@ -159,6 +164,7 @@
             // 
             this.dgvDownTopicDB.AllowUserToAddRows = false;
             this.dgvDownTopicDB.AllowUserToDeleteRows = false;
+            this.dgvDownTopicDB.BackgroundColor = System.Drawing.Color.White;
             this.dgvDownTopicDB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDownTopicDB.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TopicDBCode1,
@@ -215,9 +221,9 @@
             // CreateTime
             // 
             this.CreateTime.DataPropertyName = "CreateTime";
-            dataGridViewCellStyle10.Format = "d";
-            dataGridViewCellStyle10.NullValue = null;
-            this.CreateTime.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle8.Format = "d";
+            dataGridViewCellStyle8.NullValue = null;
+            this.CreateTime.DefaultCellStyle = dataGridViewCellStyle8;
             this.CreateTime.HeaderText = "发布时间";
             this.CreateTime.Name = "CreateTime";
             this.CreateTime.ReadOnly = true;
@@ -287,12 +293,16 @@
             // 
             // btnClose
             // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::ComputerExam.Properties.Resources.按钮03;
             this.btnClose.Location = new System.Drawing.Point(541, 364);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(76, 24);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "关闭";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel2
@@ -307,14 +317,18 @@
             this.panel2.Size = new System.Drawing.Size(604, 44);
             this.panel2.TabIndex = 1;
             // 
-            // cboSubject
+            // btnSearch
             // 
-            this.cboSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSubject.FormattingEnabled = true;
-            this.cboSubject.Location = new System.Drawing.Point(82, 12);
-            this.cboSubject.Name = "cboSubject";
-            this.cboSubject.Size = new System.Drawing.Size(200, 20);
-            this.cboSubject.TabIndex = 31;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Image = global::ComputerExam.Properties.Resources.按钮03;
+            this.btnSearch.Location = new System.Drawing.Point(288, 10);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(76, 24);
+            this.btnSearch.TabIndex = 34;
+            this.btnSearch.Text = "查询";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label5
             // 
@@ -325,15 +339,14 @@
             this.label5.TabIndex = 33;
             this.label5.Text = "科目名称：";
             // 
-            // btnSearch
+            // cboSubject
             // 
-            this.btnSearch.Location = new System.Drawing.Point(288, 10);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 34;
-            this.btnSearch.Text = "查询";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.cboSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSubject.FormattingEnabled = true;
+            this.cboSubject.Location = new System.Drawing.Point(82, 12);
+            this.cboSubject.Name = "cboSubject";
+            this.cboSubject.Size = new System.Drawing.Size(200, 20);
+            this.cboSubject.TabIndex = 31;
             // 
             // frmDownTopicDB
             // 

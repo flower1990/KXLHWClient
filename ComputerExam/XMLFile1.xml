@@ -1,113 +1,850 @@
-Ôªø<?xml version='1.0' encoding='utf-8' ?>
-<fin>
-  <head>
-    <ver>1.0</ver>
-    <state>1</state>
-    <workdate>2016-09-28</workdate>
-    <excode>1003</excode>
-    <exsm>ÊâßË°åÊàêÂäüÔºÅ</exsm>
-    <reserve></reserve>
-  </head>
-  <msg>
-    <param>
-      <Path>
-        <FileHost>http://192.168.199.106/sowerestres</FileHost>
-      </Path>
-    </param>
-    <body>
-      <info>
+<?xml version="1.0" encoding="gb2312"?>
+< ‘Ã‚¡–±Ì>
+  <Ã‚–Õ>
+    <Ã‚–ÕID>1</Ã‚–ÕID>
+    <Ã‚–Õ∑÷÷µ>20</Ã‚–Õ∑÷÷µ>
+    < ‘Ã‚ ˝¡ø>20</ ‘Ã‚ ˝¡ø>
+    < ‘Ã‚œÓ¡–±Ì>
+      < ‘Ã‚œÓ>
+        <ID>20</ID>
+        < ‘Ã‚ID>45</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>A</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{43860A48-0AAD-4D7D-8123-3655271D0A77}</Õ≥“ª±‡∫≈>
+        <SubGUID>{43860A48-0AAD-4D7D-8123-3655271D0A77}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>45</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>2,3,1,0</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>19</ID>
+        < ‘Ã‚ID>46</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>B</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{8A74F4A7-76F5-4EFE-9BD1-4B6FBB9A43D7}</Õ≥“ª±‡∫≈>
+        <SubGUID>{8A74F4A7-76F5-4EFE-9BD1-4B6FBB9A43D7}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>46</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>2,1,3,0</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>18</ID>
+        < ‘Ã‚ID>58</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>A</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{F5D3D00D-7C28-4BFA-811B-E3B3EB62DBE0}</Õ≥“ª±‡∫≈>
+        <SubGUID>{F5D3D00D-7C28-4BFA-811B-E3B3EB62DBE0}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>58</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>0,1,2,3</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>17</ID>
+        < ‘Ã‚ID>59</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>B</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{0BD8AA46-0685-47BA-BB00-42E95D51C20A}</Õ≥“ª±‡∫≈>
+        <SubGUID>{0BD8AA46-0685-47BA-BB00-42E95D51C20A}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>59</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>0,2,3,1</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>16</ID>
+        < ‘Ã‚ID>63</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>A</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{1609CBE3-F35F-4BF4-B510-60270F6184FC}</Õ≥“ª±‡∫≈>
+        <SubGUID>{1609CBE3-F35F-4BF4-B510-60270F6184FC}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>63</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>0,3,1,2</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>15</ID>
+        < ‘Ã‚ID>64</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>D</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{495DE0B9-DE66-4A87-9CC4-7792E3121288}</Õ≥“ª±‡∫≈>
+        <SubGUID>{495DE0B9-DE66-4A87-9CC4-7792E3121288}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>64</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>3,0,2,1</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>14</ID>
+        < ‘Ã‚ID>65</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>B</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{3789353D-93B9-4576-ABDD-140B1D1EC566}</Õ≥“ª±‡∫≈>
+        <SubGUID>{3789353D-93B9-4576-ABDD-140B1D1EC566}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>65</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>1,2,0,3</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>13</ID>
+        < ‘Ã‚ID>66</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>C</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{E12BA072-89DD-4C6C-A522-AAEF5557990D}</Õ≥“ª±‡∫≈>
+        <SubGUID>{E12BA072-89DD-4C6C-A522-AAEF5557990D}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>66</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>1,2,3,0</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>12</ID>
+        < ‘Ã‚ID>67</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>C</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{A6B644A1-7D93-453F-B081-000D047B9835}</Õ≥“ª±‡∫≈>
+        <SubGUID>{A6B644A1-7D93-453F-B081-000D047B9835}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>67</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>2,1,3,0</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>11</ID>
+        < ‘Ã‚ID>68</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>B</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{9B47367D-4BE6-4B7A-9D3A-C9760C1CFC8E}</Õ≥“ª±‡∫≈>
+        <SubGUID>{9B47367D-4BE6-4B7A-9D3A-C9760C1CFC8E}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>68</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>3,2,0,1</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>10</ID>
+        < ‘Ã‚ID>69</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>A</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{51F72FD9-3C89-4DBA-A298-4C84190B5209}</Õ≥“ª±‡∫≈>
+        <SubGUID>{51F72FD9-3C89-4DBA-A298-4C84190B5209}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>69</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>0,1,2,3</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>9</ID>
+        < ‘Ã‚ID>70</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>B</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{2FE28E7B-CC69-423C-83F9-8D33ABB05B2D}</Õ≥“ª±‡∫≈>
+        <SubGUID>{2FE28E7B-CC69-423C-83F9-8D33ABB05B2D}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>70</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>1,2,3,0</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>8</ID>
+        < ‘Ã‚ID>71</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>C</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{2332924A-6F35-4F65-9FBA-BD9D2118E65E}</Õ≥“ª±‡∫≈>
+        <SubGUID>{2332924A-6F35-4F65-9FBA-BD9D2118E65E}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>71</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>1,2,0,3</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>7</ID>
+        < ‘Ã‚ID>89</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>D</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{7C982693-5404-4074-8363-E589B87D04FB}</Õ≥“ª±‡∫≈>
+        <SubGUID>{7C982693-5404-4074-8363-E589B87D04FB}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>89</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>2,1,0,3</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>6</ID>
+        < ‘Ã‚ID>90</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>C</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{089918A6-D101-40E5-917D-8D0F656678B1}</Õ≥“ª±‡∫≈>
+        <SubGUID>{089918A6-D101-40E5-917D-8D0F656678B1}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>90</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>2,3,0,1</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>5</ID>
+        < ‘Ã‚ID>91</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>D</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{9204665C-E67A-4840-801A-CE40FCD625CB}</Õ≥“ª±‡∫≈>
+        <SubGUID>{9204665C-E67A-4840-801A-CE40FCD625CB}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>91</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>1,0,2,3</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>4</ID>
+        < ‘Ã‚ID>92</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>D</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{D113B17F-92EE-4F4F-BA09-B1B70C4A937F}</Õ≥“ª±‡∫≈>
+        <SubGUID>{D113B17F-92EE-4F4F-BA09-B1B70C4A937F}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>92</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>1,0,2,3</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
         <ID>3</ID>
-        <HWID>3</HWID>
-        <RealName>Â≠¶Áîü001</RealName>
-        <StudentName>XS001</StudentName>
-        <StudentCode>XS001</StudentCode>
-        <ShowScore>True</ShowScore>
-        <EnvFileName></EnvFileName>
-        <ShowAnalysis>False</ShowAnalysis>
-        <ExamMode></ExamMode>
-        <CreateTime>2016/9/28 11:10:08</CreateTime>
-        <ExamStartDateTime>0001/1/1 0:00:00</ExamStartDateTime>
-        <ExamEndDateTime>0001/1/1 0:00:00</ExamEndDateTime>
-        <IsAllowReSubmitScore>False</IsAllowReSubmitScore>
-        <AllowReSubmitScoreCount></AllowReSubmitScoreCount>
-        <HWSubmitTimeType>False</HWSubmitTimeType>
-        <CourseID>1</CourseID>
-        <CourseName>CËØ≠Ë®ÄÂü∫Á°Ä</CourseName>
-        <HWName>ËßÜÈ¢ëËµÑÊ∫êÂåÖÊµãËØï</HWName>
-        <FileID>3</FileID>
-        <FileName>ËßÜÈ¢ë‰Ωú‰∏ö.zip</FileName>
-        <Description></Description>
-        <FilePath>JobFiles\2016\201609\2016092811092678.zip</FilePath>
-        <FileType>1</FileType>
-        <IsEnable>True</IsEnable>
-        <TotalExamTime></TotalExamTime>
-        <IsCaculateTime>False</IsCaculateTime>
-        <ChapterID>3</ChapterID>
-        <IsPay>False</IsPay>
-        <IsSingleGrade>False</IsSingleGrade>
-        <ScoreSubmitted>0</ScoreSubmitted>
-        <IsScoreToCenter>True</IsScoreToCenter>
-        <ChapterName>Á¨¨‰∏ÄÁ´†</ChapterName>
-        <TermID>1</TermID>
-        <TermName>Á¨¨‰∏ÄÂ≠¶Êúü</TermName>
-        <ClassID>1</ClassID>
-        <ClassName>ÊïôÂ≠¶‰∏ÄÁè≠</ClassName>
-        <EnvFilePath></EnvFilePath>
-        <IsUpload>False</IsUpload>
-        <RequireEnvFile>False</RequireEnvFile>
-        <SubmittedCount></SubmittedCount>
-        <IsUploadAnswerFile>False</IsUploadAnswerFile>
-        <IsUploadVideoFile></IsUploadVideoFile>
-        <VideoFileName>day01_02Â≠¶‰π†javaÁöÑÂª∫ËÆÆ.wmv</VideoFileName>
-        <VideoFilePath></VideoFilePath>
-      </info>
-      <info>
+        < ‘Ã‚ID>93</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>D</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{3ECA08FC-152E-4A16-AFDF-951CD8185F0F}</Õ≥“ª±‡∫≈>
+        <SubGUID>{3ECA08FC-152E-4A16-AFDF-951CD8185F0F}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>93</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>1,0,2,3</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
         <ID>2</ID>
-        <HWID>2</HWID>
-        <RealName>Â≠¶Áîü001</RealName>
-        <StudentName>XS001</StudentName>
-        <StudentCode>XS001</StudentCode>
-        <ShowScore>True</ShowScore>
-        <EnvFileName></EnvFileName>
-        <ShowAnalysis>True</ShowAnalysis>
-        <ExamMode></ExamMode>
-        <CreateTime>2016/9/26 15:25:22</CreateTime>
-        <ExamStartDateTime>0001/1/1 0:00:00</ExamStartDateTime>
-        <ExamEndDateTime>0001/1/1 0:00:00</ExamEndDateTime>
-        <IsAllowReSubmitScore>True</IsAllowReSubmitScore>
-        <AllowReSubmitScoreCount>-1</AllowReSubmitScoreCount>
-        <HWSubmitTimeType>False</HWSubmitTimeType>
-        <CourseID>1</CourseID>
-        <CourseName>CËØ≠Ë®ÄÂü∫Á°Ä</CourseName>
-        <HWName>‰∫∫Â∑•ÈòÖÂç∑È¢ò</HWName>
-        <FileID>2</FileID>
-        <FileName>‰∫∫Â∑•ÈòÖÂç∑.zip</FileName>
-        <Description></Description>
-        <FilePath>JobFiles\2016\201609\2016092615251354.zip</FilePath>
-        <FileType>1</FileType>
-        <IsEnable>True</IsEnable>
-        <TotalExamTime></TotalExamTime>
-        <IsCaculateTime>False</IsCaculateTime>
-        <ChapterID>3</ChapterID>
-        <IsPay>False</IsPay>
-        <IsSingleGrade>True</IsSingleGrade>
-        <ScoreSubmitted>0</ScoreSubmitted>
-        <IsScoreToCenter>True</IsScoreToCenter>
-        <ChapterName>Á¨¨‰∏ÄÁ´†</ChapterName>
-        <TermID>1</TermID>
-        <TermName>Á¨¨‰∏ÄÂ≠¶Êúü</TermName>
-        <ClassID>1</ClassID>
-        <ClassName>ÊïôÂ≠¶‰∏ÄÁè≠</ClassName>
-        <EnvFilePath></EnvFilePath>
-        <IsUpload>False</IsUpload>
-        <RequireEnvFile>False</RequireEnvFile>
-        <SubmittedCount></SubmittedCount>
-        <IsUploadAnswerFile>True</IsUploadAnswerFile>
-        <IsUploadVideoFile></IsUploadVideoFile>
-        <VideoFileName></VideoFileName>
-        <VideoFilePath></VideoFilePath>
-      </info>
-    </body>
-  </msg>
-</fin>
-<!--3D986BFF6089D5F74ECD7A35A6C981FC-->
+        < ‘Ã‚ID>94</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>B</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{3727B9BA-D8AE-457D-8377-DE015ADF03A4}</Õ≥“ª±‡∫≈>
+        <SubGUID>{3727B9BA-D8AE-457D-8377-DE015ADF03A4}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>94</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>3,2,0,1</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+      < ‘Ã‚œÓ>
+        <ID>1</ID>
+        < ‘Ã‚ID>95</ ‘Ã‚ID>
+        <–°Ã‚ ˝>0</–°Ã‚ ˝>
+        <—°œÓ∏ˆ ˝>4</—°œÓ∏ˆ ˝>
+        <◊” ‘Ã‚ID>-1</◊” ‘Ã‚ID>
+        <∆¿≈–“˝«ÊID>10022</∆¿≈–“˝«ÊID>
+        <”√ªß¥∞∏></”√ªß¥∞∏>
+        <±Í◊º¥∞∏>D</±Í◊º¥∞∏>
+        < ‘Ã‚∑÷÷µ>1</ ‘Ã‚∑÷÷µ>
+        < ‘Ã‚µ√∑÷>0</ ‘Ã‚µ√∑÷>
+        < «∑Ò“—¥>0</ «∑Ò“—¥>
+        <“…ƒ—±Í ∂>0</“…ƒ—±Í ∂>
+        <∆¿∑÷–≈œ¢></∆¿∑÷–≈œ¢>
+        <Õ≥“ª±‡∫≈>{8BD1D48F-068C-4A3B-BB0C-EA826063994B}</Õ≥“ª±‡∫≈>
+        <SubGUID>{8BD1D48F-068C-4A3B-BB0C-EA826063994B}</SubGUID>
+        <±‡º≠¿‡–Õ></±‡º≠¿‡–Õ>
+        <µ˜”√≤Œ ˝></µ˜”√≤Œ ˝>
+        <»®÷µ></»®÷µ>
+        < ‘Ã‚±‡¬Î>95</ ‘Ã‚±‡¬Î>
+        <¬∑æ∂></¬∑æ∂>
+        <’¬Ω⁄ID>1</’¬Ω⁄ID>
+        <’¬Ω⁄>µ⁄“ª’¬</’¬Ω⁄>
+        <ƒ—“◊≥Ã∂»ID>1</ƒ—“◊≥Ã∂»ID>
+        <ƒ—“◊≥Ã∂»>“◊</ƒ—“◊≥Ã∂»>
+        <–°Ã‚”√ ±>0</–°Ã‚”√ ±>
+        <—°œÓ±‡∫≈>3,1,2,0</—°œÓ±‡∫≈>
+        <TimeLimit>0</TimeLimit>
+        <SelfTimeLimit>0</SelfTimeLimit>
+        <ReadingText></ReadingText>
+        <IsReading>0</IsReading>
+        <MediaPath></MediaPath>
+        <PlayTimes>0</PlayTimes>
+        <RecordPath></RecordPath>
+        <RecordDuration></RecordDuration>
+        <MediaType></MediaType>
+        <MediaBeginTime>0</MediaBeginTime>
+        <RecordBeginTime></RecordBeginTime>
+        <IsShowParentFace>0</IsShowParentFace>
+        <∂‡√ΩÃÂ√˚></∂‡√ΩÃÂ√˚>
+        <IsHasRes>0</IsHasRes>
+      </ ‘Ã‚œÓ>
+    </ ‘Ã‚œÓ¡–±Ì>
+  </Ã‚–Õ>
+</ ‘Ã‚¡–±Ì>

@@ -117,7 +117,6 @@ namespace ComputerExam.BusicWork
             {
                 SetChartVisible(true);
                 CommonUtil.BindComboBox(cboSubject, "CourseID", "CourseName", CommonUtil.listSubject);
-                CommonUtil.BindComboBox(cboChartType, "Id", "Name", CommonUtil.listChartType);
                 if (CommonUtil.listSubject.Count == 2) cboSubject.SelectedIndex = 1;
                 else cboSubject.SelectedIndex = 0;
 
@@ -154,7 +153,6 @@ namespace ComputerExam.BusicWork
             {
                 string subjectValue = cboSubject.SelectedValue.ToString();
                 string jobValue = cboJob.SelectedValue.ToString();
-                string chartValue = cboChartType.SelectedValue.ToString();
 
                 CommonUtil.ShowProcessing("正在处理中，请稍候...", this, (obj) =>
                 {
@@ -170,22 +168,22 @@ namespace ComputerExam.BusicWork
                     SetJobNo(listJobScore);
                 }, null);
 
-                switch (chartValue)
+                if (rdoColumn.Checked)
                 {
-                    case "1":
-                        SetChartVisible(true);
-                        //数据绑定
-                        chartMyJob.DataSource = listJobScore;
-                        chartMyJob.DataBind();
-                        //设置图表颜色
-                        SetJobScorePoints();
-                        break;
-                    case "2":
-                        SetChartVisible(false);
-                        //数据绑定
-                        chartLine.DataSource = listJobScore;
-                        chartLine.DataBind();
-                        break;
+                    SetChartVisible(true);
+                    //数据绑定
+                    chartMyJob.DataSource = listJobScore;
+                    chartMyJob.DataBind();
+                    //设置图表颜色
+                    SetJobScorePoints();
+                }
+
+                if (rdoLine.Checked)
+                {
+                    SetChartVisible(false);
+                    //数据绑定
+                    chartLine.DataSource = listJobScore;
+                    chartLine.DataBind();
                 }
             }
             catch (Exception ex)

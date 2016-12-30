@@ -19,6 +19,7 @@ namespace ComputerExam.Common
         private EventHandler evtHandler = null;
 
         private ParameterizedThreadStart workAction = null;
+
         private object workActionArg = null;
 
         private Thread workThread = null;

@@ -1,5 +1,6 @@
 ﻿using ComputerExam.BLL;
 using ComputerExam.Model;
+using ComputerExam.Properties;
 using ComputerExam.Util;
 using System;
 using System.Collections.Generic;
@@ -158,8 +159,8 @@ namespace ComputerExam.BusicWork
                 string fileTPath = ofdOpenTopicDB.FileName + "t";
                 string fileName = Path.GetFileName(filePath);
                 string fileExt = Path.GetExtension(filePath).ToLower();
-                string copyPath = string.Format(@"{0}\data\{1}_{2}", Application.StartupPath, PublicClass.StudentCode, fileName);
-                string copyTPath = string.Format(@"{0}\data\{1}_{2}t", Application.StartupPath, PublicClass.StudentCode, fileName);
+                string copyPath = string.Format(@"{0}\data\{1}_{2}", Application.StartupPath, PublicClass.StudentCode, fileName.Replace(".srk", ".sdb"));
+                string copyTPath = string.Format(@"{0}\data\{1}_{2}t", Application.StartupPath, PublicClass.StudentCode, fileName.Replace(".srk", ".sdb"));
                 string connection = string.Format(@"data source={0};password={1};polling=false;failifmissing=true", filePath, PublicClass.PasswordTopicDB);
                 string connectionT = string.Format(@"data source={0};polling=false;failifmissing=true", fileTPath);
                 M_SubjectProp mSubjectProp = new M_SubjectProp();
@@ -189,14 +190,14 @@ namespace ComputerExam.BusicWork
                             {
                                 conn.ChangePassword(PublicClass.PasswordTopicDB);
                                 conn.Close();
-                                DirFileHelper.CopyFile(filePath, copyPath.Replace(".srk", ".sdb"));
-                                DirFileHelper.CopyFile(fileTPath, copyTPath.Replace(".srk", ".sdb"));
-                                mSubjectProp = bSubjectProp.GetSubjectProp(Path.GetFileName(copyTPath.Replace(".srk", ".sdb")));
+                                DirFileHelper.CopyFile(filePath, copyPath);
+                                DirFileHelper.CopyFile(fileTPath, copyTPath);
+                                mSubjectProp = bSubjectProp.GetSubjectProp(Path.GetFileName(copyTPath));
                                 existsResult = bService.ExistsTopicDB(mSubjectProp.TopicDBCode, mSubjectProp.TopicDBVersion);
                                 if (existsResult == "-1")
                                 {
-                                    DirFileHelper.DeleteFile(copyPath.Replace(".srk", ".sdb"));
-                                    DirFileHelper.DeleteFile(copyTPath.Replace(".srk", ".sdb"));
+                                    DirFileHelper.DeleteFile(copyPath);
+                                    DirFileHelper.DeleteFile(copyTPath);
                                 }
                             }
                             conn.Dispose();
@@ -217,14 +218,20 @@ namespace ComputerExam.BusicWork
                 catch (SQLiteException)
                 {
                     PublicClass.ShowMessageOk("无法打开题库文件，该题库不是有效的题库文件！");
+                    DirFileHelper.DeleteFile(copyPath);
+                    DirFileHelper.DeleteFile(copyTPath);
                 }
                 catch (AggregateException)
                 {
                     PublicClass.ShowMessageOk("无法打开题库文件，该题库不是有效的题库文件！");
+                    DirFileHelper.DeleteFile(copyPath);
+                    DirFileHelper.DeleteFile(copyTPath);
                 }
                 catch (Exception ex)
                 {
                     PublicClass.ShowMessageOk(ex.Message);
+                    DirFileHelper.DeleteFile(copyPath);
+                    DirFileHelper.DeleteFile(copyTPath);
                 }
                 finally
                 {
@@ -435,6 +442,47 @@ namespace ComputerExam.BusicWork
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            //获取TabControl主控件的工作区域 
+            Rectangle rec = tabControl1.ClientRectangle;
+            //获取背景图片，我的背景图片在项目资源文件中。 
+            Image backImage = Resources.背景2;
+            //新建一个StringFormat对象，用于对标签文字的布局设置 
+            StringFormat strFormat = new StringFormat();
+            strFormat.LineAlignment = StringAlignment.Center;
+            strFormat.Alignment = StringAlignment.Center;
+            //标签背景填充颜色，也可以是图片 
+            SolidBrush brush = new SolidBrush(Color.White);
+            SolidBrush brush1 = new SolidBrush(Color.FromArgb(35, 135, 194));
+            //标签字体颜色 
+            SolidBrush bruFont = new SolidBrush(Color.White);
+            SolidBrush bruFont1 = new SolidBrush(Color.FromArgb(35, 135, 194));
+            //设置标签字体样式 
+            Font font = new System.Drawing.Font("微软雅黑", 9F);
+            //绘制主控件的背景 
+            e.Graphics.DrawImage(backImage, 0, 0, tabControl1.Width, tabControl1.Height);
+            //绘制标签样式 
+            for (int i = 0; i < tabControl1.TabPages.Count; i++)
+            {
+                //获取标签头的工作区域
+                Rectangle recChild = tabControl1.GetTabRect(i);
+                //绘制标签头背景颜色 
+                e.Graphics.FillRectangle(brush1, recChild);
+                //绘制标签头的文字 
+                e.Graphics.DrawString(tabControl1.TabPages[i].Text, font, bruFont, recChild, strFormat);
+            }
+            if (e.Index == tabControl1.SelectedIndex)
+            {
+                //获取标签头的工作区域
+                Rectangle recChild = tabControl1.GetTabRect(e.Index);
+                //绘制标签头背景颜色 
+                e.Graphics.FillRectangle(brush, recChild);
+                //绘制标签头的文字 
+                e.Graphics.DrawString(tabControl1.TabPages[e.Index].Text, font, bruFont1, recChild, strFormat);
+            }
         }
 
 

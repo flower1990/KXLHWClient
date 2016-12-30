@@ -10,6 +10,12 @@ namespace ComputerExam.Util
 {
     public class Globals
     {
+        /// <summary>
+        /// 系统版本
+        /// </summary>
+        public const string SystemVersion = "v2.1.908.B1130";
+        public static DateTime ServerTime = DateTime.Now;
+
         #region 服务代码
         public static JobDataHandler SERVICE = new JobDataHandler();
         /// <summary>
@@ -119,7 +125,6 @@ namespace ComputerExam.Util
         /// 文件下载方式，1：ftp方式；2：http方式。
         /// </summary>
         public static string DownType = "1";
-        public const string SystemVersion = "v2.1.908.B0929";
         public const string BGcolor = "bg_color.jpg";
         public const string BGExam = "bg_exam.jpg";
         public const string BGInfo = "bg_info.jpg";

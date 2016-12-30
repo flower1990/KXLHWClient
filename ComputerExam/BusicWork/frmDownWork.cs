@@ -311,7 +311,7 @@ namespace ComputerExam.BusicWork
 
                 //作业限定时间&&当前时间小于作业发布开始时间
                 if (myJob.HWSubmitTimeType.ToLower() == "true" &&       //true：限时，false：不限时
-                    DateTime.Now <= DateTime.Parse(myJob.ExamStartDateTime))
+                    Globals.ServerTime < DateTime.Parse(myJob.ExamStartDateTime))
                 {
                     PublicClass.ShowMessageOk("还没有到做作业的时间，先休息休息吧！");
                     return;
@@ -320,7 +320,7 @@ namespace ComputerExam.BusicWork
                 //作业限定时间&&不允许补交作业&&当前时间大于作业提交截止时间
                 if (myJob.HWSubmitTimeType.ToLower() == "true" &&       //true：限时，false：不限时
                     myJob.IsPay.ToLower() == "false" &&           //true：允许补交作业，false：不允许补交作业
-                    DateTime.Now >= DateTime.Parse(myJob.ExamEndDateTime))
+                    Globals.ServerTime > DateTime.Parse(myJob.ExamEndDateTime))
                 {
                     PublicClass.ShowMessageOk("对不起，您已经过了交作业时间。\n请联系老师允许您补交作业！");
                     return;

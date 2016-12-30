@@ -37,13 +37,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtNotice = new System.Windows.Forms.WebBrowser();
             this.dgvResult = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Content = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtNotice = new System.Windows.Forms.WebBrowser();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
@@ -109,9 +109,12 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Image = global::ComputerExam.Properties.Resources.按钮03;
             this.btnSearch.Location = new System.Drawing.Point(467, 13);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(76, 24);
             this.btnSearch.TabIndex = 13;
             this.btnSearch.Text = "查询";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -128,6 +131,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(792, 378);
             this.panel1.TabIndex = 14;
+            // 
+            // txtNotice
+            // 
+            this.txtNotice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNotice.Location = new System.Drawing.Point(466, 78);
+            this.txtNotice.MinimumSize = new System.Drawing.Size(20, 20);
+            this.txtNotice.Name = "txtNotice";
+            this.txtNotice.Size = new System.Drawing.Size(314, 288);
+            this.txtNotice.TabIndex = 14;
             // 
             // dgvResult
             // 
@@ -187,17 +201,6 @@
             this.UserName.HeaderText = "发布人";
             this.UserName.Name = "UserName";
             this.UserName.ReadOnly = true;
-            // 
-            // txtNotice
-            // 
-            this.txtNotice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNotice.Location = new System.Drawing.Point(466, 78);
-            this.txtNotice.MinimumSize = new System.Drawing.Size(20, 20);
-            this.txtNotice.Name = "txtNotice";
-            this.txtNotice.Size = new System.Drawing.Size(314, 288);
-            this.txtNotice.TabIndex = 14;
             // 
             // frmNotice
             // 

@@ -38,6 +38,12 @@
             this.btnAddTopicDB = new System.Windows.Forms.Button();
             this.btnDeleteTopicDB = new System.Windows.Forms.Button();
             this.dgvTopicDB = new System.Windows.Forms.DataGridView();
+            this.TopicDBCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TopicDBVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.视频资源 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TopicFilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnAddFile = new System.Windows.Forms.Button();
             this.btnDeleteFile = new System.Windows.Forms.Button();
@@ -45,22 +51,16 @@
             this.FileNames = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FileVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.ofdOpenTopicDB = new System.Windows.Forms.OpenFileDialog();
-            this.ofdOpenFile = new System.Windows.Forms.OpenFileDialog();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dgvVideoFiles = new System.Windows.Forms.DataGridView();
             this.btnAddVideoFile = new System.Windows.Forms.Button();
             this.btnDelVideoFile = new System.Windows.Forms.Button();
+            this.dgvVideoFiles = new System.Windows.Forms.DataGridView();
             this.VideoFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VideoFileVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VideoFilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TopicDBCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TopicDBVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.视频资源 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TopicFilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.ofdOpenTopicDB = new System.Windows.Forms.OpenFileDialog();
+            this.ofdOpenFile = new System.Windows.Forms.OpenFileDialog();
             this.ofdOpenVideoFile = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -122,40 +122,51 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabControl1.ItemSize = new System.Drawing.Size(94, 18);
             this.tabControl1.Location = new System.Drawing.Point(12, 98);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(617, 210);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.btnAddTopicDB);
             this.tabPage1.Controls.Add(this.btnDeleteTopicDB);
             this.tabPage1.Controls.Add(this.dgvTopicDB);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(609, 184);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "考试题库维护";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnAddTopicDB
             // 
-            this.btnAddTopicDB.Location = new System.Drawing.Point(6, 155);
+            this.btnAddTopicDB.FlatAppearance.BorderSize = 0;
+            this.btnAddTopicDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddTopicDB.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTopicDB.Image")));
+            this.btnAddTopicDB.Location = new System.Drawing.Point(9, 155);
             this.btnAddTopicDB.Name = "btnAddTopicDB";
-            this.btnAddTopicDB.Size = new System.Drawing.Size(75, 23);
-            this.btnAddTopicDB.TabIndex = 3;
+            this.btnAddTopicDB.Size = new System.Drawing.Size(76, 24);
+            this.btnAddTopicDB.TabIndex = 4;
             this.btnAddTopicDB.Text = "添加题库";
             this.btnAddTopicDB.UseVisualStyleBackColor = true;
             this.btnAddTopicDB.Click += new System.EventHandler(this.btnAddTopicDB_Click);
             // 
             // btnDeleteTopicDB
             // 
+            this.btnDeleteTopicDB.FlatAppearance.BorderSize = 0;
+            this.btnDeleteTopicDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteTopicDB.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteTopicDB.Image")));
             this.btnDeleteTopicDB.Location = new System.Drawing.Point(87, 155);
             this.btnDeleteTopicDB.Name = "btnDeleteTopicDB";
-            this.btnDeleteTopicDB.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteTopicDB.Size = new System.Drawing.Size(76, 24);
             this.btnDeleteTopicDB.TabIndex = 4;
             this.btnDeleteTopicDB.Text = "删除题库";
             this.btnDeleteTopicDB.UseVisualStyleBackColor = true;
@@ -167,6 +178,7 @@
             this.dgvTopicDB.AllowUserToDeleteRows = false;
             this.dgvTopicDB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTopicDB.BackgroundColor = System.Drawing.Color.White;
             this.dgvTopicDB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTopicDB.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TopicDBCode,
@@ -175,187 +187,13 @@
             this.FileName,
             this.视频资源,
             this.TopicFilePath});
-            this.dgvTopicDB.Location = new System.Drawing.Point(3, 3);
+            this.dgvTopicDB.Location = new System.Drawing.Point(0, 0);
             this.dgvTopicDB.Name = "dgvTopicDB";
             this.dgvTopicDB.ReadOnly = true;
             this.dgvTopicDB.RowTemplate.Height = 23;
             this.dgvTopicDB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTopicDB.Size = new System.Drawing.Size(603, 146);
+            this.dgvTopicDB.Size = new System.Drawing.Size(609, 146);
             this.dgvTopicDB.TabIndex = 3;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.btnAddFile);
-            this.tabPage2.Controls.Add(this.btnDeleteFile);
-            this.tabPage2.Controls.Add(this.dgvFiles);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(609, 184);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "外部文件维护";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // btnAddFile
-            // 
-            this.btnAddFile.Location = new System.Drawing.Point(6, 155);
-            this.btnAddFile.Name = "btnAddFile";
-            this.btnAddFile.Size = new System.Drawing.Size(75, 23);
-            this.btnAddFile.TabIndex = 5;
-            this.btnAddFile.Text = "添加文件";
-            this.btnAddFile.UseVisualStyleBackColor = true;
-            this.btnAddFile.Click += new System.EventHandler(this.btnAddFile_Click);
-            // 
-            // btnDeleteFile
-            // 
-            this.btnDeleteFile.Location = new System.Drawing.Point(87, 155);
-            this.btnDeleteFile.Name = "btnDeleteFile";
-            this.btnDeleteFile.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteFile.TabIndex = 6;
-            this.btnDeleteFile.Text = "删除文件";
-            this.btnDeleteFile.UseVisualStyleBackColor = true;
-            this.btnDeleteFile.Click += new System.EventHandler(this.btnDeleteFile_Click);
-            // 
-            // dgvFiles
-            // 
-            this.dgvFiles.AllowUserToAddRows = false;
-            this.dgvFiles.AllowUserToDeleteRows = false;
-            this.dgvFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FileNames,
-            this.FileVersion,
-            this.FilePath});
-            this.dgvFiles.Location = new System.Drawing.Point(3, 3);
-            this.dgvFiles.Name = "dgvFiles";
-            this.dgvFiles.ReadOnly = true;
-            this.dgvFiles.RowTemplate.Height = 23;
-            this.dgvFiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFiles.Size = new System.Drawing.Size(603, 146);
-            this.dgvFiles.TabIndex = 0;
-            // 
-            // FileNames
-            // 
-            this.FileNames.DataPropertyName = "FileName";
-            this.FileNames.HeaderText = "文件名";
-            this.FileNames.Name = "FileNames";
-            this.FileNames.ReadOnly = true;
-            this.FileNames.Width = 150;
-            // 
-            // FileVersion
-            // 
-            this.FileVersion.DataPropertyName = "FileVersion";
-            this.FileVersion.HeaderText = "版本（修改日期）";
-            this.FileVersion.Name = "FileVersion";
-            this.FileVersion.ReadOnly = true;
-            this.FileVersion.Width = 150;
-            // 
-            // FilePath
-            // 
-            this.FilePath.DataPropertyName = "FilePath";
-            this.FilePath.HeaderText = "文件路径";
-            this.FilePath.Name = "FilePath";
-            this.FilePath.ReadOnly = true;
-            this.FilePath.Visible = false;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(541, 314);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 5;
-            this.btnClose.Text = "关闭";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // ofdOpenTopicDB
-            // 
-            this.ofdOpenTopicDB.FileName = "题库文件";
-            this.ofdOpenTopicDB.Filter = "题库文件(*.sdb,*.srk)|*.sdb;*.srk";
-            this.ofdOpenTopicDB.Title = "题库文件";
-            // 
-            // ofdOpenFile
-            // 
-            this.ofdOpenFile.FileName = "账套文件";
-            this.ofdOpenFile.Filter = "账套文件|*.casf*";
-            this.ofdOpenFile.Title = "账套文件";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.btnAddVideoFile);
-            this.tabPage3.Controls.Add(this.btnDelVideoFile);
-            this.tabPage3.Controls.Add(this.dgvVideoFiles);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(609, 184);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "视频文件维护";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // dgvVideoFiles
-            // 
-            this.dgvVideoFiles.AllowUserToAddRows = false;
-            this.dgvVideoFiles.AllowUserToDeleteRows = false;
-            this.dgvVideoFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvVideoFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVideoFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.VideoFileName,
-            this.VideoFileVersion,
-            this.VideoFilePath});
-            this.dgvVideoFiles.Location = new System.Drawing.Point(3, 3);
-            this.dgvVideoFiles.Name = "dgvVideoFiles";
-            this.dgvVideoFiles.ReadOnly = true;
-            this.dgvVideoFiles.RowTemplate.Height = 23;
-            this.dgvVideoFiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVideoFiles.Size = new System.Drawing.Size(603, 146);
-            this.dgvVideoFiles.TabIndex = 1;
-            // 
-            // btnAddVideoFile
-            // 
-            this.btnAddVideoFile.Location = new System.Drawing.Point(6, 155);
-            this.btnAddVideoFile.Name = "btnAddVideoFile";
-            this.btnAddVideoFile.Size = new System.Drawing.Size(75, 23);
-            this.btnAddVideoFile.TabIndex = 7;
-            this.btnAddVideoFile.Text = "添加文件";
-            this.btnAddVideoFile.UseVisualStyleBackColor = true;
-            this.btnAddVideoFile.Click += new System.EventHandler(this.btnAddVideoFile_Click);
-            // 
-            // btnDelVideoFile
-            // 
-            this.btnDelVideoFile.Location = new System.Drawing.Point(87, 155);
-            this.btnDelVideoFile.Name = "btnDelVideoFile";
-            this.btnDelVideoFile.Size = new System.Drawing.Size(75, 23);
-            this.btnDelVideoFile.TabIndex = 8;
-            this.btnDelVideoFile.Text = "删除文件";
-            this.btnDelVideoFile.UseVisualStyleBackColor = true;
-            this.btnDelVideoFile.Click += new System.EventHandler(this.btnDelVideoFile_Click);
-            // 
-            // VideoFileName
-            // 
-            this.VideoFileName.DataPropertyName = "FileName";
-            this.VideoFileName.HeaderText = "文件名";
-            this.VideoFileName.Name = "VideoFileName";
-            this.VideoFileName.ReadOnly = true;
-            this.VideoFileName.Width = 150;
-            // 
-            // VideoFileVersion
-            // 
-            this.VideoFileVersion.DataPropertyName = "FileVersion";
-            this.VideoFileVersion.HeaderText = "版本（修改日期）";
-            this.VideoFileVersion.Name = "VideoFileVersion";
-            this.VideoFileVersion.ReadOnly = true;
-            this.VideoFileVersion.Width = 150;
-            // 
-            // VideoFilePath
-            // 
-            this.VideoFilePath.DataPropertyName = "FilePath";
-            this.VideoFilePath.HeaderText = "文件路径";
-            this.VideoFilePath.Name = "VideoFilePath";
-            this.VideoFilePath.ReadOnly = true;
-            this.VideoFilePath.Visible = false;
             // 
             // TopicDBCode
             // 
@@ -400,6 +238,198 @@
             this.TopicFilePath.Name = "TopicFilePath";
             this.TopicFilePath.ReadOnly = true;
             this.TopicFilePath.Visible = false;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.btnAddFile);
+            this.tabPage2.Controls.Add(this.btnDeleteFile);
+            this.tabPage2.Controls.Add(this.dgvFiles);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(609, 184);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "外部文件维护";
+            // 
+            // btnAddFile
+            // 
+            this.btnAddFile.FlatAppearance.BorderSize = 0;
+            this.btnAddFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddFile.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFile.Image")));
+            this.btnAddFile.Location = new System.Drawing.Point(6, 155);
+            this.btnAddFile.Name = "btnAddFile";
+            this.btnAddFile.Size = new System.Drawing.Size(76, 24);
+            this.btnAddFile.TabIndex = 5;
+            this.btnAddFile.Text = "添加文件";
+            this.btnAddFile.UseVisualStyleBackColor = true;
+            this.btnAddFile.Click += new System.EventHandler(this.btnAddFile_Click);
+            // 
+            // btnDeleteFile
+            // 
+            this.btnDeleteFile.FlatAppearance.BorderSize = 0;
+            this.btnDeleteFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteFile.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteFile.Image")));
+            this.btnDeleteFile.Location = new System.Drawing.Point(87, 155);
+            this.btnDeleteFile.Name = "btnDeleteFile";
+            this.btnDeleteFile.Size = new System.Drawing.Size(76, 24);
+            this.btnDeleteFile.TabIndex = 6;
+            this.btnDeleteFile.Text = "删除文件";
+            this.btnDeleteFile.UseVisualStyleBackColor = true;
+            this.btnDeleteFile.Click += new System.EventHandler(this.btnDeleteFile_Click);
+            // 
+            // dgvFiles
+            // 
+            this.dgvFiles.AllowUserToAddRows = false;
+            this.dgvFiles.AllowUserToDeleteRows = false;
+            this.dgvFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvFiles.BackgroundColor = System.Drawing.Color.White;
+            this.dgvFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FileNames,
+            this.FileVersion,
+            this.FilePath});
+            this.dgvFiles.Location = new System.Drawing.Point(3, 3);
+            this.dgvFiles.Name = "dgvFiles";
+            this.dgvFiles.ReadOnly = true;
+            this.dgvFiles.RowTemplate.Height = 23;
+            this.dgvFiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFiles.Size = new System.Drawing.Size(603, 146);
+            this.dgvFiles.TabIndex = 0;
+            // 
+            // FileNames
+            // 
+            this.FileNames.DataPropertyName = "FileName";
+            this.FileNames.HeaderText = "文件名";
+            this.FileNames.Name = "FileNames";
+            this.FileNames.ReadOnly = true;
+            this.FileNames.Width = 150;
+            // 
+            // FileVersion
+            // 
+            this.FileVersion.DataPropertyName = "FileVersion";
+            this.FileVersion.HeaderText = "版本（修改日期）";
+            this.FileVersion.Name = "FileVersion";
+            this.FileVersion.ReadOnly = true;
+            this.FileVersion.Width = 150;
+            // 
+            // FilePath
+            // 
+            this.FilePath.DataPropertyName = "FilePath";
+            this.FilePath.HeaderText = "文件路径";
+            this.FilePath.Name = "FilePath";
+            this.FilePath.ReadOnly = true;
+            this.FilePath.Visible = false;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.White;
+            this.tabPage3.Controls.Add(this.btnAddVideoFile);
+            this.tabPage3.Controls.Add(this.btnDelVideoFile);
+            this.tabPage3.Controls.Add(this.dgvVideoFiles);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(609, 184);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "视频文件维护";
+            // 
+            // btnAddVideoFile
+            // 
+            this.btnAddVideoFile.FlatAppearance.BorderSize = 0;
+            this.btnAddVideoFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddVideoFile.Image = ((System.Drawing.Image)(resources.GetObject("btnAddVideoFile.Image")));
+            this.btnAddVideoFile.Location = new System.Drawing.Point(6, 155);
+            this.btnAddVideoFile.Name = "btnAddVideoFile";
+            this.btnAddVideoFile.Size = new System.Drawing.Size(76, 24);
+            this.btnAddVideoFile.TabIndex = 7;
+            this.btnAddVideoFile.Text = "添加文件";
+            this.btnAddVideoFile.UseVisualStyleBackColor = true;
+            this.btnAddVideoFile.Click += new System.EventHandler(this.btnAddVideoFile_Click);
+            // 
+            // btnDelVideoFile
+            // 
+            this.btnDelVideoFile.FlatAppearance.BorderSize = 0;
+            this.btnDelVideoFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelVideoFile.Image = ((System.Drawing.Image)(resources.GetObject("btnDelVideoFile.Image")));
+            this.btnDelVideoFile.Location = new System.Drawing.Point(87, 155);
+            this.btnDelVideoFile.Name = "btnDelVideoFile";
+            this.btnDelVideoFile.Size = new System.Drawing.Size(76, 24);
+            this.btnDelVideoFile.TabIndex = 8;
+            this.btnDelVideoFile.Text = "删除文件";
+            this.btnDelVideoFile.UseVisualStyleBackColor = true;
+            this.btnDelVideoFile.Click += new System.EventHandler(this.btnDelVideoFile_Click);
+            // 
+            // dgvVideoFiles
+            // 
+            this.dgvVideoFiles.AllowUserToAddRows = false;
+            this.dgvVideoFiles.AllowUserToDeleteRows = false;
+            this.dgvVideoFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvVideoFiles.BackgroundColor = System.Drawing.Color.White;
+            this.dgvVideoFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVideoFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.VideoFileName,
+            this.VideoFileVersion,
+            this.VideoFilePath});
+            this.dgvVideoFiles.Location = new System.Drawing.Point(3, 3);
+            this.dgvVideoFiles.Name = "dgvVideoFiles";
+            this.dgvVideoFiles.ReadOnly = true;
+            this.dgvVideoFiles.RowTemplate.Height = 23;
+            this.dgvVideoFiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVideoFiles.Size = new System.Drawing.Size(603, 146);
+            this.dgvVideoFiles.TabIndex = 1;
+            // 
+            // VideoFileName
+            // 
+            this.VideoFileName.DataPropertyName = "FileName";
+            this.VideoFileName.HeaderText = "文件名";
+            this.VideoFileName.Name = "VideoFileName";
+            this.VideoFileName.ReadOnly = true;
+            this.VideoFileName.Width = 150;
+            // 
+            // VideoFileVersion
+            // 
+            this.VideoFileVersion.DataPropertyName = "FileVersion";
+            this.VideoFileVersion.HeaderText = "版本（修改日期）";
+            this.VideoFileVersion.Name = "VideoFileVersion";
+            this.VideoFileVersion.ReadOnly = true;
+            this.VideoFileVersion.Width = 150;
+            // 
+            // VideoFilePath
+            // 
+            this.VideoFilePath.DataPropertyName = "FilePath";
+            this.VideoFilePath.HeaderText = "文件路径";
+            this.VideoFilePath.Name = "VideoFilePath";
+            this.VideoFilePath.ReadOnly = true;
+            this.VideoFilePath.Visible = false;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::ComputerExam.Properties.Resources.按钮03;
+            this.btnClose.Location = new System.Drawing.Point(553, 314);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(76, 24);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "关闭";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // ofdOpenTopicDB
+            // 
+            this.ofdOpenTopicDB.FileName = "题库文件";
+            this.ofdOpenTopicDB.Filter = "题库文件(*.sdb,*.srk)|*.sdb;*.srk";
+            this.ofdOpenTopicDB.Title = "题库文件";
+            // 
+            // ofdOpenFile
+            // 
+            this.ofdOpenFile.FileName = "账套文件";
+            this.ofdOpenFile.Filter = "账套文件|*.casf*";
+            this.ofdOpenFile.Title = "账套文件";
             // 
             // ofdOpenVideoFile
             // 
@@ -448,7 +478,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button btnAddTopicDB;
         private System.Windows.Forms.Button btnDeleteTopicDB;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -475,5 +504,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 视频资源;
         private System.Windows.Forms.DataGridViewTextBoxColumn TopicFilePath;
         private System.Windows.Forms.OpenFileDialog ofdOpenVideoFile;
+        private System.Windows.Forms.Button btnAddTopicDB;
     }
 }

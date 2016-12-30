@@ -145,4 +145,82 @@
   <data name="loading1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loding.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_01按钮_公告浏览" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\_01按钮_公告浏览.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_01按钮_公告浏览_选中" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\_01按钮_公告浏览_选中.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_01按钮_我的作业" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\_01按钮_我的作业.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_01按钮_我的作业_选中" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\_01按钮_我的作业_选中.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="作业完成情况统计1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\作业完成情况统计1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="作业完成情况统计2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\作业完成情况统计2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="使用手册1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\使用手册1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="使用手册2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\使用手册2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="已下载作业1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\已下载作业1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="已下载作业2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\已下载作业2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="成绩浏览1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\成绩浏览1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="成绩浏览2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\成绩浏览2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="我的作业1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\我的作业1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="我的作业2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\我的作业2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="考前练习1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\考前练习1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="考前练习2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\考前练习2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="资源下载1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\资源下载1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="资源下载2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\资源下载2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="公告浏览1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\公告浏览1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="公告浏览2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\公告浏览2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="退出系统1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\退出系统1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="退出系统2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\退出系统2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="背景" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\背景.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="按钮03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\按钮03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\background\bg_title.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="背景2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\背景2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

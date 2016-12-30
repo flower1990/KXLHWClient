@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWorkBrowse));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -361,9 +362,12 @@
             // 
             // btnScoreDetail
             // 
+            this.btnScoreDetail.FlatAppearance.BorderSize = 0;
+            this.btnScoreDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnScoreDetail.Image = ((System.Drawing.Image)(resources.GetObject("btnScoreDetail.Image")));
             this.btnScoreDetail.Location = new System.Drawing.Point(292, 36);
             this.btnScoreDetail.Name = "btnScoreDetail";
-            this.btnScoreDetail.Size = new System.Drawing.Size(75, 23);
+            this.btnScoreDetail.Size = new System.Drawing.Size(76, 24);
             this.btnScoreDetail.TabIndex = 13;
             this.btnScoreDetail.Text = "成绩明细";
             this.btnScoreDetail.UseVisualStyleBackColor = true;
@@ -372,9 +376,12 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.Location = new System.Drawing.Point(292, 10);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(76, 24);
             this.btnSearch.TabIndex = 13;
             this.btnSearch.Text = "查询";
             this.btnSearch.UseVisualStyleBackColor = true;

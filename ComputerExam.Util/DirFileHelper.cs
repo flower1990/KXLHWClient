@@ -330,6 +330,7 @@ namespace ComputerExam.Util
             {
                 foreach (string s in files)
                 {
+                    File.SetAttributes(s, FileAttributes.Normal);
                     File.Copy(s, varToDirectory + s.Substring(s.LastIndexOf("\\")), true);
                 }
             }

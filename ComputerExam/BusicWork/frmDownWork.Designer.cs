@@ -30,18 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDownWork));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvResult = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAddVideoFile = new System.Windows.Forms.Button();
-            this.btnAddEnvfile = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cboSubject = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cboJobState = new System.Windows.Forms.ComboBox();
-            this.btnDoJob = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.ofdOpenFile = new System.Windows.Forms.OpenFileDialog();
             this.JobNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.学生姓名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ShowScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,6 +67,16 @@
             this.AccountDownLoadState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsUploadAnswerFile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VideoDownLoadState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAddVideoFile = new System.Windows.Forms.Button();
+            this.btnAddEnvfile = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboSubject = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cboJobState = new System.Windows.Forms.ComboBox();
+            this.btnDoJob = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.ofdOpenFile = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.panel2.SuspendLayout();
@@ -136,115 +137,14 @@
             this.AccountDownLoadState,
             this.IsUploadAnswerFile,
             this.VideoDownLoadState});
-            this.dgvResult.Location = new System.Drawing.Point(12, 108);
+            this.dgvResult.Location = new System.Drawing.Point(12, 99);
             this.dgvResult.Name = "dgvResult";
             this.dgvResult.ReadOnly = true;
             this.dgvResult.RowTemplate.Height = 23;
             this.dgvResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvResult.Size = new System.Drawing.Size(855, 311);
+            this.dgvResult.Size = new System.Drawing.Size(855, 320);
             this.dgvResult.TabIndex = 13;
             this.dgvResult.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvResult_CellFormatting);
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.AutoScroll = true;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btnAddVideoFile);
-            this.panel2.Controls.Add(this.btnAddEnvfile);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.cboSubject);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.cboJobState);
-            this.panel2.Controls.Add(this.btnDoJob);
-            this.panel2.Controls.Add(this.btnSearch);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(855, 90);
-            this.panel2.TabIndex = 11;
-            // 
-            // btnAddVideoFile
-            // 
-            this.btnAddVideoFile.Location = new System.Drawing.Point(373, 39);
-            this.btnAddVideoFile.Name = "btnAddVideoFile";
-            this.btnAddVideoFile.Size = new System.Drawing.Size(75, 23);
-            this.btnAddVideoFile.TabIndex = 35;
-            this.btnAddVideoFile.Text = "添加视频";
-            this.btnAddVideoFile.UseVisualStyleBackColor = true;
-            this.btnAddVideoFile.Click += new System.EventHandler(this.btnAddVideoFile_Click);
-            // 
-            // btnAddEnvfile
-            // 
-            this.btnAddEnvfile.Location = new System.Drawing.Point(292, 39);
-            this.btnAddEnvfile.Name = "btnAddEnvfile";
-            this.btnAddEnvfile.Size = new System.Drawing.Size(75, 23);
-            this.btnAddEnvfile.TabIndex = 34;
-            this.btnAddEnvfile.Text = "添加帐套";
-            this.btnAddEnvfile.UseVisualStyleBackColor = true;
-            this.btnAddEnvfile.Click += new System.EventHandler(this.btnAddEnvfile_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 44);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 12);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "科目名称：";
-            // 
-            // cboSubject
-            // 
-            this.cboSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSubject.FormattingEnabled = true;
-            this.cboSubject.Location = new System.Drawing.Point(86, 41);
-            this.cboSubject.Name = "cboSubject";
-            this.cboSubject.Size = new System.Drawing.Size(200, 20);
-            this.cboSubject.TabIndex = 30;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 12);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "作业类型：";
-            // 
-            // cboJobState
-            // 
-            this.cboJobState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboJobState.FormattingEnabled = true;
-            this.cboJobState.Location = new System.Drawing.Point(86, 15);
-            this.cboJobState.Name = "cboJobState";
-            this.cboJobState.Size = new System.Drawing.Size(200, 20);
-            this.cboJobState.TabIndex = 31;
-            // 
-            // btnDoJob
-            // 
-            this.btnDoJob.Location = new System.Drawing.Point(373, 13);
-            this.btnDoJob.Name = "btnDoJob";
-            this.btnDoJob.Size = new System.Drawing.Size(75, 23);
-            this.btnDoJob.TabIndex = 24;
-            this.btnDoJob.Text = "做作业";
-            this.btnDoJob.UseVisualStyleBackColor = true;
-            this.btnDoJob.Click += new System.EventHandler(this.btnDoJob_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(292, 13);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 13;
-            this.btnSearch.Text = "查询";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // ofdOpenFile
-            // 
-            this.ofdOpenFile.FileName = "账套文件";
-            this.ofdOpenFile.Filter = "账套文件|*.casf*";
-            this.ofdOpenFile.Title = "账套文件";
             // 
             // JobNo
             // 
@@ -516,6 +416,120 @@
             this.VideoDownLoadState.HeaderText = "视频下载状态";
             this.VideoDownLoadState.Name = "VideoDownLoadState";
             this.VideoDownLoadState.ReadOnly = true;
+            this.VideoDownLoadState.Width = 120;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.AutoScroll = true;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnAddVideoFile);
+            this.panel2.Controls.Add(this.btnAddEnvfile);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.cboSubject);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.cboJobState);
+            this.panel2.Controls.Add(this.btnDoJob);
+            this.panel2.Controls.Add(this.btnSearch);
+            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(855, 81);
+            this.panel2.TabIndex = 11;
+            // 
+            // btnAddVideoFile
+            // 
+            this.btnAddVideoFile.FlatAppearance.BorderSize = 0;
+            this.btnAddVideoFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddVideoFile.Image = ((System.Drawing.Image)(resources.GetObject("btnAddVideoFile.Image")));
+            this.btnAddVideoFile.Location = new System.Drawing.Point(373, 39);
+            this.btnAddVideoFile.Name = "btnAddVideoFile";
+            this.btnAddVideoFile.Size = new System.Drawing.Size(76, 24);
+            this.btnAddVideoFile.TabIndex = 35;
+            this.btnAddVideoFile.Text = "添加视频";
+            this.btnAddVideoFile.UseVisualStyleBackColor = true;
+            this.btnAddVideoFile.Click += new System.EventHandler(this.btnAddVideoFile_Click);
+            // 
+            // btnAddEnvfile
+            // 
+            this.btnAddEnvfile.FlatAppearance.BorderSize = 0;
+            this.btnAddEnvfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddEnvfile.Image = ((System.Drawing.Image)(resources.GetObject("btnAddEnvfile.Image")));
+            this.btnAddEnvfile.Location = new System.Drawing.Point(292, 39);
+            this.btnAddEnvfile.Name = "btnAddEnvfile";
+            this.btnAddEnvfile.Size = new System.Drawing.Size(76, 24);
+            this.btnAddEnvfile.TabIndex = 34;
+            this.btnAddEnvfile.Text = "添加帐套";
+            this.btnAddEnvfile.UseVisualStyleBackColor = true;
+            this.btnAddEnvfile.Click += new System.EventHandler(this.btnAddEnvfile_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 44);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 12);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "科目名称：";
+            // 
+            // cboSubject
+            // 
+            this.cboSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSubject.FormattingEnabled = true;
+            this.cboSubject.Location = new System.Drawing.Point(86, 41);
+            this.cboSubject.Name = "cboSubject";
+            this.cboSubject.Size = new System.Drawing.Size(200, 20);
+            this.cboSubject.TabIndex = 30;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 12);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "作业类型：";
+            // 
+            // cboJobState
+            // 
+            this.cboJobState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboJobState.FormattingEnabled = true;
+            this.cboJobState.Location = new System.Drawing.Point(86, 15);
+            this.cboJobState.Name = "cboJobState";
+            this.cboJobState.Size = new System.Drawing.Size(200, 20);
+            this.cboJobState.TabIndex = 31;
+            // 
+            // btnDoJob
+            // 
+            this.btnDoJob.FlatAppearance.BorderSize = 0;
+            this.btnDoJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoJob.Image = ((System.Drawing.Image)(resources.GetObject("btnDoJob.Image")));
+            this.btnDoJob.Location = new System.Drawing.Point(373, 13);
+            this.btnDoJob.Name = "btnDoJob";
+            this.btnDoJob.Size = new System.Drawing.Size(76, 24);
+            this.btnDoJob.TabIndex = 24;
+            this.btnDoJob.Text = "做作业";
+            this.btnDoJob.UseVisualStyleBackColor = true;
+            this.btnDoJob.Click += new System.EventHandler(this.btnDoJob_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(292, 13);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(76, 24);
+            this.btnSearch.TabIndex = 13;
+            this.btnSearch.Text = "查询";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // ofdOpenFile
+            // 
+            this.ofdOpenFile.FileName = "账套文件";
+            this.ofdOpenFile.Filter = "账套文件|*.casf*";
+            this.ofdOpenFile.Title = "账套文件";
             // 
             // frmDownWork
             // 

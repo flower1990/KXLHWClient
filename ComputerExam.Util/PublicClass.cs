@@ -497,6 +497,7 @@ namespace ComputerExam.Util
             List<string> slDifficultyName = new List<string>();
             List<string> slPeiWuTopic = new List<string>();
             List<string> slMultimediaFileName = new List<string>();
+            List<string> slEditType = new List<string>();
             List<string> slSubTopicCount = new List<string>();
 
             List<string> slSubTopicID = new List<string>();
@@ -595,6 +596,7 @@ namespace ComputerExam.Util
                 slDifficultyID = xml.SplitString(xml.GetXmlNodeValue(sTopicList, "难易程度ID"), xml.SplitFlagStr);
                 slDifficultyName = xml.SplitString(xml.GetXmlNodeValue(sTopicList, "难易程度"), xml.SplitFlagStr);
                 slMultimediaFileName = xml.SplitString(xml.GetXmlNodeValue(sTopicList, "MultimediaFileName"), xml.SplitFlagStr);
+                slEditType = xml.SplitString(xml.GetXmlNodeValue(sTopicList, "编辑类型"), xml.SplitFlagStr);
                 #endregion
 
                 #region//安全检测
@@ -645,6 +647,7 @@ namespace ComputerExam.Util
                     shitixinxi.Score = double.Parse(slTopicScore[j]);
                     shitixinxi.TopicRightLevel = 1;
                     shitixinxi.MultimediaFileName = slMultimediaFileName[j];
+                    shitixinxi.EditorType = slEditType[j];
                     #endregion
 
                     #region 初始化子试题信息

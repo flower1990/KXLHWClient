@@ -338,7 +338,7 @@ namespace ComputerExam.BusicWork
 
             #region //作业限定时间&&当前时间小于作业发布开始时间
             if (myJob.HWSubmitTimeType.ToLower() == "true" &&       //1：限时，0：不限时
-                DateTime.Now <= DateTime.Parse(myJob.ExamStartDateTime))
+                Globals.ServerTime < DateTime.Parse(myJob.ExamStartDateTime))
             {
                 PublicClass.ShowMessageOk("还没有到作业时间，不允许下载作业。");
                 return;
@@ -348,7 +348,7 @@ namespace ComputerExam.BusicWork
             #region //作业限定时间&&不允许补交作业&&当前时间大于作业提交截止时间
             if (myJob.HWSubmitTimeType.ToLower() == "true" &&       //true：限时，false：不限时
                 myJob.IsPay.ToLower() == "false" &&           //true：允许补交作业，false：不允许补交作业
-                DateTime.Now >= DateTime.Parse(myJob.ExamEndDateTime))
+                Globals.ServerTime > DateTime.Parse(myJob.ExamEndDateTime))
             {
                 PublicClass.ShowMessageOk("对不起，您已经过了交作业时间。\n请联系老师允许您补交作业！");
                 return;
@@ -616,6 +616,24 @@ namespace ComputerExam.BusicWork
                         e.Value = "未上交";
                     }
                 }
+            }
+        }
+
+        private void dgvResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvResult.SelectedRows.Count == 0) return;
+            M_MyJob myJob = dgvResult.SelectedRows[0].DataBoundItem as M_MyJob;
+            cbIsDownAccount.Checked = false;
+            cbIsDownVideo.Checked = false;
+
+            if (myJob.RequireEnvFile.ToLower() == "true" && myJob.IsUpload.ToLower() == "true")
+            {
+                cbIsDownAccount.Checked = true;
+            }
+
+            if (string.IsNullOrEmpty(myJob.VideoFilePath) == false && myJob.IsUploadVideoFile == true)
+            {
+                cbIsDownVideo.Checked = true;
             }
         }
 

@@ -93,19 +93,21 @@ namespace ComputerExam
                 string realName = string.Empty;
                 string account = txtAccount.Text.Trim();
                 string password = txtPassord.Text.Trim();
+                DateTime serverTime = DateTime.Now;
                 PublicClass.StudentCode = account;
                 PublicClass.StudentPwd = password;
                 RememberAccount(account, password);
                 if (rdoOnline.Checked)
                 {
                     CreateService();
-                    realName = bService.GetUserInfo(account, password, out message);
+                    realName = bService.GetUserInfo(account, password, out message, out serverTime);
                     if (string.IsNullOrEmpty(realName))
                     {
                         Msg.ShowError(message);
                         return false;
                     }
                     PublicClass.ExamineeName = realName;
+                    Globals.ServerTime = serverTime;
                     InitialBaseData();
                 }
                 return true;

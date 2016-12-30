@@ -37,11 +37,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.cboJob = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cboChartType = new System.Windows.Forms.ComboBox();
             this.cboSubject = new System.Windows.Forms.ComboBox();
             this.chartLine = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.rdoLine = new System.Windows.Forms.RadioButton();
+            this.rdoColumn = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.chartMyJob)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartLine)).BeginInit();
@@ -81,9 +81,12 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(569, 36);
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Image = global::ComputerExam.Properties.Resources.按钮03;
+            this.btnSearch.Location = new System.Drawing.Point(357, 35);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(76, 24);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "查询";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -95,11 +98,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.rdoColumn);
+            this.panel1.Controls.Add(this.rdoLine);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cboJob);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.cboChartType);
             this.panel1.Controls.Add(this.cboSubject);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Location = new System.Drawing.Point(12, 12);
@@ -125,15 +128,6 @@
             this.cboJob.Size = new System.Drawing.Size(200, 20);
             this.cboJob.TabIndex = 33;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(292, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "图表类型：";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -142,15 +136,6 @@
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 24;
             this.label5.Text = "课程名称：";
-            // 
-            // cboChartType
-            // 
-            this.cboChartType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboChartType.FormattingEnabled = true;
-            this.cboChartType.Location = new System.Drawing.Point(363, 38);
-            this.cboChartType.Name = "cboChartType";
-            this.cboChartType.Size = new System.Drawing.Size(200, 20);
-            this.cboChartType.TabIndex = 22;
             // 
             // cboSubject
             // 
@@ -192,6 +177,28 @@
             this.chartLine.TabIndex = 3;
             this.chartLine.Text = "chart1";
             // 
+            // rdoLine
+            // 
+            this.rdoLine.AutoSize = true;
+            this.rdoLine.Checked = true;
+            this.rdoLine.Location = new System.Drawing.Point(292, 13);
+            this.rdoLine.Name = "rdoLine";
+            this.rdoLine.Size = new System.Drawing.Size(59, 16);
+            this.rdoLine.TabIndex = 35;
+            this.rdoLine.TabStop = true;
+            this.rdoLine.Text = "折线图";
+            this.rdoLine.UseVisualStyleBackColor = true;
+            // 
+            // rdoColumn
+            // 
+            this.rdoColumn.AutoSize = true;
+            this.rdoColumn.Location = new System.Drawing.Point(292, 39);
+            this.rdoColumn.Name = "rdoColumn";
+            this.rdoColumn.Size = new System.Drawing.Size(59, 16);
+            this.rdoColumn.TabIndex = 35;
+            this.rdoColumn.Text = "柱形图";
+            this.rdoColumn.UseVisualStyleBackColor = true;
+            // 
             // frmStatisticalAnalysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -220,10 +227,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboSubject;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboChartType;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartLine;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboJob;
+        private System.Windows.Forms.RadioButton rdoColumn;
+        private System.Windows.Forms.RadioButton rdoLine;
     }
 }

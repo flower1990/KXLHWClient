@@ -107,8 +107,8 @@ namespace ComputerExam.BusicWork
             string fileTPath = fileFullName + "t";
             string fileName = Path.GetFileName(filePath);
             string fileExt = Path.GetExtension(filePath).ToLower();
-            string copyPath = string.Format(@"{0}\data\{1}", Application.StartupPath, fileName);
-            string copyTPath = string.Format(@"{0}\data\{1}t", Application.StartupPath, fileName);
+            string copyPath = string.Format(@"{0}\data\{1}", Application.StartupPath, fileName.Replace(".srk", ".sdb"));
+            string copyTPath = string.Format(@"{0}\data\{1}t", Application.StartupPath, fileName.Replace(".srk", ".sdb"));
             string connection = string.Format(@"data source={0};password={1};polling=false;failifmissing=true", filePath, PublicClass.PasswordTopicDB);
             string connectionT = string.Format(@"data source={0};polling=false;failifmissing=true", fileTPath);
             try
@@ -136,8 +136,8 @@ namespace ComputerExam.BusicWork
                         if (ConnectionState.Open == conn.State)
                         {
                             conn.ChangePassword(PublicClass.PasswordTopicDB);
-                            DirFileHelper.CopyFile(filePath, copyPath.Replace(".srk", ".sdb"));
-                            DirFileHelper.CopyFile(fileTPath, copyTPath.Replace(".srk", ".sdb"));
+                            DirFileHelper.CopyFile(filePath, copyPath);
+                            DirFileHelper.CopyFile(fileTPath, copyTPath);
                             conn.Close();
                         }
                         conn.Dispose();
@@ -302,8 +302,15 @@ namespace ComputerExam.BusicWork
             if (fileInfo == null) return;
             if (string.IsNullOrEmpty(resource.RSPath)) return;
 
-            serverName = Path.GetFileNameWithoutExtension(resource.RSPath);
+            serverName = GetServerName(resource.RSPath);
             result = fileInfo.Exists(f => Path.GetFileNameWithoutExtension(f.Name) == serverName);
+        }
+        public static string GetServerName(string str)
+        {
+            string serverName = Path.GetFileNameWithoutExtension(str);
+            int index = serverName.IndexOf('_');
+            string result = serverName.Substring(index + 1);
+            return result;
         }
         public frmResource()
         {

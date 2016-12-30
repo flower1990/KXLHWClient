@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmResource));
             this.panel1 = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsbMessage = new System.Windows.Forms.ToolStripStatusLabel();
@@ -93,7 +94,7 @@
             // tsbMessage
             // 
             this.tsbMessage.Name = "tsbMessage";
-            this.tsbMessage.Size = new System.Drawing.Size(116, 17);
+            this.tsbMessage.Size = new System.Drawing.Size(113, 17);
             this.tsbMessage.Text = "当前资源下载进度：";
             // 
             // tsbBar
@@ -347,9 +348,12 @@
             // 
             // btnDownLoad
             // 
+            this.btnDownLoad.FlatAppearance.BorderSize = 0;
+            this.btnDownLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDownLoad.Image = ((System.Drawing.Image)(resources.GetObject("btnDownLoad.Image")));
             this.btnDownLoad.Location = new System.Drawing.Point(572, 39);
             this.btnDownLoad.Name = "btnDownLoad";
-            this.btnDownLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnDownLoad.Size = new System.Drawing.Size(76, 24);
             this.btnDownLoad.TabIndex = 14;
             this.btnDownLoad.Text = "开始下载";
             this.btnDownLoad.UseVisualStyleBackColor = true;
@@ -357,9 +361,12 @@
             // 
             // btnLook
             // 
+            this.btnLook.FlatAppearance.BorderSize = 0;
+            this.btnLook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLook.Image = ((System.Drawing.Image)(resources.GetObject("btnLook.Image")));
             this.btnLook.Location = new System.Drawing.Point(653, 39);
             this.btnLook.Name = "btnLook";
-            this.btnLook.Size = new System.Drawing.Size(75, 23);
+            this.btnLook.Size = new System.Drawing.Size(76, 24);
             this.btnLook.TabIndex = 13;
             this.btnLook.Text = "资源浏览";
             this.btnLook.UseVisualStyleBackColor = true;
@@ -367,9 +374,12 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.Location = new System.Drawing.Point(572, 12);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(76, 24);
             this.btnSearch.TabIndex = 13;
             this.btnSearch.Text = "查询";
             this.btnSearch.UseVisualStyleBackColor = true;
